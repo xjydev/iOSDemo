@@ -27,9 +27,6 @@ PODS:
   - GCDWebServer/WebUploader (3.4.2):
     - GCDWebServer/Core
   - MBProgressHUD (1.1.0)
-  - MWPhotoBrowser (0.0.1):
-    - MBProgressHUD
-    - SDWebImage
   - "NSData+Base64 (1.0.0)"
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -64,7 +61,6 @@ DEPENDENCIES:
   - GCDWebServer/WebDAV
   - GCDWebServer/WebUploader
   - MBProgressHUD
-  - MWPhotoBrowser
   - "NSData+Base64"
   - ReactiveCocoa
   - ReactiveViewModel
@@ -83,7 +79,6 @@ SPEC REPOS:
     - DateTools
     - GCDWebServer
     - MBProgressHUD
-    - MWPhotoBrowser
     - "NSData+Base64"
     - ReactiveCocoa
     - ReactiveViewModel
@@ -102,7 +97,6 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
-  MWPhotoBrowser: 0c74261360f399c22b68b63a28aedf24ebd44ae0
   "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
@@ -114,6 +108,6 @@ SPEC CHECKSUMS:
   XRefresh: b2569aec255900d3dbd794bffbaf502ff6fd4198
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: bb9c8ac65ae3151c318d19f6005127df178e8cf4
+PODFILE CHECKSUM: e7ae7fbb377c80a87e4ee1227d18b002882b4c19
 
 COCOAPODS: 1.5.0

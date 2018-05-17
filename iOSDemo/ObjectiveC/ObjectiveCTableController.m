@@ -7,8 +7,8 @@
 //
 
 #import "ObjectiveCTableController.h"
-
-@interface ObjectiveCTableController ()
+#import "XPropertyViewController.h"
+@interface ObjectiveCTableController ()<UINavigationControllerDelegate>
 {
   NSArray  *  _mainArray;
 }
@@ -18,7 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _mainArray = @[@{@"title":@"属性",@"class":@""},];
+    self.navigationController.delegate = self;
+    _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},];
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
     
@@ -52,10 +53,27 @@
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSDictionary *dict = _mainArray[indexPath.row];
+    if ([dict[@"storyboard"]boolValue]) {
+        [self performSegueWithIdentifier:dict[@"class"] sender:nil];
+    }
+    else
+    {
+         [self pushClass:dict[@"class"]];
+    }
+   
 }
-
-
+//根据类名，push到制定的类
+- (void)pushClass:(NSString *)className{
+    Class objectClass = NSClassFromString(className);
+    UIViewController * object = [[objectClass alloc]init];
+    object.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:object animated:YES];
+}
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(nonnull UIViewController *)viewController animated:(BOOL)animated {
+    BOOL isShow = [viewController isKindOfClass:[self class]];
+    [self.navigationController setNavigationBarHidden:isShow animated:YES];
+}
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.

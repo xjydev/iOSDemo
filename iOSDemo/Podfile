@@ -21,7 +21,6 @@ target 'iOSDemo' do
   pod 'GCDWebServer/WebUploader'
   pod 'GCDWebServer/WebDAV'
   pod 'RNCryptor'
-  pod 'MWPhotoBrowser'
   
   
 #  Using AFNetworking (3.2.0)
@@ -30,7 +29,6 @@ target 'iOSDemo' do
 #  Using DateTools (2.0.0)
 #  Installing GCDWebServer (3.4.2)
 #  Using MBProgressHUD (1.1.0)
-#  Installing MWPhotoBrowser (0.0.1)
 #  Using NSData+Base64 (1.0.0)
 #  Installing RNCryptor (5.0.3)
 #  Using ReactiveCocoa (2.5)
