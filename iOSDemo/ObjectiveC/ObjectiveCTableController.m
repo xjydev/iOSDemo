@@ -19,7 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.delegate = self;
-    _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},];
+    _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+                   @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},];
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
     
