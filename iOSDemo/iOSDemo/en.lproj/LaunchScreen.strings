@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3wJ-aZ-cDT"; */
+"3wJ-aZ-cDT.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; 3wc-fk-ZEj.segmentTitles[0] = "First"; ObjectID = "3wc-fk-ZEj"; */
+"3wc-fk-ZEj.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; 3wc-fk-ZEj.segmentTitles[1] = "Second"; ObjectID = "3wc-fk-ZEj"; */
+"3wc-fk-ZEj.segmentTitles[1]" = "Second";
