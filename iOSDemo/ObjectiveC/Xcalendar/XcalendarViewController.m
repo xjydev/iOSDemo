@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.title = @"日历";
     self.view.backgroundColor = [UIColor whiteColor];
-    XYCalendarView *calendarView = [[XYCalendarView alloc]initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, 340)];
+    XYCalendarView *calendarView = [[XYCalendarView alloc]initWithFrame:CGRectMake(0, 80, self.view.frame.size.width, 350)];
     [self.view addSubview:calendarView];
 }
 

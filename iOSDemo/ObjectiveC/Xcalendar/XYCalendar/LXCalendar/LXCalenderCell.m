@@ -13,6 +13,7 @@
 #import "UIColor+Expanded.h"
 @interface LXCalenderCell()
 @property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIView *markView;
 
 
 @end
@@ -30,7 +31,7 @@
     
     [self.label setFTCornerdious:0.0];
     self.label.backgroundColor = [UIColor whiteColor];
-    
+    self.markView.hidden = !model.isMark;
     if (model.isNextMonth || model.isLastMonth) {
         self.userInteractionEnabled = NO;
        

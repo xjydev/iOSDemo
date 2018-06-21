@@ -145,6 +145,7 @@
         model.month = monthModel.month;
         
         model.year = monthModel.year;
+        model.isMark = i%3 == 0;
         
         
         //上个月的日期
@@ -264,7 +265,7 @@
     }
     return _calendarWeekView;
 }
--(UICollectionView *)collectionView{
+-(UICollectionView *)collectionView{//高度300；
     if (!_collectionView) {
         
         

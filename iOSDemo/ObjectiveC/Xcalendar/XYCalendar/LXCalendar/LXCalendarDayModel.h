@@ -20,7 +20,7 @@
 @property(nonatomic,assign)BOOL isCurrentMonth;//属于当月
 
 @property(nonatomic,assign)BOOL isToday;//今天
-
+@property(nonatomic,assign)BOOL isMark;//是否被标记
 @property(nonatomic,assign)BOOL isSelected;//是否被选中
 
 

@@ -20,8 +20,10 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
-                   @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
-                   @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},];
+                @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
+                    @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
+                    @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
+                 @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},];
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
     
@@ -106,6 +108,7 @@
     editRowAction.backgroundColor = [UIColor colorWithRed:0 green:124/255.0 blue:223/255.0 alpha:1];//可以定义RowAction的颜色
     return @[deleteRoWAction,editRowAction];//最后返回这俩个RowAction 的数组
 }
+
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
