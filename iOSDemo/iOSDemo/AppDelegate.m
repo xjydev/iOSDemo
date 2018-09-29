@@ -16,7 +16,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    NSNumber *num = @(18618393874);
+    NSString *numst = num;
+    NSLog(@"===%@",numst);
     return YES;
 }
 

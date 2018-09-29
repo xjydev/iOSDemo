@@ -8,7 +8,8 @@
 
 #import "ObjectiveCTableController.h"
 #import "XPropertyViewController.h"
-@interface ObjectiveCTableController ()<UINavigationControllerDelegate>
+#import "ABCalendarController.h"
+@interface ObjectiveCTableController ()<UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate>
 {
   NSArray  *  _mainArray;
 }
@@ -23,7 +24,9 @@
                 @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
                     @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
                     @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
-                 @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},];
+                 @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
+                   @{@"title":@"UITableView",@"class":@"XTableViewController",@"storyboard":@"0"},
+                   ];
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
     
@@ -108,7 +111,35 @@
     editRowAction.backgroundColor = [UIColor colorWithRed:0 green:124/255.0 blue:223/255.0 alpha:1];//可以定义RowAction的颜色
     return @[deleteRoWAction,editRowAction];//最后返回这俩个RowAction 的数组
 }
-
+- (IBAction)footButtonAction:(id)sender {
+    [[ABCalendarController alloc]showSelectedCompletion:^(NSDate *startDate, NSDate *endDate) {
+        
+    }];
+}
+- (IBAction)popButtonAction:(UIButton *)sender {
+    UIViewController *viewC = [[UIViewController alloc]init];
+    viewC.modalPresentationStyle = UIModalPresentationPopover;
+    viewC.preferredContentSize = CGSizeMake(80, 150);
+    viewC.popoverPresentationController.sourceView = sender;
+    viewC.popoverPresentationController.sourceRect =sender.bounds;
+    viewC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
+    viewC.popoverPresentationController.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+    viewC.popoverPresentationController.delegate = self;
+    
+    [self presentViewController:viewC animated:YES completion:^{
+        
+    }];
+}
+#pragma mark -- UIPopoverPresentationControllerDelegate
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    return UIModalPresentationNone;
+}
+- (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller traitCollection:(UITraitCollection *)traitCollection {
+   return UIModalPresentationNone;
+}
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(UIPopoverPresentationController *)popoverPresentationController {
+    return YES;
+}
 /*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
