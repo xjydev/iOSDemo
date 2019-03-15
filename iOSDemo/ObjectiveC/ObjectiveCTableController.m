@@ -9,14 +9,21 @@
 #import "ObjectiveCTableController.h"
 #import "XPropertyViewController.h"
 #import "ABCalendarController.h"
+#import "ABGuideView.h"
 @interface ObjectiveCTableController ()<UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate>
 {
   NSArray  *  _mainArray;
 }
+@property (nonatomic, strong)NSMutableArray *viewsArray;
 @end
 
 @implementation ObjectiveCTableController
-
+- (NSMutableArray *)viewsArray {
+    if (!_viewsArray) {
+        _viewsArray = [NSMutableArray arrayWithCapacity:0];
+    }
+    return _viewsArray;
+}
 - (void)viewDidLoad {//
     [super viewDidLoad];
     self.navigationController.delegate = self;
@@ -26,6 +33,9 @@
                     @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
                  @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
                    @{@"title":@"UITableView",@"class":@"XTableViewController",@"storyboard":@"0"},
+                   @{@"title":@"字符串的操作",@"class":@"XStringViewController",@"storyboard":@"1"},
+                   @{@"title":@"WebView",@"class":@"XWebViewController",@"storyboard":@"0"},
+                   @{@"title":@"URL解析",@"class":@"URLComponentsViewController",@"storyboard":@"0"},
                    ];
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;

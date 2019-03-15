@@ -10,9 +10,11 @@
 		6BBD23DDCEFF46136546B5E0 /* Pods_iOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */; };
 		6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C044E3420CE4485009B77C9 /* XimageViewController.m */; };
 		6C044E3720CE45C5009B77C9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
+		6C1DF32B21A2A3AA009E4725 /* XStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */; };
 		6C39DF4420DBBE580086D632 /* UIView+XCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C39DF4320DBBE580086D632 /* UIView+XCategory.m */; };
 		6C39DF4720DBBE990086D632 /* UIViewController+XCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C39DF4620DBBE990086D632 /* UIViewController+XCategory.m */; };
 		6C39DF4A20DBBEEA0086D632 /* XCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C39DF4920DBBEEA0086D632 /* XCategoryViewController.m */; };
+		6C5B99FC21A3B5590020384C /* XWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C5B99FB21A3B5590020384C /* XWebViewController.m */; };
 		6C6232DA215F789B001E85D4 /* XTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6232D9215F789B001E85D4 /* XTableViewController.m */; };
 		6C64584F20AD4B5D0046C2F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64584E20AD4B5D0046C2F9 /* AppDelegate.m */; };
 		6C64585820AD4B5D0046C2F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C64585620AD4B5D0046C2F9 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		6C64589120AD51580046C2F9 /* ObjectiveCTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */; };
 		6C64589720AD670A0046C2F9 /* XPropertyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64589620AD670A0046C2F9 /* XPropertyViewController.m */; };
 		6C64589B20AD92360046C2F9 /* XBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C64589A20AD92360046C2F9 /* XBlockViewController.m */; };
+		6C68BCD5223A5101007C8861 /* URLComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C68BCD4223A5101007C8861 /* URLComponentsViewController.m */; };
+		6C68BCD8223A6328007C8861 /* ABGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C68BCD7223A6328007C8861 /* ABGuideView.m */; };
 		6C6F7F7720C7C27400C5C151 /* XYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F7F7620C7C27400C5C151 /* XYViewController.m */; };
 		6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F7F7920C7C44000C5C151 /* XYView.m */; };
 		6CB429CA20C545E9000CFD37 /* XcalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429C920C545E9000CFD37 /* XcalendarViewController.m */; };
@@ -70,6 +74,8 @@
 		6C044E3320CE4485009B77C9 /* XimageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XimageViewController.h; sourceTree = "<group>"; };
 		6C044E3420CE4485009B77C9 /* XimageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XimageViewController.m; sourceTree = "<group>"; };
 		6C044E3620CE45C5009B77C9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		6C1DF32921A2A3AA009E4725 /* XStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XStringViewController.h; sourceTree = "<group>"; };
+		6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XStringViewController.m; sourceTree = "<group>"; };
 		6C39DF4120DBBDC00086D632 /* UIView+XExtensionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XExtensionView.h"; sourceTree = "<group>"; };
 		6C39DF4220DBBE580086D632 /* UIView+XCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XCategory.h"; sourceTree = "<group>"; };
 		6C39DF4320DBBE580086D632 /* UIView+XCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XCategory.m"; sourceTree = "<group>"; };
@@ -77,6 +83,8 @@
 		6C39DF4620DBBE990086D632 /* UIViewController+XCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+XCategory.m"; sourceTree = "<group>"; };
 		6C39DF4820DBBEEA0086D632 /* XCategoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCategoryViewController.h; sourceTree = "<group>"; };
 		6C39DF4920DBBEEA0086D632 /* XCategoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCategoryViewController.m; sourceTree = "<group>"; };
+		6C5B99FA21A3B5590020384C /* XWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XWebViewController.h; sourceTree = "<group>"; };
+		6C5B99FB21A3B5590020384C /* XWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XWebViewController.m; sourceTree = "<group>"; };
 		6C601E1320AEC0E30022D8DE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6C601E1420AEC0E30022D8DE /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6C601E1620AEC17C0022D8DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -104,6 +112,10 @@
 		6C64589620AD670A0046C2F9 /* XPropertyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XPropertyViewController.m; sourceTree = "<group>"; };
 		6C64589920AD92360046C2F9 /* XBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XBlockViewController.h; sourceTree = "<group>"; };
 		6C64589A20AD92360046C2F9 /* XBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XBlockViewController.m; sourceTree = "<group>"; };
+		6C68BCD3223A5101007C8861 /* URLComponentsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = URLComponentsViewController.h; sourceTree = "<group>"; };
+		6C68BCD4223A5101007C8861 /* URLComponentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = URLComponentsViewController.m; sourceTree = "<group>"; };
+		6C68BCD6223A6328007C8861 /* ABGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGuideView.h; sourceTree = "<group>"; };
+		6C68BCD7223A6328007C8861 /* ABGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGuideView.m; sourceTree = "<group>"; };
 		6C6F7F7520C7C27400C5C151 /* XYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYViewController.h; sourceTree = "<group>"; };
 		6C6F7F7620C7C27400C5C151 /* XYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYViewController.m; sourceTree = "<group>"; };
 		6C6F7F7820C7C44000C5C151 /* XYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYView.h; sourceTree = "<group>"; };
@@ -191,6 +203,15 @@
 			path = Ximage;
 			sourceTree = "<group>";
 		};
+		6C1DF32821A2A393009E4725 /* XString */ = {
+			isa = PBXGroup;
+			children = (
+				6C1DF32921A2A3AA009E4725 /* XStringViewController.h */,
+				6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */,
+			);
+			path = XString;
+			sourceTree = "<group>";
+		};
 		6C39DF3C20DBB8910086D632 /* XCategory */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +231,17 @@
 				6C39DF4120DBBDC00086D632 /* UIView+XExtensionView.h */,
 			);
 			path = XExtension;
+			sourceTree = "<group>";
+		};
+		6C5B99F921A3B5450020384C /* XwebView */ = {
+			isa = PBXGroup;
+			children = (
+				6C5B99FA21A3B5590020384C /* XWebViewController.h */,
+				6C5B99FB21A3B5590020384C /* XWebViewController.m */,
+				6C68BCD3223A5101007C8861 /* URLComponentsViewController.h */,
+				6C68BCD4223A5101007C8861 /* URLComponentsViewController.m */,
+			);
+			path = XwebView;
 			sourceTree = "<group>";
 		};
 		6C6232D7215F787A001E85D4 /* XTableView */ = {
@@ -293,6 +325,8 @@
 				6C64588E20AD51580046C2F9 /* ObjectiveCTableController.h */,
 				6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */,
 				6C6232D7215F787A001E85D4 /* XTableView */,
+				6C5B99F921A3B5450020384C /* XwebView */,
+				6C1DF32821A2A393009E4725 /* XString */,
 				6C39DF3C20DBB8910086D632 /* XCategory */,
 				6C39DF3D20DBB8910086D632 /* XExtension */,
 				6C044E3220CE446B009B77C9 /* Ximage */,
@@ -325,6 +359,8 @@
 		6C6F7F7420C7C25F00C5C151 /* XYView */ = {
 			isa = PBXGroup;
 			children = (
+				6C68BCD6223A6328007C8861 /* ABGuideView.h */,
+				6C68BCD7223A6328007C8861 /* ABGuideView.m */,
 				6C6F7F7520C7C27400C5C151 /* XYViewController.h */,
 				6C6F7F7620C7C27400C5C151 /* XYViewController.m */,
 				6C6F7F7820C7C44000C5C151 /* XYView.h */,
@@ -632,14 +668,18 @@
 				6C39DF4A20DBBEEA0086D632 /* XCategoryViewController.m in Sources */,
 				6CB429E020C5468D000CFD37 /* LXCalendarHearder.m in Sources */,
 				6C64589B20AD92360046C2F9 /* XBlockViewController.m in Sources */,
+				6C1DF32B21A2A3AA009E4725 /* XStringViewController.m in Sources */,
 				6CB429FD20C54B00000CFD37 /* XTools.m in Sources */,
+				6C68BCD5223A5101007C8861 /* URLComponentsViewController.m in Sources */,
 				6CB429E420C5468D000CFD37 /* NSDate+GFCalendar.m in Sources */,
 				6CB429F820C547DB000CFD37 /* LxButton.m in Sources */,
 				6C64584F20AD4B5D0046C2F9 /* AppDelegate.m in Sources */,
 				6C39DF4420DBBE580086D632 /* UIView+XCategory.m in Sources */,
+				6C68BCD8223A6328007C8861 /* ABGuideView.m in Sources */,
 				6CB429E220C5468D000CFD37 /* LXCalendarDayModel.m in Sources */,
 				6CB429F920C547DB000CFD37 /* UIColor+Expanded.m in Sources */,
 				6CB429F520C547DB000CFD37 /* UIView+FTCornerdious.m in Sources */,
+				6C5B99FC21A3B5590020384C /* XWebViewController.m in Sources */,
 				6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */,
 				6CB429F620C547DB000CFD37 /* UIView+LX_Frame.m in Sources */,
 				6CB429E320C5468D000CFD37 /* LXCalendarView.m in Sources */,
