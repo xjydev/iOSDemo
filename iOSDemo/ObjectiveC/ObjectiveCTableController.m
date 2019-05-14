@@ -28,20 +28,34 @@
     [super viewDidLoad];
     self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
-                @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
-                    @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
-                    @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
-                 @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
+                   @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
+                   @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
+                   @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
+                   @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
+                   @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
+                   @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
                    @{@"title":@"UITableView",@"class":@"XTableViewController",@"storyboard":@"0"},
                    @{@"title":@"字符串的操作",@"class":@"XStringViewController",@"storyboard":@"1"},
                    @{@"title":@"WebView",@"class":@"XWebViewController",@"storyboard":@"0"},
                    @{@"title":@"URL解析",@"class":@"URLComponentsViewController",@"storyboard":@"0"},
+                   @{@"title":@"新手页面引导",@"class":@"XGuideViewController",@"storyboard":@"1"},
+                   @{@"title":@"进行时",@"class":@"RuntimeViewController",@"storyboard":@"0"},
                    ];
+//
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
      self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    NSDictionary *ndict = @{@"a":@"1"};
+    NSDictionary *sdic = @{@"s":@(1)};
+    NSString *str = [ndict objectForKey:@"a"];
+//    [NSNumber numberWithInt:[[ndict objectForKey:@"a"] intValue]];
+    NSNumber *num = [sdic objectForKey:@"s"];
+//    [NSString stringWithFormat:@"%@",[sdic objectForKey:@"s"]];
+    NSLog(@"number === %@",num.stringValue);
+    NSLog(@"long === %@",@(num.longLongValue));
+    NSLog(@"str == %ld",str.length);
 }
 
 - (void)didReceiveMemoryWarning {

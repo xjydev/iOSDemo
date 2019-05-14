@@ -37,58 +37,65 @@
     [super viewDidLoad];
     self.title = @"UIImage 处理";
     self.view.backgroundColor = [UIColor whiteColor];
-    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"im"]];
-    imageView.frame = CGRectMake(0, 80, 100, 100);
+    UIImage *laImage = [UIImage imageNamed:@"相册38"];
+    UIImageView *imageView = [[UIImageView alloc]init];
+    imageView.frame = CGRectMake(0, 80, 300, 300);
     [self.view addSubview:imageView];
-     
-    UIImageView *imageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 180, 100, 100)];
+//    [imageView setImage:[self compressImage:laImage]];
+    
+    UIImageView *imageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 380, 200, 200)];
     [self.view addSubview:imageView2];
-    [imageView2 setImage:[self coreBlurImage:imageView.image withBlurNumber:0.8]];
     
-    _imageView3 = [[UIImageView alloc]initWithFrame:CGRectMake(100, 180, 100, 100)];
-    [_imageView3 setImage:[self boxblurImage:imageView.image withBlurNumber:1.0]];
-    [self.view addSubview:_imageView3];
-    
-    UIImageView *imageView4 = [[UIImageView alloc]initWithFrame:CGRectMake(120, 80, 100, 100)];
-    [imageView4 setImage:imageView.image];
-    [self.view addSubview:imageView4];
-    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:effect];
-    effectView.frame = imageView4.bounds ;
-    [imageView4 addSubview:effectView];
-    
-    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(30, kScreen_Height - 60, kScreen_Width-60, 30)];
-    slider.maximumValue = 1.0;
-    slider.minimumValue = 0.0;
-    [slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
-    [self.view addSubview:slider];
-    
-    self.surfaceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 280, 250, 250)];
-    self.surfaceImageView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:self.surfaceImageView ];
-    
-    
-    self.surfaceImage = [self mosaicImage:[UIImage imageNamed:@"im"] level:1];
-    self.surfaceImageView.image = self.surfaceImage;
-    self.image = [UIImage imageNamed:@"im"] ;
-    self.imageLayer.contents = (__bridge id _Nullable)(self.image.CGImage);
-    
-    self.imageLayer = [CALayer layer];
-    self.imageLayer.frame = self.surfaceImageView.frame;
-    [self.view.layer addSublayer:self.imageLayer];
-    
-    self.shapeLayer = [CAShapeLayer layer];
-    self.shapeLayer.frame = self.surfaceImageView.frame;
-    self.shapeLayer.lineCap = kCALineCapRound;
-    self.shapeLayer.lineJoin = kCALineJoinRound;
-    self.shapeLayer.lineWidth = 20.f;
-    self.shapeLayer.strokeColor = [UIColor blueColor].CGColor;
-    self.shapeLayer.fillColor = nil;//此处设置颜色有异常效果，可以自己试试
-
-    [self.view.layer addSublayer:self.shapeLayer];
-    self.imageLayer.mask = self.shapeLayer;
-    
-    self.path = CGPathCreateMutable();
+    UIImage *imag = [self compressLargeImage:laImage];
+    [imageView2 setImage:imag];
+    NSLog(@"%@ \n %@",laImage,imag);
+    NSData *ldata = UIImagePNGRepresentation(laImage);
+    NSData *idata = UIImagePNGRepresentation(imag);
+    NSLog(@"%@ \n %@",@(ldata.length),@(idata.length));
+//    _imageView3 = [[UIImageView alloc]initWithFrame:CGRectMake(100, 180, 100, 100)];
+//    [_imageView3 setImage:[self boxblurImage:imageView.image withBlurNumber:1.0]];
+//    [self.view addSubview:_imageView3];
+//
+//    UIImageView *imageView4 = [[UIImageView alloc]initWithFrame:CGRectMake(120, 80, 100, 100)];
+//    [imageView4 setImage:imageView.image];
+//    [self.view addSubview:imageView4];
+//    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:effect];
+//    effectView.frame = imageView4.bounds ;
+//    [imageView4 addSubview:effectView];
+//
+//    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(30, kScreen_Height - 60, kScreen_Width-60, 30)];
+//    slider.maximumValue = 1.0;
+//    slider.minimumValue = 0.0;
+//    [slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+//    [self.view addSubview:slider];
+//
+//    self.surfaceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 280, 250, 250)];
+//    self.surfaceImageView.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:self.surfaceImageView ];
+//
+//
+//    self.surfaceImage = [self mosaicImage:[UIImage imageNamed:@"im"] level:1];
+//    self.surfaceImageView.image = self.surfaceImage;
+//    self.image = [UIImage imageNamed:@"im"] ;
+//    self.imageLayer.contents = (__bridge id _Nullable)(self.image.CGImage);
+//
+//    self.imageLayer = [CALayer layer];
+//    self.imageLayer.frame = self.surfaceImageView.frame;
+//    [self.view.layer addSublayer:self.imageLayer];
+//
+//    self.shapeLayer = [CAShapeLayer layer];
+//    self.shapeLayer.frame = self.surfaceImageView.frame;
+//    self.shapeLayer.lineCap = kCALineCapRound;
+//    self.shapeLayer.lineJoin = kCALineJoinRound;
+//    self.shapeLayer.lineWidth = 20.f;
+//    self.shapeLayer.strokeColor = [UIColor blueColor].CGColor;
+//    self.shapeLayer.fillColor = nil;//此处设置颜色有异常效果，可以自己试试
+//
+//    [self.view.layer addSublayer:self.shapeLayer];
+//    self.imageLayer.mask = self.shapeLayer;
+//
+//    self.path = CGPathCreateMutable();
     
     
 }
@@ -254,6 +261,15 @@
     CGDataProviderRelease(providerRef);
     CGContextRelease(outContextRef);
     return mosaicImage;
+}
+#pragma mark -- 图片压缩
+- (UIImage *)compressLargeImage:(UIImage *)largeImage {
+    CGSize size =CGSizeMake( 200, 200);
+    UIGraphicsBeginImageContext(size);
+    [largeImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+   UIImage * resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return resultImage;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

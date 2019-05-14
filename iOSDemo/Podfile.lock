@@ -28,6 +28,7 @@ PODS:
     - GCDWebServer/Core
   - MBProgressHUD (1.1.0)
   - "NSData+Base64 (1.0.0)"
+  - Protobuf (3.7.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -46,6 +47,15 @@ PODS:
   - SQLCipher/common (3.4.2)
   - SQLCipher/standard (3.4.2):
     - SQLCipher/common
+  - SSZipArchive (2.1.5)
+  - SVGAPlayer (2.3.3):
+    - SVGAPlayer/Core (= 2.3.3)
+    - SVGAPlayer/ProtoFiles (= 2.3.3)
+  - SVGAPlayer/Core (2.3.3):
+    - SSZipArchive (>= 1.8.1)
+    - SVGAPlayer/ProtoFiles
+  - SVGAPlayer/ProtoFiles (2.3.3):
+    - Protobuf (~> 3.4)
   - SVPullToRefresh (0.4.1)
   - thrift (0.9.3)
   - XRefresh (1.2.0)
@@ -66,13 +76,14 @@ DEPENDENCIES:
   - ReactiveViewModel
   - RNCryptor
   - SDWebImage
+  - SVGAPlayer (~> 2.3.3)
   - SVPullToRefresh
   - thrift (~> 0.9.3)
   - XRefresh
   - YYKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - CTMediator
     - CTPersistance
@@ -80,11 +91,14 @@ SPEC REPOS:
     - GCDWebServer
     - MBProgressHUD
     - "NSData+Base64"
+    - Protobuf
     - ReactiveCocoa
     - ReactiveViewModel
     - RNCryptor
     - SDWebImage
     - SQLCipher
+    - SSZipArchive
+    - SVGAPlayer
     - SVPullToRefresh
     - thrift
     - XRefresh
@@ -98,16 +112,19 @@ SPEC CHECKSUMS:
   GCDWebServer: 8d67ee9f634b4bb91eb4b8aee440318a5fc6debd
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
+  Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
+  SSZipArchive: cefe1364104a0231268a5deb8495bdf2861f52f0
+  SVGAPlayer: cf93c1761209c478003951fa23376e7ed7dedc96
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   thrift: 206849d78773b19e1be3cc1bbe094371c0adfbe2
   XRefresh: b2569aec255900d3dbd794bffbaf502ff6fd4198
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: e7ae7fbb377c80a87e4ee1227d18b002882b4c19
+PODFILE CHECKSUM: be35912bf5768cf4284f3cb28b652fd653097873
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

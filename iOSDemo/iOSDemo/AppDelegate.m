@@ -19,9 +19,17 @@
     NSNumber *num = @(18618393874);
     NSString *numst = num;
     NSLog(@"===%@",numst);
+    [self setArray:1,2,3,0];
     return YES;
 }
-
+- (void)setArray:(NSInteger)a,... {
+    va_list args;
+    va_start(args, a);
+    for (NSInteger b = a; b != 0; b = va_arg(args, NSInteger)) {
+        NSLog(@"b = %@",@(b));
+    }
+    va_end(args);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

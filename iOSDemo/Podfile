@@ -21,7 +21,7 @@ target 'iOSDemo' do
   pod 'GCDWebServer/WebUploader'
   pod 'GCDWebServer/WebDAV'
   pod 'RNCryptor'
-  
+  pod 'SVGAPlayer', '~> 2.3.3'
   
 #  Using AFNetworking (3.2.0)
 #  Using CTMediator (13)

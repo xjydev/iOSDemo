@@ -34,7 +34,7 @@
     return _maskLayer;
 }
 - (void)setStep:(NSInteger)step {
-    if (_step >= self.viewsArray.count) {
+    if (step >= self.viewsArray.count) {
         [self removeFromSuperview];
         return;
     }
@@ -51,7 +51,7 @@
     self.maskLayer.fillColor = [UIColor blackColor].CGColor;
     CGFloat maskCornerRadius = 5;
     
-    CGRect visualRect = [self convertRect:self.currentView.frame toView:self.currentView.superview];
+    CGRect visualRect = [self.currentView convertRect:self.currentView.bounds toView:[UIApplication sharedApplication].windows.lastObject];
     UIEdgeInsets maskInsets = UIEdgeInsetsMake(-8, -8, -8, -8);
     visualRect.origin.x += maskInsets.left;
     visualRect.origin.y += maskInsets.top;
@@ -136,13 +136,14 @@
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     self.step ++;
-    if (![self showImageWithStep:self.step]) {
-        [self removeFromSuperview];
-    }
 }
 
 
 - (void)show {
+    [[UIApplication sharedApplication].keyWindow addSubview:self];
+    self.step = 0;
+    self.currentView = self.viewsArray[self.step];
     
+    [self reloadMask];
 }
 @end
