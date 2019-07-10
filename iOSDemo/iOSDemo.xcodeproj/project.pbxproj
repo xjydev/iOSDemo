@@ -54,6 +54,8 @@
 		6CB429F920C547DB000CFD37 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429F320C547DB000CFD37 /* UIColor+Expanded.m */; };
 		6CB429FD20C54B00000CFD37 /* XTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429FC20C54B00000CFD37 /* XTools.m */; };
 		6CBAB4AC211D69B7009E07B1 /* ABCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAB4AB211D69B7009E07B1 /* ABCalendarController.m */; };
+		6CE36BBB22D484BD00B38008 /* SwiftBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */; };
+		6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		6CB429FC20C54B00000CFD37 /* XTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTools.m; sourceTree = "<group>"; };
 		6CBAB4AA211D69B7009E07B1 /* ABCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCalendarController.h; sourceTree = "<group>"; };
 		6CBAB4AB211D69B7009E07B1 /* ABCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCalendarController.m; sourceTree = "<group>"; };
+		6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBlocksViewController.swift; sourceTree = "<group>"; };
+		6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		A925C9B207F37E35CFCEF1CB /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -368,6 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				6C64588B20AD51580046C2F9 /* SwiftTableController.swift */,
+				6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */,
+				6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */,
 				6C64588C20AD51580046C2F9 /* iOSDemo-Bridging-Header.h */,
 			);
 			path = Swift;
@@ -723,6 +729,8 @@
 				6CB429F720C547DB000CFD37 /* UILabel+LXLabel.m in Sources */,
 				6CB429E520C5468D000CFD37 /* LXCalendarMonthModel.m in Sources */,
 				6C6232DA215F789B001E85D4 /* XTableViewController.m in Sources */,
+				6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */,
+				6CE36BBB22D484BD00B38008 /* SwiftBlocksViewController.swift in Sources */,
 				6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */,
 				6C64589120AD51580046C2F9 /* ObjectiveCTableController.m in Sources */,
 				6C61CB3A2269B0D7002FE2A8 /* XBluetoothViewController.m in Sources */,
@@ -939,7 +947,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.xiaodev.iOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -958,7 +966,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.xiaodev.iOSDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

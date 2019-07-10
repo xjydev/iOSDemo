@@ -9,11 +9,22 @@
 import UIKit
 
 class SwiftTableController: UITableViewController {
-    let mainArray:NSArray = [["title":"属性","class":""],]
+    let mainArray = [["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"]]
     
+    func fsunctionUseBlock(callBack:(String,String) ->String) -> Void {
+    print(callBack("parameter1","parameter2"))
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var di = mainArray[0];
+        print(di["title"]!);
+        var a:String = "1"
+        var b:String = "2"
+        a = "12"
+        b = "34"
+        self.fsunctionUseBlock { (a, b) -> String in
+            return b+a;
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -41,15 +52,31 @@ class SwiftTableController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "swiftcell", for: indexPath)
-        let dict:NSDictionary = mainArray[indexPath.row] as! NSDictionary;
+        let dict = mainArray[indexPath.row];
         
-        cell.textLabel?.text = dict["title"] as? String;
+        cell.textLabel?.text = dict["title"];
         // Configure the cell...
 
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let dict = mainArray[indexPath.row];
+        guard let boolstr = dict["storyboard"] else { return };
+        print(dict,boolstr)
+        if (Int(boolstr) == 1){
+            guard let Str = dict["classn"] else { return };
+            self.performSegue(withIdentifier: Str, sender: nil);
+        }
+        else {
+            guard let Str = dict["classn"] else { return };
+            print(Str)
+            let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String
+            let classV = NSClassFromString(clsName! + "." +  "EnumViewController") as!UIViewController.Type;
+            let vc = classV.init();
+            self.navigationController?.pushViewController(vc, animated: true);
+        }
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

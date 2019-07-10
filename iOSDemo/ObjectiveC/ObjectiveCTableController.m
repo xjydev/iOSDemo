@@ -26,7 +26,7 @@
 }
 - (void)viewDidLoad {//
     [super viewDidLoad];
-    self.navigationController.delegate = self;
+//    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
