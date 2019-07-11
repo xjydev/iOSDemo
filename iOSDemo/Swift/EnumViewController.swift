@@ -13,6 +13,10 @@ enum ArithmeticExpression {
     indirect case addition(ArithmeticExpression,ArithmeticExpression)
     indirect case mutiplication(ArithmeticExpression,ArithmeticExpression)
 }
+enum viewtype {
+    case first
+    case second
+}
 func evaluate(_ expression:ArithmeticExpression) ->Int {
     switch expression {
     case let .number(a):

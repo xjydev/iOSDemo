@@ -11,6 +11,7 @@
 		6C02D8E6225CB15F00963DB4 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02D8E5225CB15F00963DB4 /* RuntimeViewController.m */; };
 		6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C044E3420CE4485009B77C9 /* XimageViewController.m */; };
 		6C044E3720CE45C5009B77C9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
+		6C0CB34A22D6064200E4008D /* ConstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0CB34922D6064200E4008D /* ConstructorViewController.swift */; };
 		6C1DF32B21A2A3AA009E4725 /* XStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */; };
 		6C224C34228121AA00C8A6AE /* XFlashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C224C33228121AA00C8A6AE /* XFlashViewController.m */; };
 		6C39DF4420DBBE580086D632 /* UIView+XCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C39DF4320DBBE580086D632 /* UIView+XCategory.m */; };
@@ -84,6 +85,7 @@
 		6C044E3420CE4485009B77C9 /* XimageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XimageViewController.m; sourceTree = "<group>"; };
 		6C044E3620CE45C5009B77C9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6C04F5642281B25400321253 /* flash1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = flash1.swf; sourceTree = "<group>"; };
+		6C0CB34922D6064200E4008D /* ConstructorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorViewController.swift; sourceTree = "<group>"; };
 		6C1DF32921A2A3AA009E4725 /* XStringViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XStringViewController.h; sourceTree = "<group>"; };
 		6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XStringViewController.m; sourceTree = "<group>"; };
 		6C224C32228121AA00C8A6AE /* XFlashViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XFlashViewController.h; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				6C64588B20AD51580046C2F9 /* SwiftTableController.swift */,
 				6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */,
 				6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */,
+				6C0CB34922D6064200E4008D /* ConstructorViewController.swift */,
 				6C64588C20AD51580046C2F9 /* iOSDemo-Bridging-Header.h */,
 			);
 			path = Swift;
@@ -764,6 +767,7 @@
 				6C39DF4720DBBE990086D632 /* UIViewController+XCategory.m in Sources */,
 				6CB429E620C5468D000CFD37 /* LXCalenderCell.m in Sources */,
 				6C6F7F7720C7C27400C5C151 /* XYViewController.m in Sources */,
+				6C0CB34A22D6064200E4008D /* ConstructorViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
