@@ -37,7 +37,8 @@ struct SomeStruct {
 }
 
 class SwiftTableController: UITableViewController {
-    let mainArray = [["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"]]
+    
+    let mainArray = [["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"]]
     
     //类型方法
     //在方法的 func 关键字之前加上关键字 static，来指定类型方法。类还可以用关键字 class 来指定，子类重写父类该方法的实现。

@@ -21,8 +21,15 @@
 
 //MARK:析构器
 //析构器只适用于类类型，当一个类的实例被释放之前，析构器会被立即调用。析构器用关键字 deinit 来标示，类似于构造器要用 init 来标示。
-import UIKit
 
+//MARK:可选链式调用
+//类型检查操作符（is）来检查一个实例是否属于特定子类型
+import UIKit
+enum MyError:Error {
+    case invalidSelection
+    case insufficientFunds(errco:Int)
+    case outOfStock
+}
 class ConstructorViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -39,7 +46,19 @@ class ConstructorViewController: UIViewController {
         car.speed = 100;
         print(car.description);
         car.makeNoise();
+        do {
+//            try createError(name: "123")
+        } catch MyError.insufficientFunds(let errco) {
+            print("error \(errco)");
+        }
     }
+    
+    
+    
+    func createError(name:String) throws {
+        throw MyError.insufficientFunds(errco: 10);
+    }
+    
     
     deinit {
         print("== deinit ==")
@@ -59,6 +78,8 @@ class ConstructorViewController: UIViewController {
 class Vehicle {
     var speed:Double = 0.0;
     final var cycle:Float = 100;
+    var wheel:Wheel?
+    
     init?(speed:Double) {//可失败构造器
         if speed<0.0 {
             return nil
@@ -75,7 +96,10 @@ class Vehicle {
       print("noise")
     }
 }
-
+class Wheel {
+    var hub = 1;
+    
+}
 class Bicycle: Vehicle {
     var hasBasket = false
     override func makeNoise() {
