@@ -1,3 +1,4 @@
+
 platform :ios, '8.0'
 use_frameworks!
 
@@ -22,6 +23,18 @@ target 'iOSDemo' do
   pod 'GCDWebServer/WebDAV'
   pod 'RNCryptor'
   pod 'SVGAPlayer', '~> 2.3.3'
+  pod 'BaiduMapKit'
+  pod 'BMKLocationKit'
+#  pod 'XDPhoto'
+  pod 'JSONModel', '~> 1.8.0'
+  
+  pod 'DoraemonKit/Core', :configurations => ['Debug']
+  pod 'DoraemonKit/WithLogger', :configurations => ['Debug']
+  pod 'DoraemonKit/WithGPS', :configurations => ['Debug']
+  pod 'DoraemonKit/WithLoad', :configurations => ['Debug']
+  pod 'DoraemonKit/WithWeex', :configurations => ['Debug']
+  pod 'DoraemonKit/WithDatabase', :configurations => ['Debug']
+  pod 'DoraemonKit/WithMLeaksFinder', :configurations => ['Debug']
   
 #  Using AFNetworking (3.2.0)
 #  Using CTMediator (13)

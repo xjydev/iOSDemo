@@ -7,6 +7,7 @@
 //
 
 #import "XPropertyViewController.h"
+#import "XModel.h"
 
 @interface XPropertyViewController ()
 /**
@@ -52,7 +53,16 @@
     s2 = @"44";
     NSLog(@"%@  %@  %@",self.str,self.str2,s);//11  1122  1122
     NSLog(@"%@  %@  %@",self.str,self.str2,s2);//33  33  44
-    
+//    XModel *model1 = [[XModel alloc]init];
+//    model1.aindex = 111;
+//    XModel2 *model2 = [[XModel2 alloc]init];
+//    model2.aindex = 222;
+//    XModel *model3 = [XModel copy];
+//    model3.aindex = 333;
+//    XModel2 *model4 = [XModel2 copy];
+//    model4.aindex = 444;
+
+//    NSLog(@"%d\n%d\n%d\n%d\n",model1.aindex,model2.aindex,model3.aindex,model4.aindex);
 
 }
 

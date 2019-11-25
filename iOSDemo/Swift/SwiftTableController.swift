@@ -8,6 +8,21 @@
 //Swift 中所有的结构体和枚举类型都是值类型,标准库定义的集合，例如数组，字典和字符串，都对复制进行了优化以降低性能成本。新集合不会立即复制，而是跟原集合共享同一份内存，共享同样的元素。在集合的某个副本要被修改前，才会复制它的元素。而你在代码中看起来就像是立即发生了复制。
 //Swift中结构体和枚举能够定义方法
 //可以使用下划线（_）来代替显式的实参标签来重写默认行为。
+//MARK:访问级别
+//Open 和 Public 级别可以让实体被同一模块源文件中的所有实体访问，在模块外也可以通过导入该模块来访问源文件里的所有实体。通常情况下，你会使用 Open 或 Public 级别来指定框架的外部接口。Open 和 Public 的区别在后面会提到。
+//Internal(默认级别) 级别让实体被同一模块源文件中的任何实体访问，但是不能被模块外的实体访问。通常情况下，如果某个接口只在应用程序或框架内部使用，就可以将其设置为 Internal 级别。
+//File-private 限制实体只能在其定义的文件内部访问。如果功能的部分细节只需要在文件内使用时，可以使用 File-private 来将其隐藏。
+//Private 限制实体只能在其定义的作用域，以及同一文件内的 extension 访问。如果功能的部分细节只需要在当前作用域内使用时，可以使用 Private 来将其隐藏。
+//Open 为最高访问级别（限制最少），Private 为最低访问级别（限制最多）。
+//
+//Open 只能作用于类和类的成员，它和 Public 的区别如下：
+//
+//Public 或者其它更严访问级别的类，只能在其定义的模块内部被继承。
+//Public 或者其它更严访问级别的类成员，只能在其定义的模块内部的子类中重写。
+//Open 的类，可以在其定义的模块中被继承，也可以在引用它的模块中被继承。
+//Open 的类成员，可以在其定义的模块中子类中重写，也可以在引用它的模块中的子类重写。
+//把一个类标记为 open，明确的表示你已经充分考虑过外部模块使用此类作为父类的影响，并且设计好了你的类的代码了。
+
 
 import UIKit
 //MARK:结构体
@@ -37,7 +52,7 @@ struct SomeStruct {
 }
 
 class SwiftTableController: UITableViewController {
-    
+  open var otherVar = 0;
     let mainArray = [["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"]]
     
     //类型方法
@@ -54,6 +69,7 @@ class SwiftTableController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        otherVar = 3;
         var di = mainArray[0];
         print(di["title"]!);
         var a:String = "1"
@@ -135,50 +151,9 @@ class SwiftTableController: UITableViewController {
             self.navigationController?.pushViewController(vc, animated: true);
         }
     }
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
+}
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+class OtherClass: NSObject {
 
 }

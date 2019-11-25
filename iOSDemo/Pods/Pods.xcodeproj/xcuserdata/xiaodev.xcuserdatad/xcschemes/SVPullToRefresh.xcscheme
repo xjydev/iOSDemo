@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE9CF54DA84D387167AF428BCC1906FB"
+               BlueprintIdentifier = "4919B9E435625FB7A7F7F378B011D789"
+               BuildableName = "SVPullToRefresh.framework"
                BlueprintName = "SVPullToRefresh"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SVPullToRefresh.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

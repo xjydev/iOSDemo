@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "162F018CF1E9DE3A008D9BE7428F3972"
+               BlueprintIdentifier = "88F974DBA24F6D8665863A41CF68ACDD"
+               BuildableName = "thrift.framework"
                BlueprintName = "thrift"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "thrift.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

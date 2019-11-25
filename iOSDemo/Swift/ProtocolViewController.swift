@@ -13,6 +13,7 @@
 //和弱引用类似，无主引用不会牢牢保持住引用的实例。和弱引用不同的是，无主引用在其他实例有相同或者更长的生命周期时使用。 加上关键字 unowned 表示这是一个无主引用。 你可以通过 unowned(unsafe) 来声明不安全无主引用
 //一个属性的值允许为 nil，而另一个属性的值不允许为 nil，这也可能会产生循环强引用。这种场景最适合通过无主引用来解决。
 
+//In-Out(输入输出)参数，它的作用是通过函数修改参数的值.如果你想让函数改变形参值，并想要在函数调用结束后保持形参值的改变，那你可以把形参定义为in-out形参。
 import UIKit
 
 protocol SomeProtocol:UITableViewDelegate {
@@ -29,6 +30,7 @@ class ProtocolViewController: UIViewController,ProtocolDelegate {
     func protocolTransfor(para: Int) {
         print("protocol =====",para);
     }
+    var osa:Int = 1;
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
@@ -55,9 +57,16 @@ class ProtocolViewController: UIViewController,ProtocolDelegate {
         print(card.name)
         customer = nil
         
+        increment(number: &osa);
+        print(osa);
+        var inouta = 3;
+        increment(number: &inouta);
+        print(inouta);
         
     }
-    
+    func increment (number:inout Int ) {
+        number = 4;
+    }
     func swapTwoValues<T>(a:inout T,b:inout T) {
         let c = a;
         a = b;

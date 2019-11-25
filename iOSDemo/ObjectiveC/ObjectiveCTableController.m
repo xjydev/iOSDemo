@@ -27,7 +27,7 @@
 - (void)viewDidLoad {//
     [super viewDidLoad];
 //    self.navigationController.delegate = self;
-    _mainArray = @[@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+    _mainArray = @[@{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
@@ -40,6 +40,7 @@
                    @{@"title":@"URL解析",@"class":@"URLComponentsViewController",@"storyboard":@"0"},
                    @{@"title":@"新手页面引导",@"class":@"XGuideViewController",@"storyboard":@"1"},
                    @{@"title":@"进行时",@"class":@"RuntimeViewController",@"storyboard":@"0"},
+                   @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
                    ];
 //
     // Uncomment the following line to preserve selection between presentations.
@@ -111,7 +112,16 @@
     return YES;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 
+cell.transform = CGAffineTransformMakeTranslation(0, 40);
+[UIView animateWithDuration:0.8 animations:^{
+
+cell.transform = CGAffineTransformIdentity;
+}];
+
+
+}
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -153,6 +163,20 @@
     [self presentViewController:viewC animated:YES completion:^{
         
     }];
+}
+- (IBAction)functionButtonAction:(id)sender {
+    for (int i = 0; i< 10;i++ ) {
+        NSLog(@"1======== %d",i);
+        for (int j = 0; j<8; j++) {
+            NSLog(@"21==== %d",j);
+            if (j== i) {
+                NSLog(@"20==== %d",j);
+                break;
+            }
+            NSLog(@"22==== %d",j);
+        }
+        NSLog(@"3======== %d",i);
+    }
 }
 #pragma mark -- UIPopoverPresentationControllerDelegate
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {

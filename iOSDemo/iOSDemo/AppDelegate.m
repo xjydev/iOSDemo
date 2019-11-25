@@ -5,17 +5,49 @@
 //  Created by XiaoDev on 17/05/2018.
 //  Copyright © 2018 Xiaodev. All rights reserved.
 //
+#ifdef DEBUG
+#import <DoraemonKit/DoraemonManager.h>
+#endif
 
 #import "AppDelegate.h"
-
-@interface AppDelegate ()
-
+#import <BMKLocationkit/BMKLocationComponent.h>
+#import <BaiduMapAPI_Base/BMKMapManager.h>
+@interface AppDelegate ()<BMKLocationAuthDelegate>
+@property (nonatomic, strong) BMKMapManager *mapManager; //主引擎类
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+#ifdef DEBUG
+    //默认
+    [[DoraemonManager shareInstance] install];
+    // 或者使用传入位置,解决遮挡关键区域,减少频繁移动
+    //[[DoraemonManager shareInstance] installWithStartingPosition:CGPointMake(66, 66)];
+#endif
+    // 初始化定位SDK
+    [[BMKLocationAuth sharedInstance] checkPermisionWithKey:@"Please enter your key" authDelegate:self];
+    //要使用百度地图，请先启动BMKMapManager
+    _mapManager = [[BMKMapManager alloc] init];
+    
+    /**
+     百度地图SDK所有API均支持百度坐标（BD09）和国测局坐标（GCJ02），用此方法设置您使用的坐标类型.
+     默认是BD09（BMK_COORDTYPE_BD09LL）坐标.
+     如果需要使用GCJ02坐标，需要设置CoordinateType为：BMK_COORDTYPE_COMMON.
+     */
+    if ([BMKMapManager setCoordinateTypeUsedInBaiduMapSDK:BMK_COORDTYPE_BD09LL]) {
+        NSLog(@"经纬度类型设置成功");
+    } else {
+        NSLog(@"经纬度类型设置失败");
+    }
+    
+    //启动引擎并设置AK并设置delegate
+    BOOL result = [_mapManager start:@"Please enter your key" generalDelegate:self];
+    if (!result) {
+        NSLog(@"启动引擎失败");
+    }
+    
     NSNumber *num = @(18618393874);
     NSString *numst = num;
     NSLog(@"===%@",numst);

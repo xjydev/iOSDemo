@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BCC0FDFD24877E9395DA981915418EDE"
+               BlueprintIdentifier = "26DBBC70B66D0762B5AADB37FD11E185"
+               BuildableName = "ReactiveViewModel.framework"
                BlueprintName = "ReactiveViewModel"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ReactiveViewModel.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
