@@ -10,6 +10,8 @@
 #import "XPropertyViewController.h"
 #import "ABCalendarController.h"
 #import "ABGuideView.h"
+#import <Masonry/Masonry.h>
+#import "XTools.h"
 @interface ObjectiveCTableController ()<UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate>
 {
   NSArray  *  _mainArray;
@@ -41,6 +43,7 @@
                    @{@"title":@"新手页面引导",@"class":@"XGuideViewController",@"storyboard":@"1"},
                    @{@"title":@"进行时",@"class":@"RuntimeViewController",@"storyboard":@"0"},
                    @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
+                   @{@"title":@"Collection",@"class":@"XCollectionViewController",@"storyboard":@"0"},
                    ];
 //
     // Uncomment the following line to preserve selection between presentations.
@@ -57,6 +60,30 @@
     NSLog(@"number === %@",num.stringValue);
     NSLog(@"long === %@",@(num.longLongValue));
     NSLog(@"str == %ld",str.length);
+    
+    UIView *suView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, 100)];
+    UIView *view1 = [[UIView alloc]init];
+    view1.backgroundColor = [UIColor redColor];
+    [suView addSubview:view1];
+    UIView *view2 = [[UIView alloc]init];
+    view2.backgroundColor = [UIColor yellowColor];
+    [suView addSubview:view2];
+     self.tableView.tableHeaderView = suView;
+    [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(suView.mas_top).offset(10);
+        make.right.equalTo(suView.mas_right).offset(-10);
+        make.width.equalTo(@(80));
+        make.height.equalTo(@(50));
+    }];
+    [view1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(suView.mas_top).offset(10);
+               make.left.equalTo(suView.mas_left).offset(10);
+        make.height.equalTo(@100);
+        make.right.equalTo(view2.mas_left).offset(-10);
+    }];
+    
+//    [view1.mas_makeConstraints:^(MASConstraintMaker *make) {
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,7 @@
 
 @implementation XYView
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
+    [self setNeedsLayout];
     return self;
 }
 - (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {

@@ -8,6 +8,7 @@
 
 #import "XGuideViewController.h"
 #import "ABGuideView.h"
+//arc4random() > random() > rand()
 @interface XGuideViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *button1;
 @property (weak, nonatomic) IBOutlet UIView *view1;
@@ -24,7 +25,22 @@
    ABGuideView *v = [[ABGuideView alloc]init];
     v.viewsArray = @[self.button1,self.view1,self.label1,self.subView1];
     [v show];
+//    _button1 addTarget:<#(nullable id)#> action:<#(nonnull SEL)#> forControlEvents:<#(UIControlEvents)#>
 }
+- (IBAction)buttonAction:(id)sender {
+    NSLog(@"%d %ld %d",arc4random()%100,random()%100,rand()%100);
+    
+}
+// 47 83 7
+// 32 86 49
+// 56 77 73
+//91 15 58
+//26 93 30
+//42 35 72
+//33 86 44
+//25 92 78
+
+
 
 /*
 #pragma mark - Navigation

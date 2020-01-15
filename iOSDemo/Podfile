@@ -25,6 +25,7 @@ target 'iOSDemo' do
   pod 'SVGAPlayer', '~> 2.3.3'
   pod 'BaiduMapKit'
   pod 'BMKLocationKit'
+  pod 'Masonry'
 #  pod 'XDPhoto'
   pod 'JSONModel', '~> 1.8.0'
   

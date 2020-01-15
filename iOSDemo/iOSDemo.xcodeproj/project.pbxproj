@@ -38,8 +38,10 @@
 		6C68BCD5223A5101007C8861 /* URLComponentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C68BCD4223A5101007C8861 /* URLComponentsViewController.m */; };
 		6C68BCD8223A6328007C8861 /* ABGuideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C68BCD7223A6328007C8861 /* ABGuideView.m */; };
 		6C69F53722DC2B9C00677BD7 /* ProtocolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C69F53622DC2B9C00677BD7 /* ProtocolViewController.swift */; };
+		6C6B66852399F2C200F2D368 /* XTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6B66842399F2C200F2D368 /* XTableViewCell.m */; };
 		6C6F7F7720C7C27400C5C151 /* XYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F7F7620C7C27400C5C151 /* XYViewController.m */; };
 		6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F7F7920C7C44000C5C151 /* XYView.m */; };
+		6C989A7623950AA000B24663 /* XCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C989A7523950AA000B24663 /* XCollectionViewController.m */; };
 		6C98ABB2237E9291006839EB /* XModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C98ABB1237E9291006839EB /* XModel.m */; };
 		6CB429CA20C545E9000CFD37 /* XcalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429C920C545E9000CFD37 /* XcalendarViewController.m */; };
 		6CB429DE20C5468D000CFD37 /* LXCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429CE20C5468D000CFD37 /* LXCalendarWeekView.m */; };
@@ -145,10 +147,14 @@
 		6C68BCD6223A6328007C8861 /* ABGuideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ABGuideView.h; sourceTree = "<group>"; };
 		6C68BCD7223A6328007C8861 /* ABGuideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ABGuideView.m; sourceTree = "<group>"; };
 		6C69F53622DC2B9C00677BD7 /* ProtocolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolViewController.swift; sourceTree = "<group>"; };
+		6C6B66832399F2C200F2D368 /* XTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTableViewCell.h; sourceTree = "<group>"; };
+		6C6B66842399F2C200F2D368 /* XTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTableViewCell.m; sourceTree = "<group>"; };
 		6C6F7F7520C7C27400C5C151 /* XYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYViewController.h; sourceTree = "<group>"; };
 		6C6F7F7620C7C27400C5C151 /* XYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYViewController.m; sourceTree = "<group>"; };
 		6C6F7F7820C7C44000C5C151 /* XYView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYView.h; sourceTree = "<group>"; };
 		6C6F7F7920C7C44000C5C151 /* XYView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYView.m; sourceTree = "<group>"; };
+		6C989A7423950AA000B24663 /* XCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCollectionViewController.h; sourceTree = "<group>"; };
+		6C989A7523950AA000B24663 /* XCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCollectionViewController.m; sourceTree = "<group>"; };
 		6C98ABB0237E9291006839EB /* XModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XModel.h; sourceTree = "<group>"; };
 		6C98ABB1237E9291006839EB /* XModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XModel.m; sourceTree = "<group>"; };
 		6CB429C820C545E9000CFD37 /* XcalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcalendarViewController.h; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 			children = (
 				6C6232D8215F789B001E85D4 /* XTableViewController.h */,
 				6C6232D9215F789B001E85D4 /* XTableViewController.m */,
+				6C6B66832399F2C200F2D368 /* XTableViewCell.h */,
+				6C6B66842399F2C200F2D368 /* XTableViewCell.m */,
 			);
 			path = XTableView;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 			children = (
 				6C64588E20AD51580046C2F9 /* ObjectiveCTableController.h */,
 				6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */,
+				6C989A7323950A8200B24663 /* XCollectionView */,
 				6C678E9D232893FE009DE3AB /* Map */,
 				6C0E11D222DEFDA000360D76 /* Transfer */,
 				6C224C312281219A00C8A6AE /* XFlash */,
@@ -472,6 +481,15 @@
 				6C6F7F7920C7C44000C5C151 /* XYView.m */,
 			);
 			path = XYView;
+			sourceTree = "<group>";
+		};
+		6C989A7323950A8200B24663 /* XCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				6C989A7423950AA000B24663 /* XCollectionViewController.h */,
+				6C989A7523950AA000B24663 /* XCollectionViewController.m */,
+			);
+			path = XCollectionView;
 			sourceTree = "<group>";
 		};
 		6CB429C720C545CD000CFD37 /* Xcalendar */ = {
@@ -744,6 +762,7 @@
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/JSONModel/JSONModel.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NSData+Base64/NSData_Base64.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
@@ -778,6 +797,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSONModel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSData_Base64.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
@@ -810,6 +830,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C64589720AD670A0046C2F9 /* XPropertyViewController.m in Sources */,
+				6C6B66852399F2C200F2D368 /* XTableViewCell.m in Sources */,
 				6CB429F720C547DB000CFD37 /* UILabel+LXLabel.m in Sources */,
 				6CB429E520C5468D000CFD37 /* LXCalendarMonthModel.m in Sources */,
 				6C0E11D522DEFDCA00360D76 /* XTransferViewController.m in Sources */,
@@ -842,6 +863,7 @@
 				6C69F53722DC2B9C00677BD7 /* ProtocolViewController.swift in Sources */,
 				6C98ABB2237E9291006839EB /* XModel.m in Sources */,
 				6C68BCD8223A6328007C8861 /* ABGuideView.m in Sources */,
+				6C989A7623950AA000B24663 /* XCollectionViewController.m in Sources */,
 				6CB429E220C5468D000CFD37 /* LXCalendarDayModel.m in Sources */,
 				6CB429F920C547DB000CFD37 /* UIColor+Expanded.m in Sources */,
 				6CB429F520C547DB000CFD37 /* UIView+FTCornerdious.m in Sources */,

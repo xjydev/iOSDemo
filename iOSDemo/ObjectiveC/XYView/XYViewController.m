@@ -18,7 +18,10 @@
 #import "XYViewController.h"
 #import "XYView.h"
 @interface XYViewController ()
-
+{
+    UIView *_boundView;
+    UIView *_frameView;
+}
 @end
 
 @implementation XYViewController
@@ -30,13 +33,30 @@
     XYView *view = [[XYView alloc]initWithFrame:CGRectMake(100, 200, 200, 200)];
     view.backgroundColor = [UIColor redColor];
     [self.view addSubview:view];
+    
+    _boundView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+    _frameView = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 100)];
+    _boundView.backgroundColor = [UIColor redColor];
+    _frameView.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:_boundView];
+    [self.view addSubview:_frameView];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
     UITouch *touch = [allTouches anyObject];//视图中的所有对象
     CGPoint supPoint = [touch locationInView:self.view];
     CGPoint point = [touch locationInView:[touch view]]; //返回触摸点在视图中的当前坐标
-    if (CGRectContainsPoint(CGRectMake(0, 0, 200, 200), supPoint)) {//是否某个区域包含一个点
+    if (CGRectContainsPoint(_boundView.frame, supPoint)) {
+        [UIView animateWithDuration:0.5 animations:^{
+            self->_boundView.bounds = CGRectMake(0, 0, 50, 50);
+        }];
+    }
+    else if (CGRectContainsPoint(_frameView.frame, supPoint)){
+        [UIView animateWithDuration:0.5 animations:^{
+//            _frameView.frame = CGRectMake(150, 200, 50, 50);
+        }];
+    }
+    else if (CGRectContainsPoint(CGRectMake(0, 0, 200, 200), supPoint)) {//是否某个区域包含一个点
         NSLog(@"containspoint");
     }
     else

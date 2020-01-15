@@ -11,6 +11,7 @@
 @interface XStringViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *stringField;
 @property (weak, nonatomic) IBOutlet UITextField *sting2Field;
+@property (weak, nonatomic) IBOutlet UILabel *stringLabel;
 
 @end
 
@@ -27,6 +28,27 @@
     //半角符长度
     NSLog(@"UTF = %ld %ld %ld",[str1 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding],[str2 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding],[str3 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding]);
     NSLog(@"isa = %ld %ld %ld",[self halfLength:str1],[self halfLength:str2],[self halfLength:str3]);
+    
+//    _stringLabel.text = @"这是一个折行的字符串适配计算大小的空间真的是空间";
+//    CGSize thatsize = [_stringLabel sizeThatFits:CGSizeZero];
+    UILabel *testLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 300, 100, 20)];
+    testLabel.numberOfLines = 0;
+    testLabel.text = @"这是一个折行的字符串适配计算大小的空间真的是空间";
+    testLabel.font = [UIFont systemFontOfSize:14];
+    testLabel.textAlignment=NSTextAlignmentCenter;
+    //使用sizeThatFit计算lable大小
+//    CGSize sizeThatFit=[testLabel sizeThatFits:CGSizeZero];
+//    NSLog(@"%f--1---%f", sizeThatFit.width, sizeThatFit.height);
+    //343.000000--1---17.000000
+    CGSize sizeThatFit=[testLabel sizeThatFits:CGSizeMake(100, 100)];
+      NSLog(@"%f--1---%f", sizeThatFit.width, sizeThatFit.height);//100.000000--1---67.000000
+    NSLog(@"%f--2---%f", testLabel.frame.size.width, testLabel.frame.size.height);//100.000000--2---20.000000
+    // 调用sizeToFit
+    [testLabel sizeToFit];
+    NSLog(@"%f--3---%f", testLabel.frame.size.width, testLabel.frame.size.height);//100.000000--3---67.000000
+    testLabel.textColor=[UIColor blackColor];
+    testLabel.backgroundColor=[UIColor yellowColor];
+    [self.view addSubview:testLabel];
 }
 - (NSInteger)halfLength:(NSString *)text {
     NSInteger len = 0;
