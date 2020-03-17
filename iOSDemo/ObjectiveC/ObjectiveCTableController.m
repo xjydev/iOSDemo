@@ -29,7 +29,8 @@
 - (void)viewDidLoad {//
     [super viewDidLoad];
 //    self.navigationController.delegate = self;
-    _mainArray = @[@{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+    _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
+ @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"}, @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
@@ -45,6 +46,8 @@
                    @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
                    @{@"title":@"Collection",@"class":@"XCollectionViewController",@"storyboard":@"0"},
                    ];
+    NSObject *ob = [[NSObject alloc]init];
+//    [ob setValue:@"11" forKey:@"uuu"];
 //
     // Uncomment the following line to preserve selection between presentations.
      self.clearsSelectionOnViewWillAppear = YES;
@@ -81,7 +84,7 @@
         make.height.equalTo(@100);
         make.right.equalTo(view2.mas_left).offset(-10);
     }];
-    
+    NSValue *v = [[NSValue alloc]init];
 //    [view1.mas_makeConstraints:^(MASConstraintMaker *make) {
 //    }];
 }
@@ -118,14 +121,15 @@
     }
     else
     {
-         [self pushClass:dict[@"class"]];
+         [self pushClass:dict[@"class"]title:dict[@"title"]];
     }
    
 }
 //根据类名，push到制定的类
-- (void)pushClass:(NSString *)className{
+- (void)pushClass:(NSString *)className title:(NSString *)title{
     Class objectClass = NSClassFromString(className);
     UIViewController * object = [[objectClass alloc]init];
+    object.title = title;
     object.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:object animated:YES];
 }
@@ -204,6 +208,7 @@ cell.transform = CGAffineTransformIdentity;
         }
         NSLog(@"3======== %d",i);
     }
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"2222" object:nil];
 }
 #pragma mark -- UIPopoverPresentationControllerDelegate
 - (UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {

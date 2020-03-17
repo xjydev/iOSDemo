@@ -8,7 +8,7 @@
 //Swift 中所有的结构体和枚举类型都是值类型,标准库定义的集合，例如数组，字典和字符串，都对复制进行了优化以降低性能成本。新集合不会立即复制，而是跟原集合共享同一份内存，共享同样的元素。在集合的某个副本要被修改前，才会复制它的元素。而你在代码中看起来就像是立即发生了复制。
 //Swift中结构体和枚举能够定义方法
 //可以使用下划线（_）来代替显式的实参标签来重写默认行为。
-//MARK:访问级别
+//MARK:访问级别 open>public>Internal>private
 //Open 和 Public 级别可以让实体被同一模块源文件中的所有实体访问，在模块外也可以通过导入该模块来访问源文件里的所有实体。通常情况下，你会使用 Open 或 Public 级别来指定框架的外部接口。Open 和 Public 的区别在后面会提到。
 //Internal(默认级别) 级别让实体被同一模块源文件中的任何实体访问，但是不能被模块外的实体访问。通常情况下，如果某个接口只在应用程序或框架内部使用，就可以将其设置为 Internal 级别。
 //File-private 限制实体只能在其定义的文件内部访问。如果功能的部分细节只需要在文件内使用时，可以使用 File-private 来将其隐藏。
@@ -69,6 +69,7 @@ class SwiftTableController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let xs:XStringViewController  = XStringViewController.init()
         otherVar = 3;
         var di = mainArray[0];
         print(di["title"]!);

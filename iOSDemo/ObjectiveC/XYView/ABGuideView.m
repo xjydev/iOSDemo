@@ -16,6 +16,7 @@
 @end
 
 @implementation ABGuideView
+@dynamic a;
 
 - (instancetype)init {
     self = [super initWithFrame:CGRectMake(0, 0, APPFRAME_WIDTH, APPFRAME_HEIGHT)];

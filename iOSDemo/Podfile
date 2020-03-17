@@ -9,7 +9,7 @@ target 'iOSDemo' do
   
   pod 'thrift', '~> 0.9.3'
   
-  pod 'AFNetworking' 
+  pod 'AFNetworking'
   pod 'YYKit'
   pod 'NSData+Base64'
   pod 'MBProgressHUD'
@@ -28,7 +28,10 @@ target 'iOSDemo' do
   pod 'Masonry'
 #  pod 'XDPhoto'
   pod 'JSONModel', '~> 1.8.0'
-  
+  pod 'CTMediator', '~> 25'
+  pod 'JLRoutes', '~> 2.1'
+  pod 'GPUImage', '~> 0.1.7'
+#  pod 'HCMVManager', '~> 1.6.4'
   pod 'DoraemonKit/Core', :configurations => ['Debug']
   pod 'DoraemonKit/WithLogger', :configurations => ['Debug']
   pod 'DoraemonKit/WithGPS', :configurations => ['Debug']

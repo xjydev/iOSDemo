@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:nil];
+    
 }
 - (void)centralManagerDidUpdateState:(CBCentralManager *)central {
     NSLog(@"bluetooth state == %@",@(central.state));

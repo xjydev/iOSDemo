@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
-
+@property (nonatomic, strong)NSString *la;
 @end
 
 @implementation AppDelegate
@@ -17,9 +17,18 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.la = @"11111";
+    [self fun1:self.la];
     return YES;
 }
-
+- (void)fun1:(NSString *)a {
+    self.la = @"22222";
+    NSLog(@"a === %@",a);
+    [self fun2:a];
+}
+- (void)fun2:(NSString *)b {
+    NSLog(@"b === %@",b);
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

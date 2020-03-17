@@ -10,6 +10,7 @@
 #endif
 
 #import "AppDelegate.h"
+#import "iOSDemo-Swift.h"
 #import <BMKLocationkit/BMKLocationComponent.h>
 #import <BaiduMapAPI_Base/BMKMapManager.h>
 @interface AppDelegate ()<BMKLocationAuthDelegate>
@@ -52,6 +53,8 @@
     NSString *numst = num;
     NSLog(@"===%@",numst);
     [self setArray:1,2,3,0];
+    
+    SwiftTableController *VC = [[SwiftTableController alloc]init];
     return YES;
 }
 - (void)setArray:(NSInteger)a,... {

@@ -116,6 +116,7 @@
     CGImageRelease(outImage);
     return blurImage;
 }
+//获取模糊图片
 -(UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
 {
     if (blur < 0.f || blur > 1.f) {

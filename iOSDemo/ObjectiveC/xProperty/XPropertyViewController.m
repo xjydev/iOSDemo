@@ -9,7 +9,10 @@
 #import "XPropertyViewController.h"
 #import "XModel.h"
 
+const NSString * ExternStr = @"externStr";
+
 @interface XPropertyViewController ()
+
 /**
  *  atomic 默认值 通过锁定机制来确保其操作的原子性 如果两个线程同时读取一个属性，那么不论何时，总能看到有效的属性值。
  *  nonatomic 非原子性 如果该对象无需考虑多线程的情况，请加入这个属性， 使用同步锁的开销比较大， 这会带来性能问题。
@@ -39,6 +42,8 @@
 
 @implementation XPropertyViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"属性关键字";
@@ -63,7 +68,22 @@
 //    model4.aindex = 444;
 
 //    NSLog(@"%d\n%d\n%d\n%d\n",model1.aindex,model2.aindex,model3.aindex,model4.aindex);
+    [self theKeyWord];
 
+}
+
+#pragma mark -- 关键字
+
+static int sta1 = 2;//本来是在整个源程序的所有文件都可见，static修饰后，改为只在申明自己的文件可见，即修改了作用域。
+int sta2 = 3;
+
+- (void)theKeyWord {
+     static int sta = 1;//static修饰局部变量：将局部变量的本来分配在栈区改为分配在静态存储区，也就改变了局部变量的生命周期。
+    const int coa = 10;//在栈区分配一块区域，coa这块儿内存中的值不可修改。
+    const NSString *coStr = @"123";//*coStr指针指向的内存值不可以修改，但是coStr这个指针是可以变的。
+    coStr = @"234";
+    NSString * const coStr1 = @"456";
+//    coStr1 = @"567";//coStr1指针指向的内存地址不能变。指向不能变。
 }
 
 - (void)didReceiveMemoryWarning {

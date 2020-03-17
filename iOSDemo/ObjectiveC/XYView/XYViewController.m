@@ -17,11 +17,13 @@
 
 #import "XYViewController.h"
 #import "XYView.h"
+#import "XPropertyViewController.h"
 @interface XYViewController ()
 {
     UIView *_boundView;
     UIView *_frameView;
 }
+@property (nonatomic, copy)NSString *str;
 @end
 
 @implementation XYViewController
@@ -40,6 +42,11 @@
     _frameView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:_boundView];
     [self.view addSubview:_frameView];
+    self.str = @"222222";
+    extern int sta2;//可以引用
+//    extern int sta;//使用static定义的不可以引用。
+    NSLog(@"extern== %d",sta2);//extern 3
+    NSLog(@"externstr == %@",ExternStr);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
@@ -63,6 +70,11 @@
     {
       NSLog(@"dontcontainspoint");
     }
+   
+    
+    
+}
+- (void)notify {
 }
 //一根或者多根手指在view上移动（随着手指的移动，会持续调用该方法）
 -(void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event {
@@ -84,7 +96,10 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)dealloc {
+    NSLog(@"delloc ===== view ");
+     [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 /*
 #pragma mark - Navigation
 

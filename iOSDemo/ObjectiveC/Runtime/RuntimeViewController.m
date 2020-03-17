@@ -84,6 +84,11 @@
 }
 - (void)setNumber:(NSNumber *)num {
 }
+
+//NSInvocation对象用于在对象之间和应用程序之间存储和转发消息，主要是通过NSTimer对象和分布式对象系统实现的。NSInvocation对象包含Objective-C消息的所有元素:目标、选择器、参数和返回值。每个元素都可以直接设置，并且在分派NSInvocation对象时自动设置返回值。
+//一个NSInvocation对象可以被多次分派到不同的目标;它的参数可以在调度之间进行修改，以获得不同的结果;甚至它的选择器也可以更改为具有相同方法签名(参数和返回类型)的其他选择器。这种灵活性使得nsinvoke对于重复具有许多参数和变体的消息非常有用;不是为每个消息重新键入略有不同的表达式，而是在每次将NSInvocation对象发送到新目标之前根据需要修改它。
+//NSInvocation不支持使用变量数量的参数或联合参数调用方法。你应该使用invocationWithMethodSignature: class方法来创建NSInvocation对象;您不应该使用alloc和init来创建这些对象。
+//默认情况下，该类不保留所包含调用的参数。如果这些对象可能在您创建NSInvocation实例和使用它之间消失，那么您应该显式地自己保留这些对象，或者调用retainArguments方法来让调用对象自己保留它们。
 /*
 #pragma mark - Navigation
 

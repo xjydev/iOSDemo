@@ -7,29 +7,59 @@
 //
 //在局部变量前使用下划线下划线block修饰,在声明Block之后、调用Block之前对局部变量进行修改,在调用Block时局部变量值是修改之后的新值
 #import "XBlockViewController.h"
+#import "XShareInstance.h";
+#import "XTools.h"
 typedef void(^eBlock) (NSString *eb);
 @interface XBlockViewController ()
+{
+    id _observe;
+    NSInteger _num;
+    NSObject *_nObj;
+}
+@property (nonatomic, assign)NSTimeInterval time;
+@property (nonatomic, copy)NSString *astr;
 @property (nonatomic,copy)void (^block)(NSString * str);
 @property (nonatomic,copy)eBlock eblock;
+@property (nonatomic, strong)dispatch_queue_t queue;
 - (void)transferA:(NSString *)a aBlock:(void (^)(NSString *astr))bBlock;
+
 @end
 
 @implementation XBlockViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"任务  == 2"); // 任务2
+    });
+    NSLog(@"3");
     self.title = @"Block";
+    self.astr = @"dele";
     self.view.backgroundColor = [UIColor whiteColor];
    __block int a = 1;
     self.block = ^(NSString *str) {
         NSLog(@"str ==%@",str);
         NSLog(@"b1 a  %d",a);
         a = 2;
+//        NSLog(@"%@",self.astr);
     };
     NSLog(@"b2 a  %d",a);
     self.eblock = ^(NSString *eb) {
         
     };
+    
+    self.time = 2;
+    [UIView animateWithDuration:self.time animations:^{
+        NSLog(@"animate == %@",self.astr);
+    }];
+    
+    [self transferA:self.astr aBlock:^(NSString *astr) {
+//        NSLog(@"animate == %@",self.astr);
+    }];
+//    dispatch_queue_t queue = dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT);
+    self.queue = dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_async(self.queue, ^{
+     NSLog(@"gcd == %@",self.astr);
+    });
 //    __block在MRC下有两个作用
 //    1. 允许在Block中访问和修改局部变量
 //    2. 禁止Block对所引用的对象进行隐式retain操作
@@ -62,6 +92,64 @@ typedef void(^eBlock) (NSString *eb);
         }
         
     };
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notify ) name:@"1111" object:nil];
+//       [[NSNotificationCenter defaultCenter]removeObserver:self];
+    __weak typeof(self) weakSelf = self;
+    _observe = [[NSNotificationCenter defaultCenter]addObserverForName:@"2222" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+           NSLog(@"=== %@",weakSelf.astr);//循环引用
+       }];
+//    [[NSNotificationCenter defaultCenter]removeObserver:observe];
+    [[XShareInstance share]instanceBlock:^(NSString * _Nonnull str) {
+         NSLog(@"=== %@",weakSelf.astr);
+    }];
+    
+    void(^block)(void) = ^{
+       NSLog(@"Hello, World!");
+        self.astr = @"1111";
+    };
+    _num = 10;
+    [[XShareInstance share]instanceWithStr:self.astr Block:^(NSString * _Nonnull str) {//如果blockcopy了会对内部对象强引用。
+//        NSLog(@"%@",str);
+        NSLog(@"===%@",@(self->_num));
+    }];
+//    [NSTimer scheduledTimerWithTimeInterval:1 repeats:YES block:^(NSTimer * _Nonnull timer) {
+////      NSLog(@"=== %@",self.astr);//循环引用
+//    }];
+//    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(notify) userInfo:nil repeats:YES];
+    [self deadLockThree];
+    
+    int i = 10;
+    static int m = 100;
+    NSMutableArray *mArray = [NSMutableArray arrayWithObjects:@"1",@"2", nil];
+    void (^blk)(void) = ^{
+    NSLog(@"In block, i = %d", i);
+    NSLog(@"In block, m = %d", m);
+        [mArray addObject:@"4"];
+        for (NSString *str in mArray) {
+            NSLog(@"In block, str = %@", str);
+        }
+        
+    };
+    i = 20;
+    m = 200;
+    [mArray addObject:@"3"];
+    blk();
+    
+}
+- (void)deadLockThree {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"1"); // 任务1
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"2"); // 任务2
+        });
+        NSLog(@"3"); // 任务3
+    });
+    NSLog(@"4"); // 任务4
+
+}
+
+- (void)notify {
 }
 #pragma mark --
 - (void)transferA:(NSString *)a aBlock:(void (^)(NSString *))bBlock {
@@ -89,12 +177,18 @@ typedef void(^eBlock) (NSString *eb);
     [self transferA:@"444444" aBlock:^(NSString *astr) {
         NSLog(@"astr  %@",astr);
     }];
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:@"2222" object:nil];
+    [[XShareInstance share]instanceDealloc];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter]removeObserver:_observe];
+    NSLog(@"block dealloc =========");
+}
 /*
 #pragma mark - Navigation
 

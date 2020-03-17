@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
  @"site" 0左上，1左下，2右下、3右上
  */
 @property (nonatomic, strong)NSArray *imageSArray;
+@property (nonatomic, assign)NSInteger a;
+@property (nonatomic, assign)NSInteger b;
+
 - (void)show;
 @end
 

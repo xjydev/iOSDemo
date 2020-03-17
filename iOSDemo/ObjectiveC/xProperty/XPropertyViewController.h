@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface XPropertyViewController : UIViewController
-
+extern NSString *ExternStr;
 @end
