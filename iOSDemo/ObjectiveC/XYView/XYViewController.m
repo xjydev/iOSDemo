@@ -18,6 +18,7 @@
 #import "XYViewController.h"
 #import "XYView.h"
 #import "XPropertyViewController.h"
+#import <Masonry/Masonry.h>
 @interface XYViewController ()
 {
     UIView *_boundView;
@@ -47,6 +48,63 @@
 //    extern int sta;//使用static定义的不可以引用。
     NSLog(@"extern== %d",sta2);//extern 3
     NSLog(@"externstr == %@",ExternStr);
+    [self contentLabel];
+}
+- (void)contentLabel {
+    UILabel * label = [[UILabel alloc]init];
+    [self.view addSubview:label];
+    label.backgroundColor = [UIColor yellowColor];
+
+    UILabel * label2 = [[UILabel alloc]init];
+    [self.view addSubview:label2];
+    label2.backgroundColor = [UIColor blueColor];
+    [label mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(@10);
+        make.top.equalTo(@510);
+        make.right.equalTo(label2.mas_left).offset(-20);
+    }];
+    
+    [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.equalTo(label.mas_right).offset(20);
+        make.top.equalTo(label);
+        make.right.equalTo(@(-10));
+    }];
+
+    /*
+     * intrinsicContentSize: 这个是label 的真实的 大小size
+     * 抗拉伸 和 抗压缩 都是相对于intrinsicContentSize 值来说的
+     **/
+    /*
+     * 抗拉伸
+     * 主要用在
+     * eg：label、label2 限制后 还有空余空间，这个时候就需要谁来拉伸了，才能满足我们的限制
+     * setContentHuggingPriority（值越高，越不容易拉伸，所以我取名为‘抗拉伸’）
+     **/
+//    label.text = @"label";
+//    label2.text = @"label2";
+//    /*
+//     * 保证label 不被拉伸，那么只能拉伸label2
+//     **/
+    [label setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    [label2 setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
+    /*
+     * 抗压缩
+     * 主要用在
+     * eg：label、label2 限制后 ，没有空余空间，这个时候就 只能压缩某个label，才能满足我们的限制
+     * setContentCompressionResistancePriority（值越高，越不容易压缩，所以我取名为‘抗压缩’）
+     **/
+    label.text = @"hello，我是第一个label，请多多！";
+    label2.text = @"hello，我是第二个label，谢谢";
+   
+    /*
+     * 保证label2 不被压缩，那么只能压缩label
+     **/
+    [label setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
+    [label2 setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
+   
+    
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象

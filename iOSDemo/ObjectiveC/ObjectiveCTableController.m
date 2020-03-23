@@ -30,7 +30,8 @@
     [super viewDidLoad];
 //    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
- @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"}, @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+ @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"},
+                   @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},@{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},

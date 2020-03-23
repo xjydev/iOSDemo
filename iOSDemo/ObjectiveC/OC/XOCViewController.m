@@ -14,12 +14,19 @@
 #import "XWifeObj.h"
 #import <AVKit/AVKit.h>
 #import <VideoToolbox/VideoToolbox.h>
+typedef void (^XBlock)(void);
 @interface XOCViewController ()
 @property (nonatomic, copy)NSString *astr1;
 @property (nonatomic, copy)NSString *astr2;
 
 @property (nonatomic, copy)NSArray *arry1;
 @property (nonatomic, copy)NSArray *arry2;
+
+@property (nonatomic, copy)XBlock block1;
+@property (nonatomic, strong)XBlock block2;
+@property (nonatomic, copy)XBlock block6;
+@property (nonatomic, strong)XBlock block7;
+@property (nonatomic, copy)void(^block8)(void);
 @end
 
 @implementation XOCViewController
@@ -48,14 +55,49 @@
     NSMutableString *mstr = [NSMutableString stringWithFormat:@"4567"];
     self.astr1 = astr;
     self.astr2 = mstr;
-    NSLog(@"address\n%p\n%p\n%p\n%p",astr,mstr,_astr1,_astr2);
-    
+    NSLog(@"address\n%p\n%p\n%p\n%p",astr,mstr,_astr1,_astr2); 
     NSMutableArray *arr = [NSMutableArray arrayWithArray:@[@(1),@(2)]];
     NSArray *arr1 = @[@"1"];
     self.arry1 = arr;
     self.arry2 = arr1;
     NSLog(@"\n%p\n%p\n%p\n%p\n",arr,arr1,self.arry1,self.arry2);
     
+    int a = 100;
+    void (^block3)(void) = ^{
+    };
+    void (^block4)(void) = ^{
+        NSLog(@"block4 == %d == %@  =%@",a,astr,mstr);
+    };
+    a = 99;
+    astr = @"56789";
+    [mstr appendString:@"11111"];
+    [self block5:^{
+        NSLog(@"block5 == %d == %@ == %@",a,astr,mstr);
+    }];
+    a = 98;
+    astr = @"7890";
+    [mstr appendString:@"2222"];
+    block4();
+    self.block8 = ^{
+        NSLog(@"%d",a);
+    };
+    NSLog(@"4 %@--%@",block4,[block4 class]);
+    NSLog(@"3 %@--%@",block3,[block3 class]);
+    NSLog(@"8 %@--%@",self.block8,[self.block8 class]);
+    self.block1();
+}
+- (void)block5:(XBlock)block {
+    self.block1 = block;
+    self.block2 = block;
+    
+    NSLog(@"2 %@--%@",self.block2,[self.block2 class]);
+    NSLog(@"1 %@--%@",self.block1,[self.block1 class]);
+    NSLog(@"0 %@--%@",block,[block class]);
+    
+    self.block6 = self.block1;
+    self.block7 = self.block2;
+    NSLog(@"6 %@--%@",self.block6,[self.block6 class]);
+    NSLog(@"7 %@--%@",self.block7,[self.block7 class]);
 }
 - (void)autoreleaseAction {
     NSLog(@"autorelease ==================");

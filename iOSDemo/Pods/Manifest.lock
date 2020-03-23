@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Alamofire (4.9.1)
   - BaiduMapKit (4.4.2)
   - BMKLocationKit (1.7.0)
   - BSBacktraceLogger (0.0.1)
@@ -92,6 +93,7 @@ PODS:
   - ReactiveViewModel (0.3):
     - ReactiveCocoa (~> 2.4)
   - RNCryptor (5.0.3)
+  - RxSwift (5.1.0)
   - SDWebImage (3.7.6):
     - SDWebImage/Core (= 3.7.6)
   - SDWebImage/Core (3.7.6)
@@ -126,6 +128,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
+  - Alamofire
   - BaiduMapKit
   - BMKLocationKit
   - CTMediator (~> 25)
@@ -150,6 +153,7 @@ DEPENDENCIES:
   - ReactiveCocoa
   - ReactiveViewModel
   - RNCryptor
+  - RxSwift (~> 5.1.0)
   - SDWebImage
   - SVGAPlayer (~> 2.3.3)
   - SVPullToRefresh
@@ -160,6 +164,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - Alamofire
     - BaiduMapKit
     - BMKLocationKit
     - BSBacktraceLogger
@@ -182,6 +187,7 @@ SPEC REPOS:
     - ReactiveCocoa
     - ReactiveViewModel
     - RNCryptor
+    - RxSwift
     - SDWebImage
     - SocketRocket
     - SQLCipher
@@ -197,6 +203,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BaiduMapKit: 11acde2e7c06e31b7de60b323880a5eb7c4dccb6
   BMKLocationKit: cbe7a93bc288465e12961e65aa3f11a8f9da3bb1
   BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
@@ -219,6 +226,7 @@ SPEC CHECKSUMS:
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   RNCryptor: c93d19029dcf7ff160aca0f24d6c9e7b0d82f664
+  RxSwift: ad5874f24bb0dbffd1e9bb8443604e3578796c7a
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
   SQLCipher: f9fcf29b2e59ced7defc2a2bdd0ebe79b40d4990
@@ -232,6 +240,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: c8be8bd85222cc2ced76e93ca06618bab87224d7
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 56d6002f37ced0f2dbaeb07bf4f07b199aab86d8
+PODFILE CHECKSUM: c2f3905a892960c7fc29247499425a2320359344
 
 COCOAPODS: 1.5.3

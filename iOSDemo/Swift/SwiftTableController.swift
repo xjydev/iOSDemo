@@ -25,8 +25,19 @@
 
 
 import UIKit
+public struct KScreen {
+    static  func width() -> CGFloat {
+        return UIScreen.main.bounds.width;
+    }
+    static func height() -> CGFloat {
+        return UIScreen.main.bounds.height;
+    }
+}
+
+
 //MARK:结构体
 struct SomeStruct {
+//    UIScreen.main.bounds.width;
     var tructFirst = 0
     var tructSecond = 0
     var totalStru: Int {//计算属性
@@ -52,8 +63,9 @@ struct SomeStruct {
 }
 
 class SwiftTableController: UITableViewController {
+    
   open var otherVar = 0;
-    let mainArray = [["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"]]
+    let mainArray = [["title":"数据类型","classn":"DataTypeViewController","storyboard":"0"],["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"],["title":"UIStackView","classn":"XStackViewController","storyboard":"0"]]
     
     //类型方法
     //在方法的 func 关键字之前加上关键字 static，来指定类型方法。类还可以用关键字 class 来指定，子类重写父类该方法的实现。
@@ -149,6 +161,7 @@ class SwiftTableController: UITableViewController {
             let clsName = Bundle.main.infoDictionary!["CFBundleExecutable"] as? String
             let classV = NSClassFromString(clsName! + "." +  Str) as!UIViewController.Type;
             let vc = classV.init();
+            self.navigationController?.hidesBottomBarWhenPushed = true;
             self.navigationController?.pushViewController(vc, animated: true);
         }
     }

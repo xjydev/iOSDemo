@@ -26,6 +26,8 @@ target 'iOSDemo' do
   pod 'BaiduMapKit'
   pod 'BMKLocationKit'
   pod 'Masonry'
+  pod 'RxSwift', '~> 5.1.0'
+  pod 'Alamofire'
 #  pod 'XDPhoto'
   pod 'JSONModel', '~> 1.8.0'
   pod 'CTMediator', '~> 25'

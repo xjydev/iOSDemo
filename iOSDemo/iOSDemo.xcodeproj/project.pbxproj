@@ -13,6 +13,11 @@
 		6C044E3720CE45C5009B77C9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
 		6C0BD725242074E00002E956 /* AlgorithmicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD724242074E00002E956 /* AlgorithmicViewController.swift */; };
 		6C0BD729242075190002E956 /* XCPUImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD728242075190002E956 /* XCPUImageController.m */; };
+		6C0BD72C242348C90002E956 /* XTButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD72B242348C90002E956 /* XTButton.m */; };
+		6C0BD73024235B1C0002E956 /* XAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD72F24235B1C0002E956 /* XAnimationViewController.m */; };
+		6C0BD73224246CBC0002E956 /* XStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD73124246CBC0002E956 /* XStackViewController.swift */; };
+		6C0BD7342424FF650002E956 /* XOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD7332424FF650002E956 /* XOtherViewController.swift */; };
+		6C0BD872242653F20002E956 /* DataTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD871242653F20002E956 /* DataTypeViewController.swift */; };
 		6C0CB34A22D6064200E4008D /* ConstructorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0CB34922D6064200E4008D /* ConstructorViewController.swift */; };
 		6C0E11D522DEFDCA00360D76 /* XTransferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C0E11D422DEFDCA00360D76 /* XTransferViewController.m */; };
 		6C1DF32B21A2A3AA009E4725 /* XStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1DF32A21A2A3AA009E4725 /* XStringViewController.m */; };
@@ -108,6 +113,13 @@
 		6C0BD724242074E00002E956 /* AlgorithmicViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlgorithmicViewController.swift; sourceTree = "<group>"; };
 		6C0BD727242075190002E956 /* XCPUImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCPUImageController.h; sourceTree = "<group>"; };
 		6C0BD728242075190002E956 /* XCPUImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCPUImageController.m; sourceTree = "<group>"; };
+		6C0BD72A242348C90002E956 /* XTButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTButton.h; sourceTree = "<group>"; };
+		6C0BD72B242348C90002E956 /* XTButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTButton.m; sourceTree = "<group>"; };
+		6C0BD72E24235B1C0002E956 /* XAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAnimationViewController.h; sourceTree = "<group>"; };
+		6C0BD72F24235B1C0002E956 /* XAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAnimationViewController.m; sourceTree = "<group>"; };
+		6C0BD73124246CBC0002E956 /* XStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XStackViewController.swift; sourceTree = "<group>"; };
+		6C0BD7332424FF650002E956 /* XOtherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XOtherViewController.swift; sourceTree = "<group>"; };
+		6C0BD871242653F20002E956 /* DataTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypeViewController.swift; sourceTree = "<group>"; };
 		6C0CB34922D6064200E4008D /* ConstructorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConstructorViewController.swift; sourceTree = "<group>"; };
 		6C0E11D322DEFDCA00360D76 /* XTransferViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XTransferViewController.h; sourceTree = "<group>"; };
 		6C0E11D422DEFDCA00360D76 /* XTransferViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTransferViewController.m; sourceTree = "<group>"; };
@@ -309,6 +321,16 @@
 			path = CPUImage;
 			sourceTree = "<group>";
 		};
+		6C0BD72D24235AF10002E956 /* Xanimation */ = {
+			isa = PBXGroup;
+			children = (
+				6C0BD72E24235B1C0002E956 /* XAnimationViewController.h */,
+				6C0BD72F24235B1C0002E956 /* XAnimationViewController.m */,
+			);
+			name = Xanimation;
+			path = ObjectiveC/Xanimation;
+			sourceTree = SOURCE_ROOT;
+		};
 		6C0E11D222DEFDA000360D76 /* Transfer */ = {
 			isa = PBXGroup;
 			children = (
@@ -461,11 +483,14 @@
 			isa = PBXGroup;
 			children = (
 				6C64588B20AD51580046C2F9 /* SwiftTableController.swift */,
+				6C0BD871242653F20002E956 /* DataTypeViewController.swift */,
 				6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */,
+				6C0BD7332424FF650002E956 /* XOtherViewController.swift */,
 				6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */,
 				6C0CB34922D6064200E4008D /* ConstructorViewController.swift */,
 				6CE4DB8322D742E4008F01A9 /* ExtensionViewController.swift */,
 				6C69F53622DC2B9C00677BD7 /* ProtocolViewController.swift */,
+				6C0BD73124246CBC0002E956 /* XStackViewController.swift */,
 				6C64588C20AD51580046C2F9 /* iOSDemo-Bridging-Header.h */,
 			);
 			path = Swift;
@@ -494,6 +519,7 @@
 				6CB429C720C545CD000CFD37 /* Xcalendar */,
 				6C64589820AD92220046C2F9 /* XBlock */,
 				6C6F7F7420C7C25F00C5C151 /* XYView */,
+				6C0BD72D24235AF10002E956 /* Xanimation */,
 				6C64589220AD61DE0046C2F9 /* xProperty */,
 			);
 			path = ObjectiveC;
@@ -653,6 +679,8 @@
 				6CE1A8CF241CAFD400754036 /* XThreadViewController.m */,
 				6CE1A8D1241E353100754036 /* XThread2ViewController.h */,
 				6CE1A8D2241E353100754036 /* XThread2ViewController.m */,
+				6C0BD72A242348C90002E956 /* XTButton.h */,
+				6C0BD72B242348C90002E956 /* XTButton.m */,
 			);
 			path = XThread;
 			sourceTree = "<group>";
@@ -853,6 +881,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BSBacktraceLogger/BSBacktraceLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CTPersistance/CTPersistance.framework",
@@ -873,6 +902,7 @@
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveViewModel/ReactiveViewModel.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SQLCipher/SQLCipher.framework",
 				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
@@ -890,6 +920,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSBacktraceLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPersistance.framework",
@@ -910,6 +941,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveViewModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLCipher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
@@ -936,9 +968,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C0BD73024235B1C0002E956 /* XAnimationViewController.m in Sources */,
 				6C64589720AD670A0046C2F9 /* XPropertyViewController.m in Sources */,
 				6CE1A8D0241CAFD400754036 /* XThreadViewController.m in Sources */,
 				6C6B66852399F2C200F2D368 /* XTableViewCell.m in Sources */,
+				6C0BD73224246CBC0002E956 /* XStackViewController.swift in Sources */,
 				6C0BD729242075190002E956 /* XCPUImageController.m in Sources */,
 				6CE1A8D3241E353100754036 /* XThread2ViewController.m in Sources */,
 				6C0BD725242074E00002E956 /* AlgorithmicViewController.swift in Sources */,
@@ -948,17 +982,20 @@
 				6C0E11D522DEFDCA00360D76 /* XTransferViewController.m in Sources */,
 				6C6232DA215F789B001E85D4 /* XTableViewController.m in Sources */,
 				6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */,
+				6C0BD7342424FF650002E956 /* XOtherViewController.swift in Sources */,
 				6CE36BBB22D484BD00B38008 /* SwiftBlocksViewController.swift in Sources */,
 				6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */,
 				6C64589120AD51580046C2F9 /* ObjectiveCTableController.m in Sources */,
 				6C61CB3A2269B0D7002FE2A8 /* XBluetoothViewController.m in Sources */,
 				6CB429CA20C545E9000CFD37 /* XcalendarViewController.m in Sources */,
 				6CE1A8C0241BA57000754036 /* XFatherObj.m in Sources */,
+				6C0BD72C242348C90002E956 /* XTButton.m in Sources */,
 				6CBAB4AC211D69B7009E07B1 /* ABCalendarController.m in Sources */,
 				6CE1A8C3241BA58100754036 /* XSonObj.m in Sources */,
 				6C64589020AD51580046C2F9 /* SwiftTableController.swift in Sources */,
 				6C224C34228121AA00C8A6AE /* XFlashViewController.m in Sources */,
 				6CB429DE20C5468D000CFD37 /* LXCalendarWeekView.m in Sources */,
+				6C0BD872242653F20002E956 /* DataTypeViewController.swift in Sources */,
 				6CB429E920C546AE000CFD37 /* XYCalendarView.m in Sources */,
 				6C678EA023289409009DE3AB /* XMapViewController.m in Sources */,
 				6C39DF4A20DBBEEA0086D632 /* XCategoryViewController.m in Sources */,

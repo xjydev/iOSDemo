@@ -9,6 +9,7 @@
 #import "XThreadViewController.h"
 #import "XThread2ViewController.h"
 #import "XSonObj.h"
+#import "XTButton.h"
 @interface XThreadViewController ()
 @property (nonatomic, strong)XThread2ViewController *thread2;
 @property (nonatomic, strong)XSonObj *arr;
@@ -31,17 +32,131 @@
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor redColor];
     button1.frame = CGRectMake(10, 120, 70, 70);
-    [button1 addTarget:self action:@selector(buttonAction1) forControlEvents:UIControlEventTouchUpInside];
+    [button1 addTarget:self action:@selector(buttonAction1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
     
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-    button2.backgroundColor = [UIColor blueColor];
+    button2.backgroundColor = [UIColor yellowColor];
     button2.frame = CGRectMake(110,120, 70, 70);
     [button2 addTarget:self action:@selector(buttonAction2) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button2];
+    
+    XTButton *button3 = [XTButton buttonWithType:UIButtonTypeCustom];
+    button3.backgroundColor = [UIColor blueColor];
+    button3.frame = CGRectMake(190,120, 70, 70);
+    [button3 addTarget:self action:@selector(buttonAction3) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button3];
+#pragma mark -- 圆角的实现：
+    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+    
+    UIImage *image2 = [UIImage imageNamed:@"22"];
+    UIGraphicsBeginImageContextWithOptions(button2.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:button2.bounds cornerRadius:40]addClip];
+    [image2 drawInRect:button2.bounds];
+    UIImage *endImage = UIGraphicsGetImageFromCurrentImageContext();
+    [button2 setImage:endImage forState:UIControlStateNormal];
+    UIGraphicsEndImageContext(); 
+    CFAbsoluteTime time1 = CFAbsoluteTimeGetCurrent();
+    NSLog(@"time1 ==  %f",time1 - startTime);
+    
+    CAShapeLayer *mask = [CAShapeLayer layer];
+    UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:button1.bounds byRoundingCorners:(UIRectCornerAllCorners) cornerRadii:CGSizeMake(30, 30)];
+    mask.path = path.CGPath;
+    mask.frame = button1.bounds;
+    button1.layer.mask = mask;
+
+    CFAbsoluteTime time2 = CFAbsoluteTimeGetCurrent();
+    NSLog(@"time2 == %f",time2 - time1);
+    
+    button3.layer.cornerRadius = 30;
+    button3.layer.masksToBounds = YES;
+    CFAbsoluteTime time3 = CFAbsoluteTimeGetCurrent();
+       NSLog(@"time2 == %f",time3 - time2);
+//    [self interview1];
+    [self nsthread2];
+    dispatch_queue_t  aSerialQueue = dispatch_queue_create("iosxiao.name",DISPATCH_QUEUE_SERIAL);
+    dispatch_sync(aSerialQueue, ^(void) {
+        //        NSLog(@"==========");
+        //        [self funcA];
+        NSLog(@"00000000000");
+    });
+    NSLog(@"333333333");
+    [self exchangeThread];
+    [self mainAsync];
+    
 }
-- (void)buttonAction1 {
+- (void)mainAsync {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"async =---1");
+    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"async =---2");
+    });
+    NSLog(@"async =---3");
+}
+- (void)exchangeThread {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSLog(@"exchangeThread1---%@", [NSThread currentThread]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"exchangeThread2---%@", [NSThread currentThread]);
+        });
+        NSLog(@"exchangeThread3---%@", [NSThread currentThread]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            NSLog(@"exchangeThread4---%@", [NSThread currentThread]);
+        });
+    });
+}
+- (void)interview1{
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    
+    dispatch_async(queue, ^{
+        NSLog(@"1---%@",[NSThread currentThread]);
+        [self performSelector:@selector(test1) withObject:nil afterDelay:.0f];
+        NSLog(@"3---%@",[NSThread currentThread]);
+//        [self nsthread2];
+    });
+}
+- (void)nsthread2 {
+    CFAbsoluteTime startTime = CFAbsoluteTimeGetCurrent();
+    
+    dispatch_queue_t  aSerialQueue = dispatch_queue_create("iosxiao.name",DISPATCH_QUEUE_SERIAL);
+    dispatch_async(aSerialQueue, ^(void) {
+//        NSLog(@"==========");
+//        [self funcA];
+        NSLog(@"00");
+    });
+   
+    dispatch_sync(aSerialQueue, ^(void) {
+//        [self funcA];
+         NSLog(@"11");
+    });
+    NSLog(@"22");
+//    [self funcA];
+    
+    CFAbsoluteTime endTime = (CFAbsoluteTimeGetCurrent() - startTime);
+    NSLog(@"linke %f",endTime);
+    
+    
+}
+- (void)funcA {
+    NSInteger i = 0;
+    while (i<5) {
+        sleep(1);
+        NSLog(@"%@ == %@",[NSThread currentThread],@(i));
+        i++;
+    }
+    NSLog(@"end=====%@",[NSThread currentThread]);
+}
+- (void)test1{
+    NSLog(@"2---%@",[NSThread currentThread]);
+}
+
+- (void)buttonAction1:(UIButton *)button {
     NSBlockOperation *bo = [NSBlockOperation blockOperationWithBlock:^{
+        [button setTitle:@"123" forState:UIControlStateNormal];
         NSInteger i=0;
         while (i++<8) {
             sleep(1);
@@ -73,6 +188,9 @@
         }
     }
     NSLog(@"opention 2222 ==%@",[NSThread currentThread]);
+}
+- (void)buttonAction3 {
+    NSLog(@"=======3333");
 }
 - (void)whiledemo {
     if (1) {

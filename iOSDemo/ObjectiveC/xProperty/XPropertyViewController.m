@@ -69,6 +69,31 @@ const NSString * ExternStr = @"externStr";
 
 //    NSLog(@"%d\n%d\n%d\n%d\n",model1.aindex,model2.aindex,model3.aindex,model4.aindex);
     [self theKeyWord];
+    NSMutableString *cstrd = [NSMutableString stringWithFormat:@"123"];
+     NSMutableString *cstrd1 = [NSMutableString stringWithFormat:@"234"];
+    //由于NSString是指针变量，因此只要保证NSString类型的变量存储的指针不可变就可以定义一个不可更改的NSString变量
+    const NSMutableString *cstr = cstrd;//指针可变，值不可变。
+    NSMutableString *const cstr2 = cstrd1;//指针不可变，值可变。
+    NSLog(@"const1 == %@ - %@",cstr,cstr2);
+    [cstrd appendFormat:@"456"];
+    [cstrd1 appendFormat:@"567"];
+    
+     NSLog(@"const2 == %@ - %@",cstr,cstr2);
+    int a = 2;
+    int a1 = 3;
+    int a2 = 4;
+    
+    int const *b = &a;
+    int * const b1 =&a1;
+    NSLog(@"a == %d  %d",*b,*b1);
+    a = 5;
+//    b1 = &a2;//指针不可以修改。
+    a1 = 5;
+    
+    NSLog(@"a == %d  %d",*b,*b1);
+    
+    
+    
 
 }
 

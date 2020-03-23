@@ -12,10 +12,18 @@ enum xjType {
     case second
 }
 class SwiftBlocksViewController: UIViewController {
-var blockd:BlokDemo?
+    var label1: UILabel!
+    
+    var label2: UILabel!
+    
+    var blockd:BlokDemo?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let t:xjType = xjType.first
+      
+//        let t:xjType = xjType.first
+        
         let names = ["f34","a123","b3","a1","f345"]
         let renames = names.sorted(by:backward);
         print(renames);
@@ -37,7 +45,10 @@ var blockd:BlokDemo?
             return output;
         }
         print(strings);
-        print(makeIncrementer(forIncrement: 10));
+        let makeincre = makeIncrementer(forIncrement: 10);
+        print(makeincre);
+        print("----",makeincre);
+        print("----",makeincre);
         
         blockd = BlokDemo(name: "123", text: "456")
         print(blockd!.asHTML())
@@ -45,6 +56,10 @@ var blockd:BlokDemo?
             return "890"
         }
         print(blockd!.asHTML())
+        blockd?.funcBlock(s: "123", a: { (b) -> Void in
+           print("bbbb ===",b)
+        })
+        
         blockd = nil
         print("============================")
         var heading:HTMLElement?
@@ -60,17 +75,37 @@ var blockd:BlokDemo?
         heading!.changeText(text: "11111")
         print(heading!.asHTML())
 //        heading = nil
+        
+        let p = person();
+        p.fn = {
+            print("p2")
+            p.run();
+        }
+        print("p1");
+        p.fn!();
     }
     func makeIncrementer(forIncrement amount:Int) -> Int {
         var runningTotal = 0;
         func incrementer() -> Int {
             runningTotal+=amount;
             return runningTotal;
-        }
+        } 
         return incrementer();
     }
+    
     func backward(s1:String,s2:String) -> Bool {
         return s1>s2;
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let other = XOtherViewController.init()
+        other.blockFunc = { (a:Int) -> Int in//对传入值3进行处理，并返回值。
+            NSLog("block back1 "+"\(a)")
+            return a*a;
+        }
+        other.someFunctionWithEscapingClosure {
+          print("escaping ========")
+        }
+        self.navigationController!.pushViewController(other, animated: true);
     }
 
     /*
@@ -98,6 +133,12 @@ class BlokDemo {
             print("name == ")
             return "\(self.name)"
         }
+    }
+    
+    //尾随闭包
+    func funcBlock(s:String, a:(_ b:Int)-> Void) {
+        
+        a(Int(s)!);
     }
     init(name:String,text:String? = nil) {
         self.name = name;
@@ -134,4 +175,13 @@ class HTMLElement {
         print("\(name) is being deinitialized")
     }
     
+}
+class person {
+    var fn:(()->Void)?
+    func run() {
+        print("run")
+    }
+    deinit {
+        print("deinit")
+    }
 }
