@@ -41,4 +41,6 @@
 : [UIScreen mainScreen].bounds.size.height)
 @interface XTools : NSObject
 + (instancetype _Nullable )shareXTools;
++ (id _Nonnull )alloc NS_UNAVAILABLE;
++ (instancetype _Nullable )new NS_UNAVAILABLE;
 @end

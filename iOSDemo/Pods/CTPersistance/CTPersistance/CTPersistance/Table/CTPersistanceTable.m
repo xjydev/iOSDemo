@@ -18,6 +18,7 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
 
 @interface CTPersistanceTable ()
 
+@property (nonatomic, assign, readwrite) BOOL isSwift;
 @property (nonatomic, weak) id<CTPersistanceTableProtocol> child;
 
 @property (nonatomic, strong, readwrite) CTPersistanceQueryCommand *queryCommand;
@@ -35,6 +36,14 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
         
         _isFromMigration = NO;
         self.child = (CTPersistanceTable <CTPersistanceTableProtocol> *)self;
+        if ([self.child respondsToSelector:@selector(swiftModuleName)]) {
+            NSString *swiftModuleName = [self.child swiftModuleName];
+            if (swiftModuleName.length > 0) {
+                _isSwift = YES;
+            } else {
+                _isSwift = NO;
+            }
+        }
         [self configTable:self.queryCommand];
         
     } else {
@@ -70,10 +79,10 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
     __block NSError *error = nil;
 
     // create table if not exists
-    if(self.child.columnDetaultValue) {
-        [[queryCommand createTable:self.child.tableName columnInfo:self.child.columnInfo columnDefaultValue:self.child.columnDetaultValue] executeWithError:&error];
+    if(self.child.columnDefaultValue) {
+        [[queryCommand createTable:self.child.tableName columnInfo:self.child.columnInfo columnDefaultValue:self.child.columnDefaultValue error:&error] executeWithError:&error];
     } else {
-        [[queryCommand createTable:self.child.tableName columnInfo:self.child.columnInfo] executeWithError:&error];
+        [[queryCommand createTable:self.child.tableName columnInfo:self.child.columnInfo error:&error] executeWithError:&error];
     }
     
     // create index if not exists
@@ -82,7 +91,9 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
             [[queryCommand createIndex:obj[kCTPersistanceTableIndexName]
                              tableName:self.child.tableName
                      indexedColumnList:obj[kCTPersistanceTableIndexedColumnList]
-                              isUnique:[obj[kCTPersistanceTableIndexIsUniq] boolValue]] executeWithError:&error];
+                              isUnique:[obj[kCTPersistanceTableIndexIsUniq] boolValue]
+                                 error:&error
+              ] executeWithError:&error];
             if (error) {
                 *stop = YES;
             }
@@ -106,7 +117,7 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
 }
 
 #pragma mark - method to override
--(NSDictionary *)columnDetaultValue {
+-(NSDictionary *)columnDefaultValue {
     return nil;
 }
 
@@ -129,9 +140,14 @@ NSString * const kCTPersistanceTableIndexIsUniq = @"kCTPersistanceTableIndexIsUn
 - (CTPersistanceQueryCommand *)queryCommand
 {
     if (_queryCommand == nil && self.isFromMigration == NO) {
-        _queryCommand = [[CTPersistanceQueryCommand alloc] initWithDatabaseName:[self.child databaseName]];
+        NSString *swiftModuleName = nil;
+        if ([self.child respondsToSelector:@selector(swiftModuleName)]) {
+            swiftModuleName = [self.child swiftModuleName];
+        }
+        _queryCommand = [[CTPersistanceQueryCommand alloc] initWithDatabaseName:[self.child databaseName] swiftModuleName:swiftModuleName];
     }
     return _queryCommand;
 }
+
 
 @end

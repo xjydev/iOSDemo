@@ -11,12 +11,12 @@ static XShareInstance *instance = nil;
 static dispatch_once_t onceToken;
 @implementation XShareInstance
 + (instancetype)share {
-    NSLog(@"1+++ %@",@(onceToken));
+    NSLog(@"onceToken 1+++ %@",@(onceToken));
     dispatch_once(&onceToken, ^{
-        NSLog(@"2++ %@",@(onceToken));
+        NSLog(@"onceToken 2++ %@",@(onceToken));
         instance = [[XShareInstance alloc]init];
     });
-    NSLog(@"3++ %@",@(onceToken));
+    NSLog(@"onceToken 3++ %@",@(onceToken));
     return instance;
 }
 - (void)instanceDealloc {

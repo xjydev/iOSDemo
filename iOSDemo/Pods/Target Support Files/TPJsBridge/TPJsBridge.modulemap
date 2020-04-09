@@ -1,0 +1,6 @@
+framework module TPJsBridge {
+  umbrella header "TPJsBridge-umbrella.h"
+
+  export *
+  module * { export * }
+}

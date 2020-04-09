@@ -19,10 +19,12 @@
 #import "XYView.h"
 #import "XPropertyViewController.h"
 #import <Masonry/Masonry.h>
+#import "XTButton.h"
 @interface XYViewController ()
 {
     UIView *_boundView;
     UIView *_frameView;
+    CALayer *_layer;
 }
 @property (nonatomic, copy)NSString *str;
 @end
@@ -33,10 +35,18 @@
     [super viewDidLoad];
     self.title = @"UIView";
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    _layer = [[CALayer alloc]init];
+    _layer.frame = CGRectMake(100, 100, 100, 100);
+    _layer.backgroundColor = [UIColor redColor].CGColor;
+    [self.view.layer addSublayer:_layer];
+    
     XYView *view = [[XYView alloc]initWithFrame:CGRectMake(100, 200, 200, 200)];
     view.backgroundColor = [UIColor redColor];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+    [view addGestureRecognizer:tap];
     [self.view addSubview:view];
-    
+
     _boundView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
     _frameView = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 100)];
     _boundView.backgroundColor = [UIColor redColor];
@@ -48,7 +58,41 @@
 //    extern int sta;//使用static定义的不可以引用。
     NSLog(@"extern== %d",sta2);//extern 3
     NSLog(@"externstr == %@",ExternStr);
+    XTButton *button = [XTButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(210, 310, 100, 100);
+    button.backgroundColor = [UIColor greenColor];
+    [button setTitle:@"touchu" forState:UIControlStateNormal];
+    
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction)];
+//    [button addGestureRecognizer:tap];
+    [button addTarget:self action:@selector(buttonTouchActiondown) forControlEvents:UIControlEventTouchDown];
+    [button addTarget:self action:@selector(buttonTouchAction) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+    
     [self contentLabel];
+    
+    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button5.backgroundColor = [UIColor grayColor];
+    button5.frame = CGRectMake(0, 700, 100, 100);
+    [button5 addTarget:self action:@selector(button5Action:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button5];
+    
+    UIView *view5 = [[UIView alloc]initWithFrame:CGRectMake(0, 700, 120, 120)];
+    view5.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+    view5.userInteractionEnabled = NO;
+    [self.view addSubview:view5];
+}
+- (void)button5Action:(UIButton *)button {
+    NSLog(@"%s",__func__);
+}
+- (void)buttonTouchActiondown {
+    NSLog(@"tapActiondown");
+}
+- (void)tapAction {
+    NSLog(@"tapAction");
+}
+- (void)buttonTouchAction {
+    NSLog(@"touch up inside");
 }
 - (void)contentLabel {
     UILabel * label = [[UILabel alloc]init];
@@ -107,6 +151,7 @@
     
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"touch began");
     NSSet *allTouches = [event allTouches];    //返回与当前接收者有关的所有的触摸对象
     UITouch *touch = [allTouches anyObject];//视图中的所有对象
     CGPoint supPoint = [touch locationInView:self.view];
@@ -128,8 +173,7 @@
     {
       NSLog(@"dontcontainspoint");
     }
-   
-    
+    _layer.backgroundColor = [UIColor blueColor].CGColor;
     
 }
 - (void)notify {

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "CTPersistanceDataBase.h"
-#import <sqlite3.h>
+#import <SQLCipher/sqlite3.h>
 #import "CTPersistanceSqlStatement.h"
 
 /**
@@ -34,7 +34,7 @@
  *  @warning You should never use this method directly, use insert methods in CTPersistanceTable instead
  *
  */
-- (instancetype)initWithDatabaseName:(NSString *)databaseName;
+- (instancetype)initWithDatabaseName:(NSString *)databaseName swiftModuleName:(NSString *)swiftModuleName;
 
 /**
  *  create CTPersistanceQueryCommand with instance of CTPersistanceDataBase

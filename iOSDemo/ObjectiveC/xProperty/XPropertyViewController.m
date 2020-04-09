@@ -92,6 +92,7 @@ const NSString * ExternStr = @"externStr";
     
     NSLog(@"a == %d  %d",*b,*b1);
     
+    XModel *model = [[XModel new]initWithNum:2];
     
     
 

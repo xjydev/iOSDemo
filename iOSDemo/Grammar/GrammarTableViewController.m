@@ -16,19 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //XCPUImageController
-    self.mainArray = @[@{@"title":@"算法",@"class":@"AlgorithmicViewController",@"storyboard":@"0"},@{@"title":@"图片处理",@"class":@"XCPUImageController",@"storyboard":@"0"}];
+    //XCPUImageControllerXAutoLayoutViewController
+    self.mainArray = @[@{@"title":@"算法",@"class":@"AlgorithmicViewController",@"storyboard":@"0"},@{@"title":@"图片处理",@"class":@"XCPUImageController",@"storyboard":@"0"},
+    @{@"title":@"AutoLayout",@"class":@"XAutoLayoutViewController",@"storyboard":@"0"}];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return self.mainArray.count;
 }
 

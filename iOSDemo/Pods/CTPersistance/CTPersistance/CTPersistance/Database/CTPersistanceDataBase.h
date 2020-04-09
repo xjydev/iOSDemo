@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <sqlite3.h>
+#import <SQLCipher/sqlite3.h>
 
 extern NSString * const kCTPersistanceConfigurationParamsKeyDatabaseName;
 
@@ -45,7 +45,7 @@ extern NSString * const kCTPersistanceConfigurationParamsKeyDatabaseName;
  *
  *  @return return an instance of CTPersistanceDatabase
  */
-- (instancetype)initWithDatabaseName:(NSString *)databaseName error:(NSError **)error;
+- (instancetype)initWithDatabaseName:(NSString *)databaseName swiftModuleName:(NSString *)swiftModuleName error:(NSError **)error;
 
 /**
  *  close the database connection.

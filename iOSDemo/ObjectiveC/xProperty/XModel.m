@@ -14,6 +14,10 @@
     model.aindex = self.aindex;
     return model;
 }
+- (instancetype)initWithNum:(NSInteger)num {
+    self = [super init];
+    return self;
+}
 @end
 
 @implementation XModel2

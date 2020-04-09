@@ -33,8 +33,10 @@ typedef void (^XBlock)(void);
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    UIControl
+//    UIEvent
     self.view.backgroundColor = [UIColor whiteColor];
-  
+    NSLog(@"super class == %@",NSObject.superclass);
 //    XFatherObj *father = [XFatherObj alloc];
     
     XSonObj *son= [[XSonObj alloc]init];

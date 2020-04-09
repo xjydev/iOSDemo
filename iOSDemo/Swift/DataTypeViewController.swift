@@ -54,7 +54,7 @@ class DataTypeViewController: UIViewController {
         let arr6 = arr4.map { (item) -> Int in
             return item+10;
         }
-        print(arr6);
+        print(arr6 ,"\n",arr4);
         var total = 0;
         let num = arr4.reduce(total) {(item, n) -> Int in
             print(item,"===",n)

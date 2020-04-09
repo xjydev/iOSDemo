@@ -33,6 +33,11 @@ class AlgorithmicViewController: UIViewController {
      let str1 = reverseStr(str: str);
         print("last" , str1 as Any);
         
+        let twosum = twoSum([3,2,4], 6);
+        print(twosum);
+        let arr2 = [-1,0,1,2,-1,-4,0,0,0];
+        print(threeSum2(arr2))
+        
     }
     //MARK:排序
     /// 快速排序
@@ -196,6 +201,22 @@ class AlgorithmicViewController: UIViewController {
         }
         return -1;
     }
+    func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
+          var dict = Dictionary<Int,Int>()
+          for i in 0..<nums.count{
+              dict[nums[i]] = i;
+          }
+          for i in 0..<nums.count {
+              let a = target - nums[i];
+            print(a,dict)
+              if let b = dict[a] {
+                if b != i {
+                  return [i,b]
+                }
+              }
+          }
+          return []
+       }
     //MARK:二叉树
     
     //MARK:链表
@@ -254,7 +275,72 @@ class AlgorithmicViewController: UIViewController {
 //        print(str1!)
         return str1;
     }
-  
+  //三数之和
+    func threeSum2(_ nums: [Int]) -> [[Int]] {
+       var results = [[Int]]()
+        let numarr = nums.sorted()
+        print(numarr)
+         for i in 0..<numarr.count {
+            
+            if i > 0 && numarr[i] == numarr[i-1] {
+                continue;
+            }
+            
+            
+             let a = numarr[i];
+             var left:Int = i+1;
+             var right:Int = numarr.count-1;
+             while (left < right){
+                let t = numarr[left]+numarr[right];
+                 print(left,right)
+               if t == -a {
+                    results.append([numarr[i],numarr[left],numarr[right]])
+                   while left < right && numarr[left] == numarr[left + 1] {
+                       left += 1;
+                   }
+                   while left < right && numarr[right] == numarr[right - 1] {
+                       right -= 1;
+                   }
+                   left += 1;
+                   right -= 1;
+                }
+                else if t > -a {
+                     right -= 1;
+                 }
+                 else {
+                     left += 1;
+                 } 
+             }
+         }
+         return results;
+    }
+    func sort(nums:inout [Int],left:Int,right:Int){
+        if nums.count == 0 {
+          return;
+        }
+        if left >= right {
+           return;
+        }
+        var i = left;
+        var j = right;
+        let key = nums[left];
+        while(i < j){
+            while (nums[j] >= key && i < j) {
+                j-=1;
+            }
+            while (nums[i] <= key && i < j ){
+                i+=1;
+            }
+             let temp = nums[i];
+             nums[i] = nums[j];
+             nums[j] = temp;
+        }
+
+        nums[left] = nums[i];
+        nums[i] = key;
+        sort(nums: &nums,left: left,right: i-1);
+        sort(nums: &nums,left: i+1,right: right);
+    }
     /*
     // MARK: - Navigation
 

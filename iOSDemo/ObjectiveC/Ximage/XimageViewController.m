@@ -8,6 +8,7 @@
 
 #import "XimageViewController.h"
 #import <Accelerate/Accelerate.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 #import "XTools.h"
 @interface XimageViewController ()
 {
@@ -28,6 +29,9 @@
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
 //设置手指的涂抹路径
 @property (nonatomic, assign) CGMutablePathRef path;
+@property (nonatomic, strong) UIImageView *imageView6;
+@property (nonatomic, strong) NSData *imageData6;
+@property (nonatomic, strong) NSMutableData *alldata6;
 
 @end
 
@@ -37,10 +41,11 @@
     [super viewDidLoad];
     self.title = @"UIImage 处理";
     self.view.backgroundColor = [UIColor whiteColor];
-    UIImage *laImage = [UIImage imageNamed:@"相册38"];
+    UIImage *laImage = [UIImage imageNamed:@"12"];
     UIImageView *imageView = [[UIImageView alloc]init];
     imageView.frame = CGRectMake(0, 80, 300, 300);
     [self.view addSubview:imageView];
+//    [imageView sd_setImageWithURL:[NSURL URLWithString:@""]];
 //    [imageView setImage:[self compressImage:laImage]];
     
     UIImageView *imageView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 380, 200, 200)];
@@ -52,55 +57,68 @@
     NSData *ldata = UIImagePNGRepresentation(laImage);
     NSData *idata = UIImagePNGRepresentation(imag);
     NSLog(@"%@ \n %@",@(ldata.length),@(idata.length));
-//    _imageView3 = [[UIImageView alloc]initWithFrame:CGRectMake(100, 180, 100, 100)];
-//    [_imageView3 setImage:[self boxblurImage:imageView.image withBlurNumber:1.0]];
-//    [self.view addSubview:_imageView3];
-//
-//    UIImageView *imageView4 = [[UIImageView alloc]initWithFrame:CGRectMake(120, 80, 100, 100)];
-//    [imageView4 setImage:imageView.image];
-//    [self.view addSubview:imageView4];
-//    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:effect];
-//    effectView.frame = imageView4.bounds ;
-//    [imageView4 addSubview:effectView];
-//
-//    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(30, kScreen_Height - 60, kScreen_Width-60, 30)];
-//    slider.maximumValue = 1.0;
-//    slider.minimumValue = 0.0;
-//    [slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
-//    [self.view addSubview:slider];
-//
-//    self.surfaceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 280, 250, 250)];
-//    self.surfaceImageView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:self.surfaceImageView ];
-//
-//
-//    self.surfaceImage = [self mosaicImage:[UIImage imageNamed:@"im"] level:1];
-//    self.surfaceImageView.image = self.surfaceImage;
-//    self.image = [UIImage imageNamed:@"im"] ;
-//    self.imageLayer.contents = (__bridge id _Nullable)(self.image.CGImage);
-//
-//    self.imageLayer = [CALayer layer];
-//    self.imageLayer.frame = self.surfaceImageView.frame;
-//    [self.view.layer addSublayer:self.imageLayer];
-//
-//    self.shapeLayer = [CAShapeLayer layer];
-//    self.shapeLayer.frame = self.surfaceImageView.frame;
-//    self.shapeLayer.lineCap = kCALineCapRound;
-//    self.shapeLayer.lineJoin = kCALineJoinRound;
-//    self.shapeLayer.lineWidth = 20.f;
-//    self.shapeLayer.strokeColor = [UIColor blueColor].CGColor;
-//    self.shapeLayer.fillColor = nil;//此处设置颜色有异常效果，可以自己试试
-//
-//    [self.view.layer addSublayer:self.shapeLayer];
-//    self.imageLayer.mask = self.shapeLayer;
-//
-//    self.path = CGPathCreateMutable();
-    
-    
+    _imageView3 = [[UIImageView alloc]initWithFrame:CGRectMake(100, 180, 100, 100)];
+    [_imageView3 setImage:[self boxblurImage:imageView.image withBlurNumber:1.0]];
+    [self.view addSubview:_imageView3];
+
+    UIImageView *imageView4 = [[UIImageView alloc]initWithFrame:CGRectMake(120, 80, 100, 100)];
+    [imageView4 setImage:imageView.image];
+    [self.view addSubview:imageView4];
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *effectView = [[UIVisualEffectView alloc]initWithEffect:effect];
+    effectView.frame = imageView4.bounds ;
+    [imageView4 addSubview:effectView];
+
+    UISlider *slider = [[UISlider alloc]initWithFrame:CGRectMake(30, kScreen_Height - 60, kScreen_Width-60, 30)];
+    slider.maximumValue = 1.0;
+    slider.minimumValue = 0.0;
+    [slider addTarget:self action:@selector(sliderChange:) forControlEvents:UIControlEventValueChanged];
+    [self.view addSubview:slider];
+
+    self.surfaceImageView = [[UIImageView alloc]initWithFrame:CGRectMake(30, 280, 250, 250)];
+    self.surfaceImageView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:self.surfaceImageView ];
+
+
+    self.surfaceImage = [self mosaicImage:[UIImage imageNamed:@"im"] level:1];
+    self.surfaceImageView.image = self.surfaceImage;
+    self.image = [UIImage imageNamed:@"im"] ;
+    self.imageLayer.contents = (__bridge id _Nullable)(self.image.CGImage);
+
+    self.imageLayer = [CALayer layer];
+    self.imageLayer.frame = self.surfaceImageView.frame;
+    [self.view.layer addSublayer:self.imageLayer];
+
+    self.shapeLayer = [CAShapeLayer layer];
+    self.shapeLayer.frame = self.surfaceImageView.frame;
+    self.shapeLayer.lineCap = kCALineCapRound;
+    self.shapeLayer.lineJoin = kCALineJoinRound;
+    self.shapeLayer.lineWidth = 20.f;
+    self.shapeLayer.strokeColor = [UIColor blueColor].CGColor;
+    self.shapeLayer.fillColor = nil;//此处设置颜色有异常效果，可以自己试试
+
+    [self.view.layer addSublayer:self.shapeLayer];
+    self.imageLayer.mask = self.shapeLayer;
+
+    self.path = CGPathCreateMutable();
+    [self.view addSubview:self.imageView6];
+    self.alldata6 = [[NSMutableData alloc]init];
+}
+- (UIImageView *)imageView6 {
+    if (!_imageView6) {
+        _imageView6 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 500, 300, 200)];
+        _imageView6.backgroundColor = [UIColor redColor];
+    }
+    return _imageView6;
+}
+- (NSData *)imageData6 {
+    if (!_imageData6) {
+        _imageData6 = [NSData dataWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"tm" ofType:@"png"]];
+    }
+    return _imageData6;
 }
 - (void)sliderChange:(UISlider *)slider {
-    [_imageView3 setImage:[self boxblurImage:[UIImage imageNamed:@"im"] withBlurNumber:slider.value]];
+    [_imageView3 setImage:[self boxblurImage:[UIImage imageNamed:@"12"] withBlurNumber:slider.value]];
 }
 -(UIImage *)coreBlurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
 {
@@ -119,6 +137,9 @@
 //获取模糊图片
 -(UIImage *)boxblurImage:(UIImage *)image withBlurNumber:(CGFloat)blur
 {
+    if (!image) {
+        return nil;
+    }
     if (blur < 0.f || blur > 1.f) {
         blur = 0.5f;
     }
@@ -159,17 +180,17 @@
     CGImageRelease(imageRef);
     return returnImage;
 }
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [super touchesBegan:touches withEvent:event];
-    UITouch *touch = [touches anyObject];
-    CGPoint point = [touch locationInView:self.view];
-    CGPathMoveToPoint(self.path, NULL, point.x, point.y);
-    CGMutablePathRef path = CGPathCreateMutableCopy(self.path);
-    self.shapeLayer.path = path;
-    CGPathRelease(path);
-    
-}
+//- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+//{
+//    [super touchesBegan:touches withEvent:event];
+//    UITouch *touch = [touches anyObject];
+//    CGPoint point = [touch locationInView:self.view];
+//    CGPathMoveToPoint(self.path, NULL, point.x, point.y);
+//    CGMutablePathRef path = CGPathCreateMutableCopy(self.path);
+//    self.shapeLayer.path = path;
+//    CGPathRelease(path);
+//
+//}
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -183,9 +204,30 @@
     
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
     [super touchesEnded:touches withEvent:event];
+    //渐进渲染大图。
+    static int index = 0;
+    if (index == 10) {
+        return;
+    }
+    NSUInteger l;
+    NSInteger le = self.imageData6.length/10;
+    if (index == 9) {
+        l = self.imageData6.length - index*le;
+    }
+    else {
+        l = le;
+    }
+    Byte by[l];
+    [self.imageData6 getBytes:by range:NSMakeRange(index*le, l)];
+    [self.alldata6 appendBytes:by length:l];
+    CGImageSourceRef sourceRef = CGImageSourceCreateWithData((CFDataRef)self.alldata6, NULL);
+    CGImageRef imageRef = CGImageSourceCreateImageAtIndex(sourceRef, 0, NULL);
+    CFRelease(sourceRef);
+    self.imageView6.image = [UIImage imageWithCGImage:imageRef];
+    index++;
     
 }
 /**图片马赛克*/
@@ -272,6 +314,8 @@
     UIGraphicsEndImageContext();
     return resultImage;
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

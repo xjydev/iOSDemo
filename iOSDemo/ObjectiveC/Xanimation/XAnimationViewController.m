@@ -142,6 +142,9 @@
     }
     
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"%s",__func__);
+}
 /*
 #pragma mark - Navigation
 

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92AF39F1BF45C1D284105B1DF85B59D2"
+               BlueprintIdentifier = "293A187B6CEFC539BD11CF6DCA1063B3"
                BuildableName = "CTPersistance.framework"
                BlueprintName = "CTPersistance"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -7,9 +7,9 @@
 
 #import "DoraemonHomeCloseCell.h"
 #import "DoraemonManager.h"
-#import "DoraemonUtil.h"
 #import "DoraemonHomeWindow.h"
 #import "DoraemonDefine.h"
+#import "UIViewController+Doraemon.h"
 
 @interface DoraemonHomeCloseCell ()
 
@@ -27,7 +27,7 @@
     }];
     [alertController addAction:cancelAction];
     [alertController addAction:okAction];
-    [[DoraemonUtil rootViewControllerForKeyWindow] presentViewController:alertController animated:YES completion:nil];
+    [[UIViewController rootViewControllerForKeyWindow] presentViewController:alertController animated:YES completion:nil];
 
     [[DoraemonHomeWindow shareInstance] hide];
 }
@@ -35,6 +35,7 @@
 - (UIButton *)closeButton {
     if (!_closeButton) {
         _closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
         if (@available(iOS 13.0, *)) {
             UIColor *dyColor = [UIColor colorWithDynamicProvider:^UIColor * _Nonnull(UITraitCollection * _Nonnull traitCollection) {
                 if (traitCollection.userInterfaceStyle == UIUserInterfaceStyleLight) {
@@ -45,8 +46,11 @@
             }];
             _closeButton.backgroundColor = dyColor;
         } else {
+#endif
             _closeButton.backgroundColor = [UIColor whiteColor];
+#if defined(__IPHONE_13_0) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_13_0)
         }
+#endif
         _closeButton.layer.cornerRadius = 5.0;
         _closeButton.layer.masksToBounds = YES;
         [_closeButton setTitle:DoraemonLocalizedString(@"关闭DoraemonKit") forState:UIControlStateNormal];

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6BBD23DDCEFF46136546B5E0 /* Pods_iOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */; };
-		6C02D8E6225CB15F00963DB4 /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C02D8E5225CB15F00963DB4 /* RuntimeViewController.m */; };
 		6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C044E3420CE4485009B77C9 /* XimageViewController.m */; };
 		6C044E3720CE45C5009B77C9 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
 		6C0BD725242074E00002E956 /* AlgorithmicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0BD724242074E00002E956 /* AlgorithmicViewController.swift */; };
@@ -50,6 +49,7 @@
 		6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F7F7920C7C44000C5C151 /* XYView.m */; };
 		6C989A7623950AA000B24663 /* XCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C989A7523950AA000B24663 /* XCollectionViewController.m */; };
 		6C98ABB2237E9291006839EB /* XModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C98ABB1237E9291006839EB /* XModel.m */; };
+		6CA915EC243CC3FF00F49F55 /* XJYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA915EB243CC3FF00F49F55 /* XJYViewController.m */; };
 		6CB429CA20C545E9000CFD37 /* XcalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429C920C545E9000CFD37 /* XcalendarViewController.m */; };
 		6CB429DE20C5468D000CFD37 /* LXCalendarWeekView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429CE20C5468D000CFD37 /* LXCalendarWeekView.m */; };
 		6CB429DF20C5468D000CFD37 /* LXCalendarHearder.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6CB429D020C5468D000CFD37 /* LXCalendarHearder.xib */; };
@@ -68,6 +68,11 @@
 		6CB429F920C547DB000CFD37 /* UIColor+Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429F320C547DB000CFD37 /* UIColor+Expanded.m */; };
 		6CB429FD20C54B00000CFD37 /* XTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CB429FC20C54B00000CFD37 /* XTools.m */; };
 		6CBAB4AC211D69B7009E07B1 /* ABCalendarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CBAB4AB211D69B7009E07B1 /* ABCalendarController.m */; };
+		6CCEE1B724283F2D00C6AC2F /* XKeyWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEE1B624283F2D00C6AC2F /* XKeyWordViewController.swift */; };
+		6CCEE1B924283F7B00C6AC2F /* XView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEE1B824283F7B00C6AC2F /* XView.swift */; };
+		6CCEE1BD2429076A00C6AC2F /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEE1BC2429076A00C6AC2F /* ThirdViewController.m */; };
+		6CCEE1C12429CE6900C6AC2F /* XRunloopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEE1C02429CE6900C6AC2F /* XRunloopViewController.m */; };
+		6CCEE1C5242CB41900C6AC2F /* RuntimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CCEE1C3242CB41900C6AC2F /* RuntimeViewController.m */; };
 		6CE1A8B62418D43B00754036 /* XShareInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1A8B52418D43B00754036 /* XShareInstance.m */; };
 		6CE1A8BA241BA53C00754036 /* XOCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1A8B9241BA53C00754036 /* XOCViewController.m */; };
 		6CE1A8BD241BA54F00754036 /* XSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE1A8BC241BA54F00754036 /* XSuperViewController.m */; };
@@ -82,6 +87,11 @@
 		6CE36BBB22D484BD00B38008 /* SwiftBlocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */; };
 		6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */; };
 		6CE4DB8422D742E4008F01A9 /* ExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4DB8322D742E4008F01A9 /* ExtensionViewController.swift */; };
+		6CF440492436C0D5000B1AD1 /* UIApplication+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF440482436C0D5000B1AD1 /* UIApplication+Hook.m */; };
+		6CF4404C2436C0E9000B1AD1 /* UIViewController+Hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4404B2436C0E9000B1AD1 /* UIViewController+Hook.m */; };
+		6CF4404F2436C7E7000B1AD1 /* JYHookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */; };
+		6CF44053243744B8000B1AD1 /* tm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF44052243744B8000B1AD1 /* tm.png */; };
+		6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +114,6 @@
 /* Begin PBXFileReference section */
 		2EE7A61F689CC7248C7974C2 /* Pods-iOSDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C02D8E4225CB15F00963DB4 /* RuntimeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
-		6C02D8E5225CB15F00963DB4 /* RuntimeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
 		6C044E3320CE4485009B77C9 /* XimageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XimageViewController.h; sourceTree = "<group>"; };
 		6C044E3420CE4485009B77C9 /* XimageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XimageViewController.m; sourceTree = "<group>"; };
 		6C044E3620CE45C5009B77C9 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -185,6 +193,8 @@
 		6C989A7523950AA000B24663 /* XCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCollectionViewController.m; sourceTree = "<group>"; };
 		6C98ABB0237E9291006839EB /* XModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XModel.h; sourceTree = "<group>"; };
 		6C98ABB1237E9291006839EB /* XModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XModel.m; sourceTree = "<group>"; };
+		6CA915EA243CC3FF00F49F55 /* XJYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XJYViewController.h; sourceTree = "<group>"; };
+		6CA915EB243CC3FF00F49F55 /* XJYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XJYViewController.m; sourceTree = "<group>"; };
 		6CB429C820C545E9000CFD37 /* XcalendarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XcalendarViewController.h; sourceTree = "<group>"; };
 		6CB429C920C545E9000CFD37 /* XcalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XcalendarViewController.m; sourceTree = "<group>"; };
 		6CB429CD20C5468D000CFD37 /* NSDate+GFCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+GFCalendar.h"; sourceTree = "<group>"; };
@@ -220,6 +230,14 @@
 		6CB429FC20C54B00000CFD37 /* XTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XTools.m; sourceTree = "<group>"; };
 		6CBAB4AA211D69B7009E07B1 /* ABCalendarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ABCalendarController.h; sourceTree = "<group>"; };
 		6CBAB4AB211D69B7009E07B1 /* ABCalendarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ABCalendarController.m; sourceTree = "<group>"; };
+		6CCEE1B624283F2D00C6AC2F /* XKeyWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XKeyWordViewController.swift; sourceTree = "<group>"; };
+		6CCEE1B824283F7B00C6AC2F /* XView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XView.swift; sourceTree = "<group>"; };
+		6CCEE1BB2429076A00C6AC2F /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		6CCEE1BC2429076A00C6AC2F /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		6CCEE1BF2429CE6900C6AC2F /* XRunloopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRunloopViewController.h; sourceTree = "<group>"; };
+		6CCEE1C02429CE6900C6AC2F /* XRunloopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRunloopViewController.m; sourceTree = "<group>"; };
+		6CCEE1C3242CB41900C6AC2F /* RuntimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeViewController.m; sourceTree = "<group>"; };
+		6CCEE1C4242CB41900C6AC2F /* RuntimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeViewController.h; sourceTree = "<group>"; };
 		6CE1A8B42418D43B00754036 /* XShareInstance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XShareInstance.h; sourceTree = "<group>"; };
 		6CE1A8B52418D43B00754036 /* XShareInstance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XShareInstance.m; sourceTree = "<group>"; };
 		6CE1A8B8241BA53C00754036 /* XOCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XOCViewController.h; sourceTree = "<group>"; };
@@ -245,6 +263,15 @@
 		6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBlocksViewController.swift; sourceTree = "<group>"; };
 		6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumViewController.swift; sourceTree = "<group>"; };
 		6CE4DB8322D742E4008F01A9 /* ExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionViewController.swift; sourceTree = "<group>"; };
+		6CF440472436C0D5000B1AD1 /* UIApplication+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIApplication+Hook.h"; sourceTree = "<group>"; };
+		6CF440482436C0D5000B1AD1 /* UIApplication+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+Hook.m"; sourceTree = "<group>"; };
+		6CF4404A2436C0E9000B1AD1 /* UIViewController+Hook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Hook.h"; sourceTree = "<group>"; };
+		6CF4404B2436C0E9000B1AD1 /* UIViewController+Hook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Hook.m"; sourceTree = "<group>"; };
+		6CF4404D2436C7E7000B1AD1 /* JYHookObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYHookObject.h; sourceTree = "<group>"; };
+		6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYHookObject.m; sourceTree = "<group>"; };
+		6CF44052243744B8000B1AD1 /* tm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tm.png; sourceTree = "<group>"; };
+		6CF4405524381B50000B1AD1 /* XAutoLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutViewController.h; sourceTree = "<group>"; };
+		6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutViewController.m; sourceTree = "<group>"; };
 		A925C9B207F37E35CFCEF1CB /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,15 +311,6 @@
 				6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C02D8E3225CB14500963DB4 /* Runtime */ = {
-			isa = PBXGroup;
-			children = (
-				6C02D8E4225CB15F00963DB4 /* RuntimeViewController.h */,
-				6C02D8E5225CB15F00963DB4 /* RuntimeViewController.m */,
-			);
-			path = Runtime;
 			sourceTree = "<group>";
 		};
 		6C044E3220CE446B009B77C9 /* Ximage */ = {
@@ -452,6 +470,7 @@
 				6C64588A20AD51580046C2F9 /* Swift */,
 				6C64584D20AD4B5D0046C2F9 /* AppDelegate.h */,
 				6C64584E20AD4B5D0046C2F9 /* AppDelegate.m */,
+				6CF44052243744B8000B1AD1 /* tm.png */,
 				6C64585620AD4B5D0046C2F9 /* Main.storyboard */,
 				6C64585920AD4B5E0046C2F9 /* Assets.xcassets */,
 				6C64585B20AD4B5E0046C2F9 /* LaunchScreen.storyboard */,
@@ -483,7 +502,9 @@
 			isa = PBXGroup;
 			children = (
 				6C64588B20AD51580046C2F9 /* SwiftTableController.swift */,
+				6CCEE1B824283F7B00C6AC2F /* XView.swift */,
 				6C0BD871242653F20002E956 /* DataTypeViewController.swift */,
+				6CCEE1B624283F2D00C6AC2F /* XKeyWordViewController.swift */,
 				6CE36BBA22D484BD00B38008 /* SwiftBlocksViewController.swift */,
 				6C0BD7332424FF650002E956 /* XOtherViewController.swift */,
 				6CE36BBC22D4AB3B00B38008 /* EnumViewController.swift */,
@@ -501,6 +522,9 @@
 			children = (
 				6C64588E20AD51580046C2F9 /* ObjectiveCTableController.h */,
 				6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */,
+				6CA915E9243CC3EF00F49F55 /* XVC */,
+				6CCEE1BE2429CE5B00C6AC2F /* XNSRunloop */,
+				6CCEE1BA2429075800C6AC2F /* Third */,
 				6CE1A8B7241BA52300754036 /* OC */,
 				6CE1A8CD241CAFC300754036 /* XThread */,
 				6C989A7323950A8200B24663 /* XCollectionView */,
@@ -508,7 +532,7 @@
 				6C0E11D222DEFDA000360D76 /* Transfer */,
 				6C224C312281219A00C8A6AE /* XFlash */,
 				6C61CB372269B0C6002FE2A8 /* XBLuetooth */,
-				6C02D8E3225CB14500963DB4 /* Runtime */,
+				6CCEE1C2242CB41900C6AC2F /* Runtime */,
 				6C4A64562241EEFA008F187D /* XGuide */,
 				6C6232D7215F787A001E85D4 /* XTableView */,
 				6C5B99F921A3B5450020384C /* XwebView */,
@@ -565,6 +589,8 @@
 				6C6F7F7620C7C27400C5C151 /* XYViewController.m */,
 				6C6F7F7820C7C44000C5C151 /* XYView.h */,
 				6C6F7F7920C7C44000C5C151 /* XYView.m */,
+				6C0BD72A242348C90002E956 /* XTButton.h */,
+				6C0BD72B242348C90002E956 /* XTButton.m */,
 			);
 			path = XYView;
 			sourceTree = "<group>";
@@ -576,6 +602,15 @@
 				6C989A7523950AA000B24663 /* XCollectionViewController.m */,
 			);
 			path = XCollectionView;
+			sourceTree = "<group>";
+		};
+		6CA915E9243CC3EF00F49F55 /* XVC */ = {
+			isa = PBXGroup;
+			children = (
+				6CA915EA243CC3FF00F49F55 /* XJYViewController.h */,
+				6CA915EB243CC3FF00F49F55 /* XJYViewController.m */,
+			);
+			path = XVC;
 			sourceTree = "<group>";
 		};
 		6CB429C720C545CD000CFD37 /* Xcalendar */ = {
@@ -651,6 +686,33 @@
 			path = Common;
 			sourceTree = SOURCE_ROOT;
 		};
+		6CCEE1BA2429075800C6AC2F /* Third */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEE1BB2429076A00C6AC2F /* ThirdViewController.h */,
+				6CCEE1BC2429076A00C6AC2F /* ThirdViewController.m */,
+			);
+			path = Third;
+			sourceTree = "<group>";
+		};
+		6CCEE1BE2429CE5B00C6AC2F /* XNSRunloop */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEE1BF2429CE6900C6AC2F /* XRunloopViewController.h */,
+				6CCEE1C02429CE6900C6AC2F /* XRunloopViewController.m */,
+			);
+			path = XNSRunloop;
+			sourceTree = "<group>";
+		};
+		6CCEE1C2242CB41900C6AC2F /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				6CCEE1C3242CB41900C6AC2F /* RuntimeViewController.m */,
+				6CCEE1C4242CB41900C6AC2F /* RuntimeViewController.h */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
 		6CE1A8B7241BA52300754036 /* OC */ = {
 			isa = PBXGroup;
 			children = (
@@ -679,8 +741,6 @@
 				6CE1A8CF241CAFD400754036 /* XThreadViewController.m */,
 				6CE1A8D1241E353100754036 /* XThread2ViewController.h */,
 				6CE1A8D2241E353100754036 /* XThread2ViewController.m */,
-				6C0BD72A242348C90002E956 /* XTButton.h */,
-				6C0BD72B242348C90002E956 /* XTButton.m */,
 			);
 			path = XThread;
 			sourceTree = "<group>";
@@ -688,6 +748,8 @@
 		6CE1A8D4241E661900754036 /* Grammar */ = {
 			isa = PBXGroup;
 			children = (
+				6CF4405424381B31000B1AD1 /* AutoLayout */,
+				6CF440462436C0B4000B1AD1 /* Hook */,
 				6C0BD726242074F40002E956 /* CPUImage */,
 				6C0BD723242074E00002E956 /* Algorithmic */,
 				6CE1A8DA241E678F00754036 /* GrammarTableViewController.h */,
@@ -695,6 +757,28 @@
 			);
 			path = Grammar;
 			sourceTree = SOURCE_ROOT;
+		};
+		6CF440462436C0B4000B1AD1 /* Hook */ = {
+			isa = PBXGroup;
+			children = (
+				6CF440472436C0D5000B1AD1 /* UIApplication+Hook.h */,
+				6CF440482436C0D5000B1AD1 /* UIApplication+Hook.m */,
+				6CF4404A2436C0E9000B1AD1 /* UIViewController+Hook.h */,
+				6CF4404B2436C0E9000B1AD1 /* UIViewController+Hook.m */,
+				6CF4404D2436C7E7000B1AD1 /* JYHookObject.h */,
+				6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */,
+			);
+			path = Hook;
+			sourceTree = SOURCE_ROOT;
+		};
+		6CF4405424381B31000B1AD1 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				6CF4405524381B50000B1AD1 /* XAutoLayoutViewController.h */,
+				6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
 		};
 		D8179603DC72859B01FBE2C6 /* Pods */ = {
 			isa = PBXGroup;
@@ -717,7 +801,6 @@
 				6C64584720AD4B5D0046C2F9 /* Frameworks */,
 				6C64584820AD4B5D0046C2F9 /* Resources */,
 				D47E5AFB1A1B51CA1392B282 /* [CP] Embed Pods Frameworks */,
-				73AEA7F369DCF5503D37F1FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -814,6 +897,7 @@
 			files = (
 				6C64585D20AD4B5E0046C2F9 /* LaunchScreen.storyboard in Resources */,
 				6C64585A20AD4B5E0046C2F9 /* Assets.xcassets in Resources */,
+				6CF44053243744B8000B1AD1 /* tm.png in Resources */,
 				6C64585820AD4B5D0046C2F9 /* Main.storyboard in Resources */,
 				6CB429E120C5468D000CFD37 /* LXCalenderCell.xib in Resources */,
 				6CB429DF20C5468D000CFD37 /* LXCalendarHearder.xib in Resources */,
@@ -837,24 +921,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		73AEA7F369DCF5503D37F1FA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo-resources.sh",
-				"${PODS_ROOT}/BaiduMapKit/BaiduMapKit/BaiduMapAPI_Map.framework/mapapi.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mapapi.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7A954AB87943B3E460672705 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -882,6 +948,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AsyncDisplayKit/AsyncDisplayKit.framework",
 				"${BUILT_PRODUCTS_DIR}/BSBacktraceLogger/BSBacktraceLogger.framework",
 				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/CTPersistance/CTPersistance.framework",
@@ -890,6 +957,7 @@
 				"${PODS_ROOT}/DoraemonKit/iOS/DoraemonKit/Framework/DoraemonLoadAnalyze.framework",
 				"${BUILT_PRODUCTS_DIR}/DoraemonKit/DoraemonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBRetainCycleDetector/FBRetainCycleDetector.framework",
+				"${BUILT_PRODUCTS_DIR}/FDStackView/FDStackView.framework",
 				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GCDWebServer/GCDWebServer.framework",
 				"${BUILT_PRODUCTS_DIR}/GPUImage/GPUImage.framework",
@@ -898,7 +966,10 @@
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/NSData+Base64/NSData_Base64.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PINCache/PINCache.framework",
+				"${BUILT_PRODUCTS_DIR}/PINOperation/PINOperation.framework",
+				"${BUILT_PRODUCTS_DIR}/PINRemoteImage/PINRemoteImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveViewModel/ReactiveViewModel.framework",
@@ -909,6 +980,8 @@
 				"${BUILT_PRODUCTS_DIR}/SVGAPlayer/SVGAPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/SVPullToRefresh/SVPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SocketRocket/SocketRocket.framework",
+				"${BUILT_PRODUCTS_DIR}/TPJsBridge/TPJsBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/Texture/AsyncDisplayKit.framework",
 				"${BUILT_PRODUCTS_DIR}/WXDevtool/WXDevtool.framework",
 				"${BUILT_PRODUCTS_DIR}/WeexSDK/WeexSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/XRefresh/XRefresh.framework",
@@ -921,6 +994,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AsyncDisplayKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BSBacktraceLogger.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTPersistance.framework",
@@ -929,6 +1003,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonLoadAnalyze.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DoraemonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBRetainCycleDetector.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FDStackView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCDWebServer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GPUImage.framework",
@@ -937,7 +1012,10 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSData_Base64.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINOperation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PINRemoteImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveViewModel.framework",
@@ -948,6 +1026,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVGAPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketRocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TPJsBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WXDevtool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WeexSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XRefresh.framework",
@@ -969,9 +1048,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C0BD73024235B1C0002E956 /* XAnimationViewController.m in Sources */,
+				6CCEE1B724283F2D00C6AC2F /* XKeyWordViewController.swift in Sources */,
 				6C64589720AD670A0046C2F9 /* XPropertyViewController.m in Sources */,
 				6CE1A8D0241CAFD400754036 /* XThreadViewController.m in Sources */,
 				6C6B66852399F2C200F2D368 /* XTableViewCell.m in Sources */,
+				6CF440492436C0D5000B1AD1 /* UIApplication+Hook.m in Sources */,
 				6C0BD73224246CBC0002E956 /* XStackViewController.swift in Sources */,
 				6C0BD729242075190002E956 /* XCPUImageController.m in Sources */,
 				6CE1A8D3241E353100754036 /* XThread2ViewController.m in Sources */,
@@ -982,9 +1063,12 @@
 				6C0E11D522DEFDCA00360D76 /* XTransferViewController.m in Sources */,
 				6C6232DA215F789B001E85D4 /* XTableViewController.m in Sources */,
 				6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */,
+				6CA915EC243CC3FF00F49F55 /* XJYViewController.m in Sources */,
 				6C0BD7342424FF650002E956 /* XOtherViewController.swift in Sources */,
+				6CCEE1B924283F7B00C6AC2F /* XView.swift in Sources */,
 				6CE36BBB22D484BD00B38008 /* SwiftBlocksViewController.swift in Sources */,
 				6C044E3520CE4485009B77C9 /* XimageViewController.m in Sources */,
+				6CF4404F2436C7E7000B1AD1 /* JYHookObject.m in Sources */,
 				6C64589120AD51580046C2F9 /* ObjectiveCTableController.m in Sources */,
 				6C61CB3A2269B0D7002FE2A8 /* XBluetoothViewController.m in Sources */,
 				6CB429CA20C545E9000CFD37 /* XcalendarViewController.m in Sources */,
@@ -992,6 +1076,8 @@
 				6C0BD72C242348C90002E956 /* XTButton.m in Sources */,
 				6CBAB4AC211D69B7009E07B1 /* ABCalendarController.m in Sources */,
 				6CE1A8C3241BA58100754036 /* XSonObj.m in Sources */,
+				6CF4404C2436C0E9000B1AD1 /* UIViewController+Hook.m in Sources */,
+				6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */,
 				6C64589020AD51580046C2F9 /* SwiftTableController.swift in Sources */,
 				6C224C34228121AA00C8A6AE /* XFlashViewController.m in Sources */,
 				6CB429DE20C5468D000CFD37 /* LXCalendarWeekView.m in Sources */,
@@ -1005,6 +1091,7 @@
 				6C4A64592241EF12008F187D /* XGuideViewController.m in Sources */,
 				6C1DF32B21A2A3AA009E4725 /* XStringViewController.m in Sources */,
 				6CB429FD20C54B00000CFD37 /* XTools.m in Sources */,
+				6CCEE1C12429CE6900C6AC2F /* XRunloopViewController.m in Sources */,
 				6C68BCD5223A5101007C8861 /* URLComponentsViewController.m in Sources */,
 				6CE4DB8422D742E4008F01A9 /* ExtensionViewController.swift in Sources */,
 				6CB429E420C5468D000CFD37 /* NSDate+GFCalendar.m in Sources */,
@@ -1014,7 +1101,6 @@
 				6CE1A8C6241BA5BF00754036 /* XDaughterObj.m in Sources */,
 				6C64584F20AD4B5D0046C2F9 /* AppDelegate.m in Sources */,
 				6C39DF4420DBBE580086D632 /* UIView+XCategory.m in Sources */,
-				6C02D8E6225CB15F00963DB4 /* RuntimeViewController.m in Sources */,
 				6C69F53722DC2B9C00677BD7 /* ProtocolViewController.swift in Sources */,
 				6C98ABB2237E9291006839EB /* XModel.m in Sources */,
 				6C68BCD8223A6328007C8861 /* ABGuideView.m in Sources */,
@@ -1022,8 +1108,10 @@
 				6C989A7623950AA000B24663 /* XCollectionViewController.m in Sources */,
 				6CB429E220C5468D000CFD37 /* LXCalendarDayModel.m in Sources */,
 				6CB429F920C547DB000CFD37 /* UIColor+Expanded.m in Sources */,
+				6CCEE1C5242CB41900C6AC2F /* RuntimeViewController.m in Sources */,
 				6CB429F520C547DB000CFD37 /* UIView+FTCornerdious.m in Sources */,
 				6C5B99FC21A3B5590020384C /* XWebViewController.m in Sources */,
+				6CCEE1BD2429076A00C6AC2F /* ThirdViewController.m in Sources */,
 				6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */,
 				6CB429F620C547DB000CFD37 /* UIView+LX_Frame.m in Sources */,
 				6CB429E320C5468D000CFD37 /* LXCalendarView.m in Sources */,
@@ -1125,7 +1213,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -1208,6 +1296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Q494Q8N6JY;
 				INFOPLIST_FILE = iOSDemo/Info.plist;
@@ -1220,6 +1309,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift/iOSDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7";
 			};
 			name = Debug;
 		};
@@ -1229,8 +1319,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = Q494Q8N6JY;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				INFOPLIST_FILE = iOSDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1241,6 +1333,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Swift/iOSDemo-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 arm64e armv7";
 			};
 			name = Release;
 		};

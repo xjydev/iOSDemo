@@ -10,18 +10,31 @@
 #import "XThread2ViewController.h"
 #import "XSonObj.h"
 #import "XTButton.h"
-@interface XThreadViewController ()
+@interface XThreadViewController (){
+    dispatch_semaphore_t _semaphoret;
+}
+
 @property (nonatomic, strong)XThread2ViewController *thread2;
 @property (nonatomic, strong)XSonObj *arr;
 @property (nonatomic, strong)NSOperationQueue *queue;
+@property (nonatomic, strong)NSString *keykey;
 @end
 
 @implementation XThreadViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSArray *arr = @[@"1",@"1",@"2",];
+    NSSet *set = [NSSet setWithArray:arr];
+    NSLog(@"%@--%@",arr,set); 
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"线程";
+    [self addObserver:self forKeyPath:@"keykey" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    NSLog(@"111");
+    [self willChangeValueForKey:@"keykey"];
+    NSLog(@"112");
+    [self didChangeValueForKey:@"keykey"];
+    NSLog(@"113");
     //监听
     self.arr = [[XSonObj alloc]init];
     [self.arr addObserver:self forKeyPath:@"xiaoDD" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
@@ -84,6 +97,41 @@
     [self exchangeThread];
     [self mainAsync];
     
+    UIButton *button5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button5.backgroundColor = [UIColor redColor];
+    button5.frame = CGRectMake(10, 220, 70, 70);
+    [button5 addTarget:self action:@selector(buttonAction5) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button5];
+    
+    UIButton *button6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button6.backgroundColor = [UIColor yellowColor];
+    button6.frame = CGRectMake(110,220, 70, 70);
+    [button6 addTarget:self action:@selector(buttonAction6) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button6];
+    
+    _semaphoret = dispatch_semaphore_create(0);
+    dispatch_queue_global_t globalq = dispatch_get_global_queue(0, 0);
+    NSLog(@"global  1");
+    dispatch_sync(globalq, ^{
+        NSLog(@"global  2");
+        [self performSelector:@selector(globalRun) withObject:nil afterDelay:0];
+        dispatch_async(globalq, ^{
+            NSLog(@"global  3");
+        });
+        NSLog(@"global  4");
+    });
+    NSLog(@"global  5");
+}
+- (void)globalRun {
+    NSLog(@"global  6");
+}
+- (void)buttonAction5 {
+    dispatch_semaphore_wait(_semaphoret, 0);
+    NSLog(@"%s",__func__);
+}
+- (void)buttonAction6 {
+    dispatch_semaphore_signal(_semaphoret);
+    NSLog(@"%s",__func__);
 }
 - (void)mainAsync {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -216,6 +264,7 @@
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     NSLog(@"change %@",change);
+    NSLog(@"114");
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     for (NSOperation *op in self.queue.operations) {

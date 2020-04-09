@@ -28,10 +28,16 @@
 }
 - (void)viewDidLoad {//
     [super viewDidLoad];
+    sleep(1);
 //    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
  @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"},
-                   @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},@{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},@{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+  @{@"title":@"第三方",@"class":@"ThirdViewController",@"storyboard":@"0"},
+   @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},
+  @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},
+  @{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+                   @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},
+                   
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
@@ -46,8 +52,9 @@
                    @{@"title":@"进行时",@"class":@"RuntimeViewController",@"storyboard":@"0"},
                    @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
                    @{@"title":@"Collection",@"class":@"XCollectionViewController",@"storyboard":@"0"},
+                   @{@"title":@"生命周期",@"class":@"XJYViewController",@"storyboard":@"0"},
                    ];
-    NSObject *ob = [[NSObject alloc]init];
+//    NSObject *ob = [[NSObject alloc]init];
 //    [ob setValue:@"11" forKey:@"uuu"];
 //
     // Uncomment the following line to preserve selection between presentations.
@@ -73,6 +80,7 @@
     view2.backgroundColor = [UIColor yellowColor];
     [suView addSubview:view2];
      self.tableView.tableHeaderView = suView;
+    
     [view2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(suView.mas_top).offset(10);
         make.right.equalTo(suView.mas_right).offset(-10);
@@ -88,6 +96,7 @@
     NSValue *v = [[NSValue alloc]init];
 //    [view1.mas_makeConstraints:^(MASConstraintMaker *make) {
 //    }];
+//    NSSet
 }
 
 - (void)didReceiveMemoryWarning {

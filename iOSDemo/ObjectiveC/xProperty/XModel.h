@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XModel : JSONModel<NSCopying>
 @property (nonatomic, assign)int aindex;
+- (instancetype)initWithNum:(NSInteger)num;
 @end
 
 @interface XModel2 : JSONModel

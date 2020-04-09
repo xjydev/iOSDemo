@@ -4,12 +4,13 @@
 //
 //  Created by yixiang on 2017/12/11.
 //
-
+#import <UIKit/UIKit.h>
 #import "DoraemonManager.h"
 #import "DoraemonEntryView.h"
 #import "DoraemonCacheManager.h"
 #import "DoraemonStartPluginProtocol.h"
 #import "DoraemonDefine.h"
+#import "DoraemonUtil.h"
 #import "DoraemonHomeWindow.h"
 #import "Doraemoni18NUtil.h"
 #import "DoraemonCrashUncaughtExceptionHandler.h"
@@ -18,7 +19,7 @@
 #import "DoraemonStateBar.h"
 #import "DoraemonNSLogViewController.h"
 #import "DoraemonNSLogListViewController.h"
-#import "DoraemonUtil.h"
+#import "DoraemonHomeWindow.h"
 #import "DoraemonAllTestManager.h"
 #import "DoraemonStatisticsUtil.h"
 #import "DoraemonANRManager.h"
@@ -144,7 +145,7 @@ typedef void (^DoraemonPerformanceBlock)(NSDictionary *);
     //开启NSLog监控功能
     if ([[DoraemonCacheManager sharedInstance] nsLogSwitch]) {
         [[DoraemonNSLogManager sharedInstance] startNSLogMonitor];
-        if (@available(iOS 13.0, *)){
+        if (@available(iOS 13.0, *)) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1. * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [[DoraemonStateBar shareInstance] show];
             });
@@ -399,13 +400,13 @@ typedef void (^DoraemonPerformanceBlock)(NSDictionary *);
     NSInteger from = [userInfo[@"from"] integerValue];
     if (from == DoraemonStateBarFromNSLog) {//快速打开NSLog list页面
         DoraemonNSLogViewController *vc = [[DoraemonNSLogViewController alloc] init];
-        [DoraemonUtil openPlugin:vc];
+        [DoraemonHomeWindow openPlugin:vc];
         DoraemonNSLogListViewController *vcList = [[DoraemonNSLogListViewController alloc] init];
         [vc.navigationController pushViewController:vcList animated:NO];
     }else{//快速打开CocoaLumberjack list页面
 #if DoraemonWithLogger
         DoraemonCocoaLumberjackViewController *vc = [[DoraemonCocoaLumberjackViewController alloc] init];
-        [DoraemonUtil openPlugin:vc];
+        [DoraemonHomeWindow openPlugin:vc];
         DoraemonCocoaLumberjackListViewController *vcList = [[DoraemonCocoaLumberjackListViewController alloc] init];
         [vc.navigationController pushViewController:vcList animated:NO];
 #endif

@@ -7,33 +7,33 @@
 //
 
 #import "XMapViewController.h"
-#import <BaiduMapAPI_Map/BMKMapView.h>
-@interface XMapViewController ()<BMKMapViewDelegate>
-@property (nonatomic, strong)BMKMapView *mapView;
-@end
+//#import <BaiduMapAPI_Map/BMKMapView.h>
+//@interface XMapViewController ()<BMKMapViewDelegate>
+//@property (nonatomic, strong)BMKMapView *mapView;
+//@end
 
 @implementation XMapViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.prefersLargeTitles = NO;
-    self.mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
-    [self.mapView setMapType:BMKMapTypeStandard];
-    self.mapView.compassPosition = CGPointMake(100, 100);
-    self.mapView.delegate = self;
-    [self.view addSubview:self.mapView];
+//    self.mapView = [[BMKMapView alloc]initWithFrame:self.view.bounds];
+//    [self.mapView setMapType:BMKMapTypeStandard];
+//    self.mapView.compassPosition = CGPointMake(100, 100);
+//    self.mapView.delegate = self;
+//    [self.view addSubview:self.mapView];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.mapView viewWillAppear];
+//    [self.mapView viewWillAppear];
 }
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self.mapView viewWillDisappear];
-    [BMKMapView enableCustomMapStyle:NO];
+//    [self.mapView viewWillDisappear];
+//    [BMKMapView enableCustomMapStyle:NO];
 }
-- (void)mapViewDidFinishLoading:(BMKMapView *)mapView{
-}
+//- (void)mapViewDidFinishLoading:(BMKMapView *)mapView{
+//}
 /*
 #pragma mark - Navigation
 
