@@ -9,17 +9,20 @@
 #import "XYView.h"
 
 @implementation XYView
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    [self setNeedsLayout];
-    return self;
-}
-- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
-    return YES;
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+////    [self setNeedsLayout];
+//    return self;
+//}
+//- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent *)event {
+//    return YES;
+//}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     NSLog(@"%s",__func__);
 }
-
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    NSLog(@"%s",__func__);
+}
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

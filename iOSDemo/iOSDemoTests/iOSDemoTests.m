@@ -28,8 +28,10 @@
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
     NSLog(@"自定义单元测试");
-    int a = 0;
-    XCTAssert(a == 0,"!a");
+    NSString *s1 = @"123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890";
+    NSString *s2 = @"123456789012345678901234567890123446789012345678901234567890123456789012345678901235567890123456789012345678901234567890";
+    NSLog(@"\n %lu\n %lu",s1.hash,s2.hash);
+    NSCache
 }
 
 - (void)testRequest {

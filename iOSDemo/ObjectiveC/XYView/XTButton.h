@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface XTButton : UIButton
-
++ (instancetype)creatButtonFrame:(CGRect)frame title:(NSString *)title color:(UIColor *)color;
 @end
 
 NS_ASSUME_NONNULL_END

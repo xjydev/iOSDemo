@@ -18,4 +18,9 @@ typedef void (^Block)(NSString *str);
 - (void)instanceWithStr:(NSString *)str Block:(Block)block;
 @end
 
+
+@interface XBlockObj : NSObject
+@property (nonatomic, copy)void (^block)(NSString *b);
+- (void)blockMethod;
+@end
 NS_ASSUME_NONNULL_END

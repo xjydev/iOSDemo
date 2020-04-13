@@ -135,7 +135,19 @@ typedef void(^eBlock) (NSString *eb);
     m = 200;
     [mArray addObject:@"3"];
     blk();
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(100, 120, 100, 100);
+    button.backgroundColor = [UIColor redColor];
+    [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
     
+}
+- (void)buttonAction:(UIButton *)button {
+   __block XBlockObj *ob = [[XBlockObj alloc]init];
+    ob.block = ^(NSString * _Nonnull b) {
+        ob = nil;
+    };
+    [ob blockMethod];
 }
 - (void)deadLockThree {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{

@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface XFatherObj : NSObject
 @property (nonatomic, strong)NSNumber *number;
+- (void)slog;
 @end
 
 NS_ASSUME_NONNULL_END

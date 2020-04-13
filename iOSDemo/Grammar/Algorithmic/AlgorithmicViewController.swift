@@ -7,6 +7,15 @@
 //
 
 import UIKit
+public class ListNode {
+    var next:ListNode?
+    var value:Int = 0
+}
+public class TreeNode {
+    var left:TreeNode?;
+    var right:TreeNode?;
+    var value:Int = 0;
+}
 
 class AlgorithmicViewController: UIViewController {
 
@@ -37,6 +46,7 @@ class AlgorithmicViewController: UIViewController {
         print(twosum);
         let arr2 = [-1,0,1,2,-1,-4,0,0,0];
         print(threeSum2(arr2))
+        print(max69Num(num: 69699));
         
     }
     //MARK:排序
@@ -279,6 +289,7 @@ class AlgorithmicViewController: UIViewController {
     func threeSum2(_ nums: [Int]) -> [[Int]] {
        var results = [[Int]]()
         let numarr = nums.sorted()
+        
         print(numarr)
          for i in 0..<numarr.count {
             
@@ -341,6 +352,36 @@ class AlgorithmicViewController: UIViewController {
         sort(nums: &nums,left: left,right: i-1);
         sort(nums: &nums,left: i+1,right: right);
     }
+    //MARK:链表
+    //删除节点。
+    func deleteNode(node:ListNode?) -> Bool {
+        guard let newNode = node else {
+            return false;
+        }
+        guard let nextNode = newNode.next else {
+            return false;
+        }
+        newNode.value = nextNode.value;
+        newNode.next = nextNode.next;
+        return true;
+    }
+    func max69Num(num:Int) -> Int {
+//        var newnum:Int = num;
+//        var count:Int = 0;
+//        var last:Int = 0;
+//        while (newnum > 0) {
+//            if(newnum%10 == 6){
+//                last = count;
+//            }
+//            newnum = newnum/10;
+//            count += 1;
+//        }
+//        let b = pow(10, last);
+//        let a = num + (3 * (Int(truncatingIfNeeded:b) ?? 0));
+//        return a;
+        return 0 ;
+    }
+
     /*
     // MARK: - Navigation
 

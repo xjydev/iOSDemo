@@ -47,12 +47,16 @@
     [view addGestureRecognizer:tap];
     [self.view addSubview:view];
 
-    _boundView = [[UIView alloc]initWithFrame:CGRectMake(0, 200, 100, 100)];
+    _boundView = [[UIView alloc]init];
     _frameView = [[UIView alloc]initWithFrame:CGRectMake(150, 200, 100, 100)];
     _boundView.backgroundColor = [UIColor redColor];
     _frameView.backgroundColor = [UIColor blueColor];
     [self.view addSubview:_boundView];
     [self.view addSubview:_frameView];
+    [_boundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.left.equalTo(self.view).offset(0);
+        make.width.height.equalTo(@100);
+    }];
     self.str = @"222222";
     extern int sta2;//可以引用
 //    extern int sta;//使用static定义的不可以引用。
@@ -84,6 +88,24 @@
 }
 - (void)button5Action:(UIButton *)button {
     NSLog(@"%s",__func__);
+    if (_boundView.bounds.size.height!= 200) {
+        [_boundView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.equalTo(@200);
+            make.top.left.equalTo(self.view).offset(100);
+            
+        }];
+    }
+    else {
+        [_boundView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.width.equalTo(@100);
+            make.top.left.equalTo(self.view).offset(0);
+        }];
+    }
+    [UIView animateWithDuration:2 animations:^{
+        NSLog(@"layout 111111");
+        [self.view layoutIfNeeded];
+        NSLog(@"layout 222222");
+    }];
 }
 - (void)buttonTouchActiondown {
     NSLog(@"tapActiondown");
@@ -175,6 +197,10 @@
     }
     _layer.backgroundColor = [UIColor blueColor].CGColor;
     
+}
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSLog(@"%s",__func__);
 }
 - (void)notify {
 }

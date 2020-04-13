@@ -29,4 +29,12 @@
 - (void)dealloc {
     NSLog(@"%s",__func__);
 }
+- (void)getClass {
+    
+    NSLog(@"class == %@  %@ -- %@",self.class,super.class,self);
+    [super slog];
+}
+- (void)slog {
+    NSLog(@"slog111 -- %@",self);
+}
 @end

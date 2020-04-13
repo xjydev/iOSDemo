@@ -135,6 +135,15 @@
     }
     return mstr;
 }
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self arrayCopy];
+}
+- (void)arrayCopy {
+    NSString *str = @"1234";
+    NSMutableArray *arr = [NSMutableArray arrayWithObject:str];
+    NSArray *ar = [arr copy];
+    NSLog(@"%p %p  %p",str,ar.firstObject,arr.firstObject);
+}
 /*
 #pragma mark - Navigation
 

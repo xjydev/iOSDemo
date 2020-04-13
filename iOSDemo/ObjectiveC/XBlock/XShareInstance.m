@@ -31,3 +31,13 @@ static dispatch_once_t onceToken;
     
 }
 @end
+
+@implementation XBlockObj
+
+- (void)blockMethod {
+    if (self.block) {
+        self.block(@"1");
+    }
+}
+
+@end

@@ -18,6 +18,7 @@
 @property (nonatomic, strong)XSonObj *arr;
 @property (nonatomic, strong)NSOperationQueue *queue;
 @property (nonatomic, strong)NSString *keykey;
+@property (nonatomic, strong)NSLock *lock;
 @end
 
 @implementation XThreadViewController
@@ -121,6 +122,82 @@
         NSLog(@"global  4");
     });
     NSLog(@"global  5");
+    XTButton *button7 = [XTButton creatButtonFrame:CGRectMake(20, 300, 90, 90) title:@"线程通知" color:[UIColor redColor]];
+    [button7 addTarget:self action:@selector(button7Action:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button7];
+    self.lock = [[NSLock alloc]init];
+    XTButton *button8 = [XTButton creatButtonFrame:CGRectMake(120, 300, 90, 90) title:@"线程打开" color:[UIColor redColor]];
+    [button8 addTarget:self action:@selector(button8Action:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button8];
+    
+    XTButton *button9 = [XTButton creatButtonFrame:CGRectMake(220, 300, 90, 90) title:@"线程锁住" color:[UIColor redColor]];
+    [button9 addTarget:self action:@selector(button9Action:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button9];
+}
+- (void)button9Action:(UIButton *)button {
+    static int i = 0;
+    i++;
+    NSLog(@"lock1 %d",i);
+    [self.lock lock];
+     NSLog(@"lock2 %d",i);
+    
+}
+- (void)button8Action:(UIButton *)button {
+    static int i = 0;
+     i++;
+     NSLog(@"unlock1 %d",i);
+     [self.lock unlock];
+      NSLog(@"unlock2 %d",i);
+}
+- (void)button7Action:(UIButton *)button {
+    NSLog(@"====button 777777777777777=========");
+//    dispatch_group_t gt = dispatch_group_create();
+//    dispatch_queue_t qt = dispatch_get_global_queue(0, 0);
+//    dispatch_group_async(gt, qt, ^{
+//        NSLog(@"async 11");
+//    });
+//    dispatch_group_async(gt, qt, ^{
+//        NSLog(@"async 22");
+//        [NSThread sleepForTimeInterval:2];
+//        NSLog(@"async 2211");
+//    });
+//    dispatch_group_notify(gt, qt, ^{
+//        NSLog(@"async 333");
+//    });
+////    dispatch_group_wait(gt, <#dispatch_time_t timeout#>)
+//    dispatch_barrier_async(qt, ^{
+//        NSLog(@"barrier 444");
+//    });
+    dispatch_queue_t queue = dispatch_queue_create("net.bujige.testQueue", DISPATCH_QUEUE_CONCURRENT);
+
+    dispatch_async(queue, ^{
+        // 追加任务 1
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@"1---%@",[NSThread currentThread]);      // 打印当前线程
+    });
+    dispatch_async(queue, ^{
+        // 追加任务 2
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@"2---%@",[NSThread currentThread]);      // 打印当前线程
+    });
+
+    dispatch_barrier_async(queue, ^{
+        // 追加任务 barrier
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@"barrier---%@",[NSThread currentThread]);// 打印当前线程
+    });
+
+    dispatch_async(queue, ^{
+        // 追加任务 3
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@"3---%@",[NSThread currentThread]);      // 打印当前线程
+    });
+    dispatch_async(queue, ^{
+        // 追加任务 4
+        [NSThread sleepForTimeInterval:2];              // 模拟耗时操作
+        NSLog(@"4---%@",[NSThread currentThread]);      // 打印当前线程
+    });
+    
 }
 - (void)globalRun {
     NSLog(@"global  6");

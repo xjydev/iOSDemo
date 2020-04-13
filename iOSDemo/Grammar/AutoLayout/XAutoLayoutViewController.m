@@ -8,21 +8,25 @@
 
 #import "XAutoLayoutViewController.h"
 #import <Masonry/Masonry.h>
+#import "XTButton.h"
+#import "XYView.h"
 @interface XAutoLayoutViewController ()
 {
 }
 @end
 
 @implementation XAutoLayoutViewController
-
+- (void)loadView {
+    self.view = [[XYView alloc]init];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    XTButton *button = [XTButton buttonWithType:UIButtonTypeCustom];
     button.backgroundColor = [UIColor redColor];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
-    
+    NSLog(@"1111111");
     [button mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.equalTo(self.view).offset(100);
         make.width.height.equalTo(@100);
@@ -31,15 +35,29 @@
 }
 - (void)buttonAction:(UIButton *)button {
     //实现Autolayout下的动画效果。
-    [button mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.equalTo(self.view).offset(200);
-        make.width.height.equalTo(@50);
-    }];
+    if (button.bounds.size.width == 100) {
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.equalTo(self.view).offset(200);
+            make.width.height.equalTo(@50);
+        }];
+    }
+    else {
+        [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.equalTo(self.view).offset(200);
+            make.width.height.equalTo(@100);
+        }];
+    }
+    
     [UIView animateWithDuration:3 animations:^{
-        [self.view layoutIfNeeded];
+        [self.view setNeedsLayout];
+//        [self.view layoutIfNeeded];
     }];
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+}
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    NSLog(@"%s",__func__);
 }
 /*
 #pragma mark - Navigation

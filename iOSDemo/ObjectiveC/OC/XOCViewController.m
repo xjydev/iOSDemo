@@ -87,6 +87,7 @@ typedef void (^XBlock)(void);
     NSLog(@"3 %@--%@",block3,[block3 class]);
     NSLog(@"8 %@--%@",self.block8,[self.block8 class]);
     self.block1();
+    [son getClass];
 }
 - (void)block5:(XBlock)block {
     self.block1 = block;

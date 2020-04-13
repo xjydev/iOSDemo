@@ -23,4 +23,7 @@
 - (void)dealloc {
     NSLog(@"%s",__func__);
 }
+- (void)slog {
+    NSLog(@"slog2 -- %@",self);
+}
 @end
