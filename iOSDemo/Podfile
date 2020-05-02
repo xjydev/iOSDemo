@@ -1,3 +1,4 @@
+source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
 platform :ios, '8.0'
 use_frameworks!
@@ -35,7 +36,10 @@ target 'iOSDemo' do
   pod 'JLRoutes', '~> 2.1'
   pod 'GPUImage', '~> 0.1.7'
   pod 'TPJsBridge', '~> 0.0.24'
-  pod 'AsyncDisplayKit'
+  pod 'FBAllocationTracker', :configurations => ['Debug']
+  pod 'FBRetainCycleDetector', :configurations => ['Debug']
+  pod 'FBMemoryProfiler', :configurations => ['Debug']
+#  pod 'AsyncDisplayKit'
   pod 'Texture'
   pod 'FDStackView'
 #  pod 'HCMVManager', '~> 1.6.4'

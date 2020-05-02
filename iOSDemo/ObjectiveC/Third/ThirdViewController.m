@@ -35,6 +35,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    NSMutableArray
     self.view.backgroundColor = [UIColor redColor];
     self.view.backgroundColor = [UIColor blueColor];
 //    @synchronized (<#token#>) {
@@ -78,5 +79,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

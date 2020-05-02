@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D449E55E37EF46367A519B99DC8327EF"
+               BlueprintIdentifier = "DB66E43BC980D741F3C7C5CF3ACEEFA4"
                BuildableName = "AsyncDisplayKit.framework"
                BlueprintName = "Texture"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -37,4 +37,7 @@
 - (void)slog {
     NSLog(@"slog111 -- %@",self);
 }
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return  self.class;
+}
 @end

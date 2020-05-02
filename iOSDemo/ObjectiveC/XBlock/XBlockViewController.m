@@ -7,7 +7,7 @@
 //
 //在局部变量前使用下划线下划线block修饰,在声明Block之后、调用Block之前对局部变量进行修改,在调用Block时局部变量值是修改之后的新值
 #import "XBlockViewController.h"
-#import "XShareInstance.h";
+#import "XShareInstance.h"
 #import "XTools.h"
 typedef void(^eBlock) (NSString *eb);
 @interface XBlockViewController ()
@@ -103,7 +103,9 @@ typedef void(^eBlock) (NSString *eb);
     [[XShareInstance share]instanceBlock:^(NSString * _Nonnull str) {
          NSLog(@"=== %@",weakSelf.astr);
     }];
-    
+    NSLog(@"shere1 == %@",[XShareInstance share]);
+    [[XShareInstance share]instanceDealloc];
+    NSLog(@"shere2 == %@",[XShareInstance share]);
     void(^block)(void) = ^{
        NSLog(@"Hello, World!");
         self.astr = @"1111";
@@ -140,6 +142,8 @@ typedef void(^eBlock) (NSString *eb);
     button.backgroundColor = [UIColor redColor];
     [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button];
+    
+    
     
 }
 - (void)buttonAction:(UIButton *)button {

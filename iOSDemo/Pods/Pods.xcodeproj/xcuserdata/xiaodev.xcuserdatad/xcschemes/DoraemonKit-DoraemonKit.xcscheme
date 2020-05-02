@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C5941318E0C1F43185C49F7C30CE0F8"
+               BlueprintIdentifier = "86F85BD17543B52E78020B4385A7C0C6"
                BuildableName = "DoraemonKit.bundle"
                BlueprintName = "DoraemonKit-DoraemonKit"
                ReferencedContainer = "container:Pods.xcodeproj">

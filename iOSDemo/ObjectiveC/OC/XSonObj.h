@@ -19,4 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)getClass ;
 @end
 
+@interface XSonObj (extend)
+@property (nonatomic,copy)NSString *sonName;
+@end
 NS_ASSUME_NONNULL_END

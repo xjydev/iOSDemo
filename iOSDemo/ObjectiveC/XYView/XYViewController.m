@@ -27,6 +27,7 @@
     CALayer *_layer;
 }
 @property (nonatomic, copy)NSString *str;
+
 @end
 
 @implementation XYViewController
@@ -34,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"UIView";
+//    UIControl
     self.view.backgroundColor = [UIColor whiteColor];
     
     _layer = [[CALayer alloc]init];

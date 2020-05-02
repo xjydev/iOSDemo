@@ -14,6 +14,7 @@
 #import "XWifeObj.h"
 #import <AVKit/AVKit.h>
 #import <VideoToolbox/VideoToolbox.h>
+#import "NSObject+cate.h"
 typedef void (^XBlock)(void);
 @interface XOCViewController ()
 @property (nonatomic, copy)NSString *astr1;
@@ -40,6 +41,7 @@ typedef void (^XBlock)(void);
 //    XFatherObj *father = [XFatherObj alloc];
     
     XSonObj *son= [[XSonObj alloc]init];
+//    son.sonName = @"name";
     [NSHashTable weakObjectsHashTable];
     
     [son learn];
@@ -88,6 +90,11 @@ typedef void (^XBlock)(void);
     NSLog(@"8 %@--%@",self.block8,[self.block8 class]);
     self.block1();
     [son getClass];
+//    NSLog(@"1");
+//       dispatch_sync(dispatch_get_main_queue(), ^{
+//           NSLog(@"2");
+//       });
+//       NSLog(@"3");
 }
 - (void)block5:(XBlock)block {
     self.block1 = block;
@@ -145,6 +152,24 @@ typedef void (^XBlock)(void);
           Method meth = methList[i];
           NSLog(@"meth == %@",NSStringFromSelector(method_getName(meth)));
       }
+}
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    XSonObj *o = [[XSonObj alloc]init];
+    [o runObject];
+    [XSonObj runObject];
+    [XSonObj runStatus];
+    [self selectorss];
+    [XOCViewController selectorss];
+    
+}
+- (void)selectorss {
+    NSLog(@"1%s",__func__);
+    NSLog(@"1%@",NSStringFromSelector(_cmd));
+    
+}
++ (void)selectorss {
+   NSLog(@"2%s",__func__);
+    NSLog(@"2%@",NSStringFromSelector(_cmd));
 }
 /*
 #pragma mark - Navigation

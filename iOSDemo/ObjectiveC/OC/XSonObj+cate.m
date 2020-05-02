@@ -18,6 +18,9 @@
 - (void)learn {
     NSLog(@"%s",__func__);
 }
++ (void)test {
+  NSLog(@"%s",__func__);
+}
 //- (void)dealloc {
 //    NSLog(@"%s",__func__);
 //}

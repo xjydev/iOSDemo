@@ -18,7 +18,7 @@
     [super viewDidLoad];
     //XCPUImageControllerXAutoLayoutViewController
     self.mainArray = @[@{@"title":@"算法",@"class":@"AlgorithmicViewController",@"storyboard":@"0"},@{@"title":@"图片处理",@"class":@"XCPUImageController",@"storyboard":@"0"},
-    @{@"title":@"AutoLayout",@"class":@"XAutoLayoutViewController",@"storyboard":@"0"}];
+    @{@"title":@"AutoLayout",@"class":@"XAutoLayoutViewController",@"storyboard":@"0"},@{@"title":@"ReactiveCocoa",@"class":@"XRCViewController",@"storyboard":@"0"}];
 }
 
 #pragma mark - Table view data source

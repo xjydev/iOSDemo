@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "NSObject+cate.h"
 NS_ASSUME_NONNULL_BEGIN
 typedef void (^Block)(NSString *str);
 @interface XShareInstance : NSObject
+@property (nonatomic, copy)NSString *kvoStr;
 + (instancetype)share;
 @property (nonatomic, strong)Block block;
 - (void)instanceDealloc;

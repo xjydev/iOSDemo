@@ -140,9 +140,14 @@
 }
 - (void)arrayCopy {
     NSString *str = @"1234";
-    NSMutableArray *arr = [NSMutableArray arrayWithObject:str];
+    NSMutableString * mst = [NSMutableString stringWithString:@"456"];
+    NSMutableArray *arr = [NSMutableArray arrayWithObjects:str,mst, nil];
     NSArray *ar = [arr copy];
-    NSLog(@"%p %p  %p",str,ar.firstObject,arr.firstObject);
+    NSMutableArray *arr2 = [arr mutableCopy];
+    
+    NSLog(@"%p %p  %p %p",str,ar,arr,arr2);
+     NSLog(@"%p %p  %p %p",str,ar.firstObject,arr.firstObject,arr2.firstObject);
+    NSLog(@"%p %p  %p %p",mst,ar.lastObject,arr.lastObject,arr2.lastObject);
 }
 /*
 #pragma mark - Navigation

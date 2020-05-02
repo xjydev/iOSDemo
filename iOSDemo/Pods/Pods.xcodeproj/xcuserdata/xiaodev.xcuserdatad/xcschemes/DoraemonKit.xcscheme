@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FDCFFB4C79FAEF2F6A0612D0C0660FB8"
+               BlueprintIdentifier = "1C740322617D8EE2F874BD31781B7702"
                BuildableName = "DoraemonKit.framework"
                BlueprintName = "DoraemonKit"
                ReferencedContainer = "container:Pods.xcodeproj">

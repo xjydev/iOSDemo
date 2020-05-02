@@ -12,6 +12,9 @@
 #import "ABGuideView.h"
 #import <Masonry/Masonry.h>
 #import "XTools.h"
+
+#import <FBMemoryProfiler/FBMemoryProfiler.h>
+
 @interface ObjectiveCTableController ()<UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate>
 {
   NSArray  *  _mainArray;
@@ -40,7 +43,7 @@
                    
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
-                   @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
+                   @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},@{@"title":@"KVOKVC",@"class":@"XKVCViewController",@"storyboard":@"0"},
                    @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
                    @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
                    @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
@@ -53,6 +56,8 @@
                    @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
                    @{@"title":@"Collection",@"class":@"XCollectionViewController",@"storyboard":@"0"},
                    @{@"title":@"生命周期",@"class":@"XJYViewController",@"storyboard":@"0"},
+                   @{@"title":@"数据存储",@"class":@"XStoreViewController",@"storyboard":@"0"},
+                   @{@"title":@"循环引用",@"class":@"XRetainCyViewController",@"storyboard":@"0"},
                    ];
 //    NSObject *ob = [[NSObject alloc]init];
 //    [ob setValue:@"11" forKey:@"uuu"];
@@ -97,6 +102,9 @@
 //    [view1.mas_makeConstraints:^(MASConstraintMaker *make) {
 //    }];
 //    NSSet
+    
+    FBMemoryProfiler *mp = [FBMemoryProfiler new];
+    [mp enable];
 }
 
 - (void)didReceiveMemoryWarning {

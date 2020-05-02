@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2B387521862DF3E04B64F81EBAE5A232"
+               BlueprintIdentifier = "AA9B7B54903181E5C6B828A50E4F5313"
                BuildableName = "TPJsBridge.framework"
                BlueprintName = "TPJsBridge"
                ReferencedContainer = "container:Pods.xcodeproj">

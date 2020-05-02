@@ -83,6 +83,7 @@ class SwiftBlocksViewController: UIViewController {
         }
         print("p1");
         p.fn!();
+        
     }
     func makeIncrementer(forIncrement amount:Int) -> Int {
         var runningTotal = 0;

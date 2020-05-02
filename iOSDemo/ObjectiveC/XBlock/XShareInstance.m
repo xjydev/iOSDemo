@@ -20,7 +20,9 @@ static dispatch_once_t onceToken;
     return instance;
 }
 - (void)instanceDealloc {
+    instance = nil;
     onceToken = 0;
+    NSLog(@"shere == %@",instance);
 }
 - (void)instanceBlock:(void (^)(NSString * _Nonnull))block {
     self.block = block;
