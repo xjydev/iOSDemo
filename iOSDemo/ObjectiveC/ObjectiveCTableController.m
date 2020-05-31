@@ -39,10 +39,10 @@
    @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},
   @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},
   @{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
-                   @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},
-                   
+                   @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},  @{@"title":@"play视频",@"class":@"XPlayerViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
+                   @{@"title":@"OC调用Swift",@"class":@"InvokeSwiftViewController",@"storyboard":@"0"},
                    @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},@{@"title":@"KVOKVC",@"class":@"XKVCViewController",@"storyboard":@"0"},
                    @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
                    @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
@@ -52,7 +52,7 @@
                    @{@"title":@"WebView",@"class":@"XWebViewController",@"storyboard":@"0"},
                    @{@"title":@"URL解析",@"class":@"URLComponentsViewController",@"storyboard":@"0"},
                    @{@"title":@"新手页面引导",@"class":@"XGuideViewController",@"storyboard":@"1"},
-                   @{@"title":@"进行时",@"class":@"RuntimeViewController",@"storyboard":@"0"},
+                   @{@"title":@"进行时Runtime",@"class":@"RuntimeViewController",@"storyboard":@"0"},
                    @{@"title":@"转场动画",@"class":@"XTransferViewController",@"storyboard":@"1"},
                    @{@"title":@"Collection",@"class":@"XCollectionViewController",@"storyboard":@"0"},
                    @{@"title":@"生命周期",@"class":@"XJYViewController",@"storyboard":@"0"},
@@ -168,7 +168,7 @@ cell.transform = CGAffineTransformMakeTranslation(0, 40);
 
 cell.transform = CGAffineTransformIdentity;
 }];
-
+//NSProxy
 
 }
 // Override to support editing the table view.

@@ -8,8 +8,10 @@
 
 #import "XThreadViewController.h"
 #import "XThread2ViewController.h"
+#import "XGCDViewController.h"
 #import "XSonObj.h"
 #import "XTButton.h"
+#import "XDOperation.h"
 @interface XThreadViewController (){
     dispatch_semaphore_t _semaphoret;
 }
@@ -41,10 +43,11 @@
     [self.arr addObserver:self forKeyPath:@"xiaoDD" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     //多线程
     self.queue = [[NSOperationQueue alloc]init];
-    self.queue.maxConcurrentOperationCount = 2;
+    self.queue.maxConcurrentOperationCount = 1;
     
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     button1.backgroundColor = [UIColor redColor];
+    [button1 setTitle:@"1" forState:UIControlStateNormal];
     button1.frame = CGRectMake(10, 120, 70, 70);
     [button1 addTarget:self action:@selector(buttonAction1:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button1];
@@ -133,6 +136,14 @@
     XTButton *button9 = [XTButton creatButtonFrame:CGRectMake(220, 300, 90, 90) title:@"线程锁住" color:[UIColor redColor]];
     [button9 addTarget:self action:@selector(button9Action:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:button9];
+    
+    XTButton *button10 = [XTButton creatButtonFrame:CGRectMake(20,400, 90, 90) title:@"GCD" color:[UIColor redColor]];
+    [button10 addTarget:self action:@selector(buttonGCDAction:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button10];
+}
+- (void)buttonGCDAction:(UIButton *)button {
+    XGCDViewController *gcd = [[XGCDViewController alloc]init];
+    [self.navigationController pushViewController:gcd animated:YES];
 }
 - (void)button9Action:(UIButton *)button {
     static int i = 0;
@@ -301,6 +312,10 @@
     
     NSInvocationOperation *io2 = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(whiledemo2) object:nil];
     [self.queue addOperation:io2];
+    
+    XDOperation *xo = [[XDOperation alloc]init];
+    [xo start];
+//    [self.queue addOperation:xo];
     
 }
 - (void)whiledemo2 {

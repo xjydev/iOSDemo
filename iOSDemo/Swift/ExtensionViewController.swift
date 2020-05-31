@@ -39,5 +39,23 @@ class ExtensionViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    deinit {
+            
+    }
 
+}
+class objectcl: NSObject {
+    var pro = 0
+}
+extension objectcl {
+    static var p = "proj"
+//    var proj = 0;//扩展不能包含存储属性。可以添加新行为方法。
+    var proj:Int {
+        get {
+            return objc_getAssociatedObject(self, &objectcl.p)as!Int;
+        }
+        set {
+            objc_setAssociatedObject(self, &objectcl.p, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_ASSIGN);
+        }
+    }
 }

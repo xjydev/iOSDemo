@@ -7,6 +7,7 @@
 //
 
 #import "XThread2ViewController.h"
+#import "XDOperation.h"
 
 @interface XThread2ViewController ()
 

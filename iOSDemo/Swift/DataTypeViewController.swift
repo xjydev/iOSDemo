@@ -28,6 +28,10 @@ class DataTypeViewController: UIViewController {
     }
     //MARK:集合
     func gatherFun() {
+//        String
+//        NSString
+//        Array
+        
         var arr = [Int]();//初始化数组
         arr.append(1);//添加内容
         print(arr);

@@ -10,10 +10,13 @@
 #import "XShareInstance.h"
 #import "XShareInstance+cate.h"
 #import "XKVCViewController+cate.h"
+#import <objc/runtime.h>
 @interface XKVOViewController ()
 {
     NSObject *_ob;
 }
+@property (nonatomic, copy)NSString *str;
+@property (nonatomic, copy)NSString *objStr;
 @end
 
 @implementation XKVOViewController
@@ -22,7 +25,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [[XShareInstance share] addObserver:self forKeyPath:@"kvoStr" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
-    [self addObserver:self forKeyPath:@"a" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    [self addObserver:self forKeyPath:@"str" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(notifySelector) name:@"notify" object:nil];
     __weak typeof(self)weakS = self;
@@ -45,9 +48,16 @@
     NSLog(@"%s",__func__);
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [[XShareInstance share] setObjectNum:@(1)];
+    [[XShareInstance share] setObjectNum:@(1)];
+    self.str = @"123";
+    NSLog(@"self == %@ ",self.class);
+    objc_getClass("");
     
 }
++ (BOOL)automaticallyNotifiesObserversOfStr {
+    return NO;
+}
+
 /*
 #pragma mark - Navigation
 

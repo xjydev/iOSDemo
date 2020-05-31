@@ -23,3 +23,8 @@
 @implementation XModel2
 
 @end
+
+@implementation XModel3
+
+
+@end

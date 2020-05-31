@@ -25,6 +25,7 @@
     UIView *_boundView;
     UIView *_frameView;
     CALayer *_layer;
+    UITextField *_field;
 }
 @property (nonatomic, copy)NSString *str;
 
@@ -87,6 +88,18 @@
     view5.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     view5.userInteractionEnabled = NO;
     [self.view addSubview:view5];
+    //自定义键盘
+    _field = [[UITextField alloc]initWithFrame:CGRectMake(0, 200, 100, 40)];
+    _field.backgroundColor = [UIColor grayColor];
+    _field.placeholder = @"自定义键盘";
+    [self.view addSubview:_field];
+    UIView *inputView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    inputView.backgroundColor = [UIColor yellowColor];
+    _field.inputView = inputView;
+    UIPasteboard *board1 = [UIPasteboard pasteboardWithName:@"xiao" create:YES];
+    [board1 setString:@"123"];
+    UIPasteboard *board = [UIPasteboard generalPasteboard];
+    NSLog(@"baor == %@",board.strings);
 }
 - (void)button5Action:(UIButton *)button {
     NSLog(@"%s",__func__);
@@ -198,6 +211,7 @@
       NSLog(@"dontcontainspoint");
     }
     _layer.backgroundColor = [UIColor blueColor].CGColor;
+    [_field resignFirstResponder];
     
 }
 - (void)viewWillLayoutSubviews {

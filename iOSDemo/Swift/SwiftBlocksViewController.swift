@@ -84,6 +84,18 @@ class SwiftBlocksViewController: UIViewController {
         print("p1");
         p.fn!();
         
+        var carstr = "car"
+        let printfun = { [carstr] in//闭包内捕获了值
+            print("pp === \(carstr)")
+            
+        }
+        let printfunc = {//省略捕获列表，使用引用而不是副本。
+            print("pd === \(carstr)")
+        }
+        carstr = "bus"
+        printfun()
+        printfunc()
+        
     }
     func makeIncrementer(forIncrement amount:Int) -> Int {
         var runningTotal = 0;

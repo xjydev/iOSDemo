@@ -111,7 +111,24 @@ int sta2 = 3;
     NSString * const coStr1 = @"456";
 //    coStr1 = @"567";//coStr1指针指向的内存地址不能变。指向不能变。
 }
-
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self weakFunc];
+}
+- (void)weakFunc {
+    NSHashTable *hashT = [NSHashTable weakObjectsHashTable];//弱引用,对象被销毁后移除
+    @autoreleasepool {
+        XModel2 *model2 = [[XModel2 alloc]init];
+        XModel3 *model3 = [[XModel3 alloc]init];
+//        model2.model = model3;
+//        model3.model = model2;
+        [hashT addObject:model2];
+        [hashT addObject:model3];
+    }
+    NSLog(@"t == %@",hashT);
+    for (NSObject *o in hashT) {
+        NSLog(@"o == %@",o);
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

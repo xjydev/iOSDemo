@@ -33,6 +33,7 @@ class ProtocolViewController: UIViewController,ProtocolDelegate {
     var osa:Int = 1;
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(XDScreenWidth,XDScreenHeight);
         self.view.backgroundColor = UIColor.white;
         self.title = "协议"
         let pv:protocolView = protocolView()

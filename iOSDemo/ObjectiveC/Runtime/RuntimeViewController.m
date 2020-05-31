@@ -8,6 +8,7 @@
 
 #import "RuntimeViewController.h"
 #import <objc/runtime.h>
+#import "XRuntimeObj.h";
 @interface RuntimeViewController ()
 
 @end
@@ -49,6 +50,10 @@
     NSNumber *nu = d[@"roomid"];
     NSLog(@"nu == %@",object_getClass(nu));
     NSLog(@"p == %@ == %@",[self getIvarTypeWithInstance:self propertyName:@"num"],[self getIvarTypeWithInstance:self propertyName:@"str"]);
+    
+    XRuntimeObj *runoj = [[XRuntimeObj alloc]init];
+    [XRuntimeObj undefindClassFunction];
+    [runoj undefindFunction];
 //    unsigned int  outCount = 0;
 //    Ivar * varList = class_copyIvarList([self class], &outCount);
 //    for (NSInteger i = 0; i<outCount; i++) {

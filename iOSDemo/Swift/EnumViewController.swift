@@ -7,9 +7,11 @@
 //
 
 import UIKit
+public let XDScreenHeight = UIScreen.main.bounds.height
+public let XDScreenWidth = UIScreen.main.bounds.width
 
 enum ArithmeticExpression {
-    case number(Int)
+    case number(Int)//枚举关联值
     indirect case addition(ArithmeticExpression,ArithmeticExpression)
     indirect case mutiplication(ArithmeticExpression,ArithmeticExpression)
 }
