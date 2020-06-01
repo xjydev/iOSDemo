@@ -78,7 +78,7 @@ PODS:
   - JSONModel (1.8.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - "NSData+Base64 (1.0.0)"
+  - NSData+Base64 (1.0.0)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
     - PINCache/Core (= 3.0.1-beta.4)
@@ -170,7 +170,7 @@ DEPENDENCIES:
   - JSONModel (~> 1.8.0)
   - Masonry
   - MBProgressHUD
-  - "NSData+Base64"
+  - NSData+Base64
   - ReactiveCocoa
   - ReactiveViewModel
   - RNCryptor
@@ -183,52 +183,6 @@ DEPENDENCIES:
   - TPJsBridge (~> 0.0.24)
   - XRefresh
   - YYKit
-
-SPEC REPOS:
-  https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git:
-    - AFNetworking
-    - Alamofire
-    - BSBacktraceLogger
-    - CocoaLumberjack
-    - CTMediator
-    - CTPersistance
-    - DateTools
-    - DoraemonKit
-    - FBAllocationTracker
-    - FBMemoryProfiler
-    - FBRetainCycleDetector
-    - FDStackView
-    - fishhook
-    - FMDB
-    - GCDWebServer
-    - GPUImage
-    - JLRoutes
-    - JSONModel
-    - Masonry
-    - MBProgressHUD
-    - "NSData+Base64"
-    - PINCache
-    - PINOperation
-    - PINRemoteImage
-    - Protobuf
-    - ReactiveCocoa
-    - ReactiveViewModel
-    - RNCryptor
-    - RxSwift
-    - SDWebImage
-    - SocketRocket
-    - SQLCipher
-    - SSZipArchive
-    - SVGAPlayer
-    - SVPullToRefresh
-    - Texture
-    - thrift
-    - TPJsBridge
-    - WeexSDK
-    - WXDevtool
-    - XRefresh
-    - YYDebugDatabase
-    - YYKit
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -251,7 +205,7 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
+  NSData+Base64: 4e84902c4db907a15673474677e57763ef3903e4
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
@@ -272,9 +226,9 @@ SPEC CHECKSUMS:
   WeexSDK: 55b67d1c411eb28ec1e356f763a335d0ddcc5324
   WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
   XRefresh: b2569aec255900d3dbd794bffbaf502ff6fd4198
-  YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
+  YYDebugDatabase: '037486297a7dd40bc50e2c6df5de7b4ad24c9c17'
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: c38ffc53efdc37c73e5a03d634871b1ddb80d403
+PODFILE CHECKSUM: 4a95ba98464d35dd6a15c53c0d287658537413d5
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.1.1
