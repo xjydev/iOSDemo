@@ -76,6 +76,7 @@ PODS:
   - GPUImage (0.1.7)
   - JLRoutes (2.1)
   - JSONModel (1.8.0)
+  - LzmaSDK-ObjC (2.0.19)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - "NSData+Base64 (1.0.0)"
@@ -133,6 +134,9 @@ PODS:
     - Texture/Core
   - thrift (0.9.3)
   - TPJsBridge (0.0.24)
+  - UnrarKit (2.8.1):
+    - UnrarKit/unrar-lib (= 2.8.1)
+  - UnrarKit/unrar-lib (2.8.1)
   - WeexSDK (0.26.0)
   - WXDevtool (0.24.0):
     - SocketRocket
@@ -168,6 +172,7 @@ DEPENDENCIES:
   - GPUImage (~> 0.1.7)
   - JLRoutes (~> 2.1)
   - JSONModel (~> 1.8.0)
+  - LzmaSDK-ObjC
   - Masonry
   - MBProgressHUD
   - "NSData+Base64"
@@ -176,11 +181,13 @@ DEPENDENCIES:
   - RNCryptor
   - RxSwift
   - SDWebImage
+  - SSZipArchive (~> 2.2.2)
   - SVGAPlayer (~> 2.3.3)
   - SVPullToRefresh
   - Texture
   - thrift (~> 0.9.3)
   - TPJsBridge (~> 0.0.24)
+  - UnrarKit
   - XRefresh
   - YYKit
 
@@ -204,6 +211,7 @@ SPEC REPOS:
     - GPUImage
     - JLRoutes
     - JSONModel
+    - LzmaSDK-ObjC
     - Masonry
     - MBProgressHUD
     - "NSData+Base64"
@@ -224,6 +232,7 @@ SPEC REPOS:
     - Texture
     - thrift
     - TPJsBridge
+    - UnrarKit
     - WeexSDK
     - WXDevtool
     - XRefresh
@@ -249,6 +258,7 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  LzmaSDK-ObjC: 1dd68a10d1af6c127f9811d117bf41a90bac9234
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
@@ -269,12 +279,13 @@ SPEC CHECKSUMS:
   Texture: 3e4664479225216198c29bdb9621664de390534d
   thrift: 206849d78773b19e1be3cc1bbe094371c0adfbe2
   TPJsBridge: c42c763168840f10e85915d2a1b389b3d7f363ff
+  UnrarKit: 167602bda6542e575c4cdc068509d6b787f84468
   WeexSDK: 55b67d1c411eb28ec1e356f763a335d0ddcc5324
   WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
   XRefresh: b2569aec255900d3dbd794bffbaf502ff6fd4198
   YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 4a95ba98464d35dd6a15c53c0d287658537413d5
+PODFILE CHECKSUM: 1f94b54816c41dcecfb153551b10d19747ddb694
 
 COCOAPODS: 1.5.3

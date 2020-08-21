@@ -50,22 +50,10 @@ target 'iOSDemo' do
   pod 'DoraemonKit/WithWeex', :configurations => ['Debug']
   pod 'DoraemonKit/WithDatabase', :configurations => ['Debug']
   pod 'DoraemonKit/WithMLeaksFinder', :configurations => ['Debug']
+  #解压压缩 zip rar 7z
+  pod 'SSZipArchive'
+  pod 'UnrarKit'
+  pod 'LzmaSDK-ObjC'
   
-#  Using AFNetworking (3.2.0)
-#  Using CTMediator (13)
-#  Using CTPersistance (169)
-#  Using DateTools (2.0.0)
-#  Installing GCDWebServer (3.4.2)
-#  Using MBProgressHUD (1.1.0)
-#  Using NSData+Base64 (1.0.0)
-#  Installing RNCryptor (5.0.3)
-#  Using ReactiveCocoa (2.5)
-#  Using ReactiveViewModel (0.3)
-#  Using SDWebImage (4.3.3)
-#  Using SQLCipher (3.4.2)
-#  Using SVPullToRefresh (0.4.1)
-#  Using XRefresh (1.2.0)
-#  Using YYKit (1.0.9)
-#  Using thrift (0.9.3)
 end
 
