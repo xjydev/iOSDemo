@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.9.1)
+  - BookReader (0.1.0)
   - BSBacktraceLogger (0.0.1)
   - CocoaLumberjack (3.6.1):
     - CocoaLumberjack/Core (= 3.6.1)
@@ -77,9 +78,13 @@ PODS:
   - JLRoutes (2.1)
   - JSONModel (1.8.0)
   - LzmaSDK-ObjC (2.0.19)
+  - LZUberSignature (1.0.4)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
   - "NSData+Base64 (1.0.0)"
+  - pdftotxt (0.1.3):
+    - pdftotxt/xpdf (= 0.1.3)
+  - pdftotxt/xpdf (0.1.3)
   - PINCache (3.0.1-beta.4):
     - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
     - PINCache/Core (= 3.0.1-beta.4)
@@ -152,6 +157,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
+  - BookReader
   - CTMediator (~> 25)
   - CTPersistance
   - DateTools
@@ -173,15 +179,17 @@ DEPENDENCIES:
   - JLRoutes (~> 2.1)
   - JSONModel (~> 1.8.0)
   - LzmaSDK-ObjC
+  - LZUberSignature (~> 1.0.4)
   - Masonry
   - MBProgressHUD
   - "NSData+Base64"
+  - pdftotxt
   - ReactiveCocoa
   - ReactiveViewModel
   - RNCryptor
   - RxSwift
   - SDWebImage
-  - SSZipArchive (~> 2.2.2)
+  - SSZipArchive
   - SVGAPlayer (~> 2.3.3)
   - SVPullToRefresh
   - Texture
@@ -195,6 +203,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Alamofire
+    - BookReader
     - BSBacktraceLogger
     - CocoaLumberjack
     - CTMediator
@@ -212,9 +221,11 @@ SPEC REPOS:
     - JLRoutes
     - JSONModel
     - LzmaSDK-ObjC
+    - LZUberSignature
     - Masonry
     - MBProgressHUD
     - "NSData+Base64"
+    - pdftotxt
     - PINCache
     - PINOperation
     - PINRemoteImage
@@ -242,6 +253,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  BookReader: 63a44cb075cf63b18526c2c23f190fd700c4ab31
   BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
   CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
@@ -259,9 +271,11 @@ SPEC CHECKSUMS:
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   LzmaSDK-ObjC: 1dd68a10d1af6c127f9811d117bf41a90bac9234
+  LZUberSignature: f1bb185deaa45f158720933fda78b6ddff3c8617
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
+  pdftotxt: fe108ba4238caf616b519fc7aeb99e690b9289bc
   PINCache: a89c8f609232afac77128557bd12c861844423d7
   PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
   PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
@@ -286,6 +300,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1f94b54816c41dcecfb153551b10d19747ddb694
+PODFILE CHECKSUM: 6c0cf3961e2ce7b672dc368d8eaba289733692c9
 
 COCOAPODS: 1.5.3

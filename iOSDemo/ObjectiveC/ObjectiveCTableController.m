@@ -58,6 +58,7 @@
                    @{@"title":@"生命周期",@"class":@"XJYViewController",@"storyboard":@"0"},
                    @{@"title":@"数据存储",@"class":@"XStoreViewController",@"storyboard":@"0"},
                    @{@"title":@"循环引用",@"class":@"XRetainCyViewController",@"storyboard":@"0"},
+                   @{@"title":@"手写签名",@"class":@"XSignatureViewController",@"storyboard":@"0"},
                    ];
 //    NSObject *ob = [[NSObject alloc]init];
 //    [ob setValue:@"11" forKey:@"uuu"];

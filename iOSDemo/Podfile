@@ -1,6 +1,6 @@
 #source 'https://mirrors.tuna.tsinghua.edu.cn/git/CocoaPods/Specs.git'
 
-platform :ios, '8.0'
+platform :ios, '11.0'
 use_frameworks!
 
 target 'iOSDemo' do
@@ -54,6 +54,9 @@ target 'iOSDemo' do
   pod 'SSZipArchive'
   pod 'UnrarKit'
   pod 'LzmaSDK-ObjC'
-  
+  pod 'BookReader'
+  pod 'pdftotxt'
+#  pod 'SwiftOCR'
+  pod 'LZUberSignature', '~> 1.0.4'
 end
 
