@@ -45,13 +45,13 @@
     NSLog(@"selector1 %@",NSStringFromSelector(@selector(selectorName)));
     NSLog(@"selector2 %@",NSStringFromSelector(@selector(seletorNa)));
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"" parameters:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"1%@",self.hah);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"2%@",self.hah);
-    }];
+//    [manager GET:@"" parameters:@{} progress:^(NSProgress * _Nonnull downloadProgress) {
+//        
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSLog(@"1%@",self.hah);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//        NSLog(@"2%@",self.hah);
+//    }];
     
     UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 120, 100, 100)];
     [self.view addSubview:imageView];

@@ -1,60 +1,44 @@
 PODS:
-  - AFNetworking (3.2.1):
-    - AFNetworking/NSURLSession (= 3.2.1)
-    - AFNetworking/Reachability (= 3.2.1)
-    - AFNetworking/Security (= 3.2.1)
-    - AFNetworking/Serialization (= 3.2.1)
-    - AFNetworking/UIKit (= 3.2.1)
-  - AFNetworking/NSURLSession (3.2.1):
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.2.1)
-  - AFNetworking/Security (3.2.1)
-  - AFNetworking/Serialization (3.2.1)
-  - AFNetworking/UIKit (3.2.1):
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
-  - Alamofire (4.9.1)
+  - Alamofire (5.2.2)
   - BookReader (0.1.0)
-  - BSBacktraceLogger (0.0.1)
-  - CocoaLumberjack (3.6.1):
-    - CocoaLumberjack/Core (= 3.6.1)
-  - CocoaLumberjack/Core (3.6.1)
+  - CocoaLumberjack (3.6.2):
+    - CocoaLumberjack/Core (= 3.6.2)
+  - CocoaLumberjack/Core (3.6.2)
   - CTMediator (25)
-  - CTPersistance (199):
+  - CTPersistance (200):
     - CTMediator
     - SQLCipher
   - DateTools (2.0.0)
-  - DoraemonKit/Core (2.0.0):
-    - BSBacktraceLogger
-    - fishhook
-  - DoraemonKit/WithDatabase (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/Core (3.0.2)
+  - DoraemonKit/WithDatabase (3.0.2):
     - DoraemonKit/Core
-    - fishhook
     - YYDebugDatabase
-  - DoraemonKit/WithGPS (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/WithGPS (3.0.2):
     - DoraemonKit/Core
-    - fishhook
-  - DoraemonKit/WithLoad (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/WithLoad (3.0.2):
     - DoraemonKit/Core
-    - fishhook
-  - DoraemonKit/WithLogger (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/WithLogger (3.0.2):
     - CocoaLumberjack
     - DoraemonKit/Core
-    - fishhook
-  - DoraemonKit/WithMLeaksFinder (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/WithMLeaksFinder (3.0.2):
     - DoraemonKit/Core
-    - FBRetainCycleDetector
-    - fishhook
-  - DoraemonKit/WithWeex (2.0.0):
-    - BSBacktraceLogger
+  - DoraemonKit/WithWeex (3.0.2):
     - DoraemonKit/Core
-    - fishhook
     - WeexSDK
     - WXDevtool
   - FBAllocationTracker (0.1.5)
@@ -63,7 +47,6 @@ PODS:
     - FBRetainCycleDetector (~> 0.1)
   - FBRetainCycleDetector (0.1.4)
   - FDStackView (1.0.1)
-  - fishhook (0.2)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
@@ -77,7 +60,7 @@ PODS:
   - GPUImage (0.1.7)
   - JLRoutes (2.1)
   - JSONModel (1.8.0)
-  - LzmaSDK-ObjC (2.0.19)
+  - LzmaSDK-ObjC (2.1.1)
   - LZUberSignature (1.0.4)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
@@ -85,21 +68,7 @@ PODS:
   - pdftotxt (0.1.3):
     - pdftotxt/xpdf (= 0.1.3)
   - pdftotxt/xpdf (0.1.3)
-  - PINCache (3.0.1-beta.4):
-    - PINCache/Arc-exception-safe (= 3.0.1-beta.4)
-    - PINCache/Core (= 3.0.1-beta.4)
-  - PINCache/Arc-exception-safe (3.0.1-beta.4):
-    - PINCache/Core
-  - PINCache/Core (3.0.1-beta.4):
-    - PINOperation (= 1.0.3)
-  - PINOperation (1.0.3)
-  - PINRemoteImage/Core (3.0.0-beta.8)
-  - PINRemoteImage/iOS (3.0.0-beta.8):
-    - PINRemoteImage/Core
-  - PINRemoteImage/PINCache (3.0.0-beta.8):
-    - PINCache (= 3.0.1-beta.4)
-    - PINRemoteImage/Core
-  - Protobuf (3.11.4)
+  - Protobuf (3.12.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -111,16 +80,16 @@ PODS:
     - ReactiveCocoa (~> 2.4)
   - RNCryptor (5.1.0)
   - RxSwift (5.1.1)
-  - SDWebImage (5.6.1):
-    - SDWebImage/Core (= 5.6.1)
-  - SDWebImage/Core (5.6.1)
+  - SDWebImage (5.8.4):
+    - SDWebImage/Core (= 5.8.4)
+  - SDWebImage/Core (5.8.4)
   - SocketRocket (0.5.1)
-  - SQLCipher (4.3.0):
-    - SQLCipher/standard (= 4.3.0)
-  - SQLCipher/common (4.3.0)
-  - SQLCipher/standard (4.3.0):
+  - SQLCipher (4.4.0):
+    - SQLCipher/standard (= 4.4.0)
+  - SQLCipher/common (4.4.0)
+  - SQLCipher/standard (4.4.0):
     - SQLCipher/common
-  - SSZipArchive (2.2.2)
+  - SSZipArchive (2.2.3)
   - SVGAPlayer (2.3.5):
     - SVGAPlayer/Core (= 2.3.5)
     - SVGAPlayer/ProtoFiles (= 2.3.5)
@@ -130,24 +99,17 @@ PODS:
   - SVGAPlayer/ProtoFiles (2.3.5):
     - Protobuf (~> 3.4)
   - SVPullToRefresh (0.4.1)
-  - Texture (2.2):
-    - Texture/PINRemoteImage (= 2.2)
-  - Texture/Core (2.2)
-  - Texture/PINRemoteImage (2.2):
-    - PINRemoteImage/iOS (= 3.0.0-beta.8)
-    - PINRemoteImage/PINCache
-    - Texture/Core
   - thrift (0.9.3)
   - TPJsBridge (0.0.24)
-  - UnrarKit (2.8.1):
-    - UnrarKit/unrar-lib (= 2.8.1)
-  - UnrarKit/unrar-lib (2.8.1)
-  - WeexSDK (0.26.0)
+  - UnrarKit (2.9):
+    - UnrarKit/unrar-lib (= 2.9)
+  - UnrarKit/unrar-lib (2.9)
+  - WeexSDK (0.28.0)
   - WXDevtool (0.24.0):
     - SocketRocket
     - WeexSDK
   - XRefresh (1.2.0)
-  - YYDebugDatabase (2.0.8):
+  - YYDebugDatabase (2.0.9):
     - FMDB
     - GCDWebServer
   - YYKit (1.0.9):
@@ -192,7 +154,6 @@ DEPENDENCIES:
   - SSZipArchive
   - SVGAPlayer (~> 2.3.3)
   - SVPullToRefresh
-  - Texture
   - thrift (~> 0.9.3)
   - TPJsBridge (~> 0.0.24)
   - UnrarKit
@@ -204,7 +165,6 @@ SPEC REPOS:
     - AFNetworking
     - Alamofire
     - BookReader
-    - BSBacktraceLogger
     - CocoaLumberjack
     - CTMediator
     - CTPersistance
@@ -214,7 +174,6 @@ SPEC REPOS:
     - FBMemoryProfiler
     - FBRetainCycleDetector
     - FDStackView
-    - fishhook
     - FMDB
     - GCDWebServer
     - GPUImage
@@ -226,9 +185,6 @@ SPEC REPOS:
     - MBProgressHUD
     - "NSData+Base64"
     - pdftotxt
-    - PINCache
-    - PINOperation
-    - PINRemoteImage
     - Protobuf
     - ReactiveCocoa
     - ReactiveViewModel
@@ -240,7 +196,6 @@ SPEC REPOS:
     - SSZipArchive
     - SVGAPlayer
     - SVPullToRefresh
-    - Texture
     - thrift
     - TPJsBridge
     - UnrarKit
@@ -251,55 +206,49 @@ SPEC REPOS:
     - YYKit
 
 SPEC CHECKSUMS:
-  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
   BookReader: 63a44cb075cf63b18526c2c23f190fd700c4ab31
-  BSBacktraceLogger: 06b983ee93a9f87d957960e9c73d660d5966b447
-  CocoaLumberjack: b17ae15142558d08bbacf69775fa10c4abbebcc9
+  CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
-  CTPersistance: 015761716454d93dd1e41566ffb751e7958f4efe
+  CTPersistance: 91dfa86d211a416ee4364b433153b21c0d94329b
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
-  DoraemonKit: 9e923599e28d0b61f1c6de4aef2c2d669b30abb7
+  DoraemonKit: 8587e7a9aae0773dfc96707d2369d89d2a21b3d2
   FBAllocationTracker: dfdca3f71aceca6a85e95e3c6ec76a9785eba0f1
   FBMemoryProfiler: 623fc5f8a61f7d02ec75c87e3b97c90f621d8b02
   FBRetainCycleDetector: 46f8179bbb1c587deee3ea838a1a3ee02acf5015
   FDStackView: fc0697e5be2022c8af36ce66e9e2061006058ba8
-  fishhook: ea19933abfe8f2f52c55fd8b6e2718467d3ebc89
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   GCDWebServer: 2c156a56c8226e2d5c0c3f208a3621ccffbe3ce4
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
-  LzmaSDK-ObjC: 1dd68a10d1af6c127f9811d117bf41a90bac9234
+  LzmaSDK-ObjC: 6c68c37743a658fc9a4c7b70f7d6045b587aa42b
   LZUberSignature: f1bb185deaa45f158720933fda78b6ddff3c8617
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   "NSData+Base64": 4e84902c4db907a15673474677e57763ef3903e4
   pdftotxt: fe108ba4238caf616b519fc7aeb99e690b9289bc
-  PINCache: a89c8f609232afac77128557bd12c861844423d7
-  PINOperation: ac23db44796d4a564ecf9b5ea7163510f579b71d
-  PINRemoteImage: c4f9f16932840c597f32e69dd288e10e111a1929
-  Protobuf: 176220c526ad8bd09ab1fb40a978eac3fef665f7
+  Protobuf: 2793fcd0622a00b546c60e7cbbcc493e043e9bb9
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
-  SDWebImage: 7edb9c3ea661e77a66661f7f044de8c1b55d1120
+  SDWebImage: cf6922231e95550934da2ada0f20f2becf2ceba9
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
-  SQLCipher: d305a7bd9af4b64f095c79bdc1a1fa50f2a15116
-  SSZipArchive: fa16b8cc4cdeceb698e5e5d9f67e9558532fbf23
+  SQLCipher: e434ed542b24f38ea7b36468a13f9765e1b5c072
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   SVGAPlayer: bae4048710c948dc4de98971e35207d3bbed85ad
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
-  Texture: 3e4664479225216198c29bdb9621664de390534d
   thrift: 206849d78773b19e1be3cc1bbe094371c0adfbe2
   TPJsBridge: c42c763168840f10e85915d2a1b389b3d7f363ff
-  UnrarKit: 167602bda6542e575c4cdc068509d6b787f84468
-  WeexSDK: 55b67d1c411eb28ec1e356f763a335d0ddcc5324
+  UnrarKit: 99e3f0222a98a212188e1a6975dcf5aa798d26dd
+  WeexSDK: 78861d2f8b78f67e30580c15a54f5b420456db39
   WXDevtool: 95b70c73c06fc3299d65bd53ba4b3e0b0087f3cb
   XRefresh: b2569aec255900d3dbd794bffbaf502ff6fd4198
-  YYDebugDatabase: 037486297a7dd40bc50e2c6df5de7b4ad24c9c17
+  YYDebugDatabase: e9e1d2a92c32b29c8a2777e3a49d34f8133efae0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 6c0cf3961e2ce7b672dc368d8eaba289733692c9
+PODFILE CHECKSUM: 18336b85aaa5023b81b4e2ffaea9524aff64e281
 
 COCOAPODS: 1.5.3

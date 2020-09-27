@@ -40,7 +40,7 @@ target 'iOSDemo' do
   pod 'FBRetainCycleDetector', :configurations => ['Debug']
   pod 'FBMemoryProfiler', :configurations => ['Debug']
 #  pod 'AsyncDisplayKit'
-  pod 'Texture'
+#  pod 'Texture'
   pod 'FDStackView'
 #  pod 'HCMVManager', '~> 1.6.4'
   pod 'DoraemonKit/Core', :configurations => ['Debug']
