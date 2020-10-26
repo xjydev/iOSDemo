@@ -7,6 +7,12 @@
 //
 
 #import "XStringViewController.h"
+#include <arpa/inet.h>
+#include <netdb.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <ifaddrs.h>
+#include <net/if.h>
 
 @interface XStringViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *stringField;
@@ -24,6 +30,8 @@
     NSString *str1 = @"123456";
     NSString *str2 = @"ab1234";
     NSString *str3 = @"说话ab12";
+    NSLog(@"host == %@",[self syncFetchIPAddressWithHost:@""]);
+    NSLog(@"host1 == %@",[self syncFetchIPAddressWithHost:nil]);
     NSLog(@"length = %ld %ld %ld",str1.length,str2.length,str3.length);
     //半角符长度
     NSLog(@"UTF = %ld %ld %ld",[str1 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding],[str2 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding],[str3 lengthOfBytesUsingEncoding:NSNonLossyASCIIStringEncoding]);
@@ -49,6 +57,14 @@
     testLabel.textColor=[UIColor blackColor];
     testLabel.backgroundColor=[UIColor yellowColor];
     [self.view addSubview:testLabel];
+    NSLog(@"containt 1-- %@",[self contentStr:@"NT:" inData:@"0123NT:44567\r\n"]);
+    
+    NSLog(@"containt 2 -- %@",[self contentStr:nil inData:@"12\r\n23"]);
+    
+    NSLog(@"containt 3 -- %@",[self contentStr:@"1234" inData:@"\r\n123"]);
+    
+    NSLog(@"containt 4 -- %@",[self contentStr:@"1234" inData:@"3"]);
+//    [self contentStr:nil inData:nil];
 }
 - (NSInteger)halfLength:(NSString *)text {
     NSInteger len = 0;
@@ -149,6 +165,79 @@
      NSLog(@"%p %p  %p %p",str,ar.firstObject,arr.firstObject,arr2.firstObject);
     NSLog(@"%p %p  %p %p",mst,ar.lastObject,arr.lastObject,arr2.lastObject);
 }
+- (NSString *)contentStr:(NSString *)key inData:(NSString *)data {
+   
+    NSString *str = data;
+//    if (str == nil || key == nil) {
+//        return @"";
+//    }
+//
+//    NSRange keyRange = [str rangeOfString:key options:NSCaseInsensitiveSearch];
+//
+//    if (keyRange.location == NSNotFound){
+//        return @"";
+//    }
+//
+//    str = [str substringFromIndex:keyRange.location + keyRange.length];
+//
+    NSRange enterRange = [str rangeOfString:@"\r\n"];
+    if (enterRange.location == NSNotFound) {
+        return str;
+    }
+    NSString *value = [[str substringToIndex:enterRange.location] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    return value;
+}
+- (NSString *)syncFetchIPAddressWithHost:(NSString *)host
+{
+    if (host == nil || host.length == 0 ) {
+        return nil;
+    }
+    NSString *address = nil;
+    const char * hostAdd = [host UTF8String];
+    CFStringRef hostNameRef = CFStringCreateWithCString(kCFAllocatorDefault, hostAdd, kCFStringEncodingASCII);
+    CFHostRef hostRef = CFHostCreateWithName(kCFAllocatorDefault, hostNameRef);
+    
+    if (CFHostStartInfoResolution(hostRef, kCFHostAddresses, NULL))
+    {
+        Boolean result = false;
+        CFArrayRef addresses = CFHostGetAddressing(hostRef, &result);
+        if (result) {
+            struct sockaddr *remoteAddress;
+            for (int i = 0; i < CFArrayGetCount(addresses); i++)
+            {
+                CFDataRef saData = (CFDataRef)CFArrayGetValueAtIndex(addresses, i);
+                remoteAddress = (struct sockaddr *)CFDataGetBytePtr(saData);
+                if (remoteAddress != NULL) {
+                    if (remoteAddress->sa_family == AF_INET) {
+                        struct sockaddr_in *remoteAddressV4 = (struct sockaddr_in *)remoteAddress;
+                        char ipv4[INET_ADDRSTRLEN];
+                        if (inet_ntop(AF_INET, (void *)&(remoteAddressV4->sin_addr), ipv4, INET_ADDRSTRLEN) != NULL)
+                            address = [NSString stringWithUTF8String:ipv4];
+                    }
+                    else if (remoteAddress->sa_family == AF_INET6) {
+                        struct sockaddr_in6 *remoteAddressV6 = (struct sockaddr_in6 *)remoteAddress;
+                        char ipv6[INET6_ADDRSTRLEN];
+                        if (inet_ntop(AF_INET6, (void *)&(remoteAddressV6->sin6_addr), ipv6, INET6_ADDRSTRLEN) != NULL)
+                            address = [NSString stringWithUTF8String:ipv6];
+                    }
+                    break;
+                }
+            }
+        }
+    }
+    if (address == nil) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [WBNLCurrentLogManager getPlayerErrorCode:9999 errortype:WBPlayDNSError];
+//            [WBNLCurrentLogManager getPlayerErrorDomain:@"dns ip error"];
+//            [WBNLCurrentLogManager getPlayerErrorMsg:WBPlayState * 10 + WBMLVideoLiveLogPlayerTypeWBPLAYER];
+        });
+    }
+    CFRelease(hostRef);
+    CFRelease(hostNameRef);
+    return address;
+}
+
 /*
 #pragma mark - Navigation
 

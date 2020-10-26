@@ -111,7 +111,9 @@
 		6CF4404F2436C7E7000B1AD1 /* JYHookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */; };
 		6CF44053243744B8000B1AD1 /* tm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF44052243744B8000B1AD1 /* tm.png */; };
 		6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */; };
+		E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */; };
 		E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475BB2B251C91B20090D954 /* DistributeViewController.swift */; };
+		E4C25047252425D8000BC8B8 /* EncryptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C25046252425D8000BC8B8 /* EncryptViewController.m */; };
 		E4FE4BDC24FCA42200AF2DE6 /* XSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE4BDB24FCA42200AF2DE6 /* XSignatureViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -327,7 +329,11 @@
 		6CF4405524381B50000B1AD1 /* XAutoLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutViewController.h; sourceTree = "<group>"; };
 		6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutViewController.m; sourceTree = "<group>"; };
 		A925C9B207F37E35CFCEF1CB /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E457B6E12542E2C500AE445A /* XGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGestureRecognizerViewController.h; sourceTree = "<group>"; };
+		E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		E475BB2B251C91B20090D954 /* DistributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeViewController.swift; sourceTree = "<group>"; };
+		E4C25045252425D8000BC8B8 /* EncryptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptViewController.h; sourceTree = "<group>"; };
+		E4C25046252425D8000BC8B8 /* EncryptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptViewController.m; sourceTree = "<group>"; };
 		E4FE4BDA24FCA42200AF2DE6 /* XSignatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSignatureViewController.h; sourceTree = "<group>"; };
 		E4FE4BDB24FCA42200AF2DE6 /* XSignatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSignatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -596,6 +602,7 @@
 				6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */,
 				6CE9914C2466F62700F8AE12 /* InvokeSwiftViewController.h */,
 				6CE9914D2466F62700F8AE12 /* InvokeSwiftViewController.m */,
+				E4C25044252425D8000BC8B8 /* Encrypt */,
 				6C67E2232452DD4E00BA9876 /* KVOKVC */,
 				6C67E21F2452D81900BA9876 /* X循环引用 */,
 				6CA915E9243CC3EF00F49F55 /* XVC */,
@@ -624,6 +631,7 @@
 				6C0BD72D24235AF10002E956 /* Xanimation */,
 				E4FE4BD924FCA40300AF2DE6 /* Signature */,
 				6C64589220AD61DE0046C2F9 /* xProperty */,
+				E457B6DA2542E2AB00AE445A /* GestureRecognizer */,
 			);
 			path = ObjectiveC;
 			sourceTree = SOURCE_ROOT;
@@ -921,6 +929,25 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E457B6DA2542E2AB00AE445A /* GestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				E457B6E12542E2C500AE445A /* XGestureRecognizerViewController.h */,
+				E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */,
+			);
+			name = GestureRecognizer;
+			path = ObjectiveC/GestureRecognizer;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4C25044252425D8000BC8B8 /* Encrypt */ = {
+			isa = PBXGroup;
+			children = (
+				E4C25045252425D8000BC8B8 /* EncryptViewController.h */,
+				E4C25046252425D8000BC8B8 /* EncryptViewController.m */,
+			);
+			path = Encrypt;
+			sourceTree = "<group>";
+		};
 		E4FE4BD924FCA40300AF2DE6 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
@@ -995,7 +1022,7 @@
 		6C64584220AD4B5D0046C2F9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = Xiaodev;
 				TargetAttributes = {
 					6C64584920AD4B5D0046C2F9 = {
@@ -1252,6 +1279,7 @@
 				6C67E2222452D83800BA9876 /* XRetainCyViewController.m in Sources */,
 				6CE9914B2466F48100F8AE12 /* InvokeOCViewController.swift in Sources */,
 				6C64589B20AD92360046C2F9 /* XBlockViewController.m in Sources */,
+				E4C25047252425D8000BC8B8 /* EncryptViewController.m in Sources */,
 				6CE1A8C9241BA88C00754036 /* XSonObj+cate.m in Sources */,
 				6C4A64592241EF12008F187D /* XGuideViewController.m in Sources */,
 				6CB7D3D9245F1B15007C1374 /* XGCDViewController.m in Sources */,
@@ -1283,6 +1311,7 @@
 				6C6F7F7A20C7C44000C5C151 /* XYView.m in Sources */,
 				6C7EA63024485E7F00E970AB /* XStringViewController.swift in Sources */,
 				6CB429F620C547DB000CFD37 /* UIView+LX_Frame.m in Sources */,
+				E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */,
 				6C7EA62E24475BD100E970AB /* XRCViewController.m in Sources */,
 				E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */,
 				6CB429E320C5468D000CFD37 /* LXCalendarView.m in Sources */,
@@ -1377,6 +1406,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1402,7 +1432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1436,6 +1466,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1455,9 +1486,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

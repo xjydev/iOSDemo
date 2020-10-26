@@ -40,6 +40,7 @@
   @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},
   @{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},  @{@"title":@"play视频",@"class":@"XPlayerViewController",@"storyboard":@"0"},
+                   @{@"title":@"Gesture手势",@"class":@"XGestureRecognizerViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"OC调用Swift",@"class":@"InvokeSwiftViewController",@"storyboard":@"0"},
