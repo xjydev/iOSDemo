@@ -111,6 +111,8 @@
 		E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */; };
 		E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475BB2B251C91B20090D954 /* DistributeViewController.swift */; };
 		E49F899B2546D28A00A9A165 /* XGSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F899A2546D28A00A9A165 /* XGSubViewController.m */; };
+		E4C028A5254FB08D00FD783C /* XCarouselTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028A4254FB08D00FD783C /* XCarouselTController.m */; };
+		E4C028AB254FB29400FD783C /* XCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */; };
 		E4C25047252425D8000BC8B8 /* EncryptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C25046252425D8000BC8B8 /* EncryptViewController.m */; };
 		E4D0ED782547FEED00548F76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C61CB3B2269B403002FE2A8 /* CoreBluetooth.framework */; };
 		E4D0ED7A2547FEEF00548F76 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
@@ -335,6 +337,10 @@
 		E475BB2B251C91B20090D954 /* DistributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeViewController.swift; sourceTree = "<group>"; };
 		E49F89992546D28A00A9A165 /* XGSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGSubViewController.h; sourceTree = "<group>"; };
 		E49F899A2546D28A00A9A165 /* XGSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGSubViewController.m; sourceTree = "<group>"; };
+		E4C028A3254FB08D00FD783C /* XCarouselTController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCarouselTController.h; sourceTree = "<group>"; };
+		E4C028A4254FB08D00FD783C /* XCarouselTController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCarouselTController.m; sourceTree = "<group>"; };
+		E4C028A9254FB29400FD783C /* XCarouselTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCarouselTableViewCell.h; sourceTree = "<group>"; };
+		E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCarouselTableViewCell.m; sourceTree = "<group>"; };
 		E4C25045252425D8000BC8B8 /* EncryptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptViewController.h; sourceTree = "<group>"; };
 		E4C25046252425D8000BC8B8 /* EncryptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptViewController.m; sourceTree = "<group>"; };
 		E4FE4BDA24FCA42200AF2DE6 /* XSignatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSignatureViewController.h; sourceTree = "<group>"; };
@@ -634,6 +640,7 @@
 				6C0BD72D24235AF10002E956 /* Xanimation */,
 				E4FE4BD924FCA40300AF2DE6 /* Signature */,
 				6C64589220AD61DE0046C2F9 /* xProperty */,
+				E4C0289F254FAEF600FD783C /* XCarousel */,
 				E457B6DA2542E2AB00AE445A /* GestureRecognizer */,
 			);
 			path = ObjectiveC;
@@ -943,6 +950,17 @@
 			name = GestureRecognizer;
 			path = ObjectiveC/GestureRecognizer;
 			sourceTree = SOURCE_ROOT;
+		};
+		E4C0289F254FAEF600FD783C /* XCarousel */ = {
+			isa = PBXGroup;
+			children = (
+				E4C028A3254FB08D00FD783C /* XCarouselTController.h */,
+				E4C028A4254FB08D00FD783C /* XCarouselTController.m */,
+				E4C028A9254FB29400FD783C /* XCarouselTableViewCell.h */,
+				E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */,
+			);
+			path = XCarousel;
+			sourceTree = "<group>";
 		};
 		E4C25044252425D8000BC8B8 /* Encrypt */ = {
 			isa = PBXGroup;
@@ -1298,6 +1316,7 @@
 				6C67E2262452DD5A00BA9876 /* XKVOViewController.m in Sources */,
 				6CB429E420C5468D000CFD37 /* NSDate+GFCalendar.m in Sources */,
 				6CE1A8B62418D43B00754036 /* XShareInstance.m in Sources */,
+				E4C028AB254FB29400FD783C /* XCarouselTableViewCell.m in Sources */,
 				6CE1A8BA241BA53C00754036 /* XOCViewController.m in Sources */,
 				6CB429F820C547DB000CFD37 /* LxButton.m in Sources */,
 				6CE1A8C6241BA5BF00754036 /* XDaughterObj.m in Sources */,
@@ -1320,6 +1339,7 @@
 				E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */,
 				6C7EA62E24475BD100E970AB /* XRCViewController.m in Sources */,
 				E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */,
+				E4C028A5254FB08D00FD783C /* XCarouselTController.m in Sources */,
 				6CB429E320C5468D000CFD37 /* LXCalendarView.m in Sources */,
 				6C64586020AD4B5E0046C2F9 /* main.m in Sources */,
 				6CE1A8CC241BB33100754036 /* XWifeObj.m in Sources */,

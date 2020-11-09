@@ -12,6 +12,7 @@
 #import "ABGuideView.h"
 #import <Masonry/Masonry.h>
 #import "XTools.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
 
@@ -31,21 +32,24 @@
 }
 - (void)viewDidLoad {//
     [super viewDidLoad];
-    sleep(1);
+//    sleep(1);
 //    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
- @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"},
-  @{@"title":@"第三方",@"class":@"ThirdViewController",@"storyboard":@"0"},
-   @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},
-  @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},
-  @{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
+                   @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"},
+                   @{@"title":@"轮播图",@"class":@"XCarouselTController",@"storyboard":@"0"},
+                   @{@"title":@"第三方",@"class":@"ThirdViewController",@"storyboard":@"0"},
+                   @{@"title":@"动画",@"class":@"XAnimationViewController",@"storyboard":@"0"},
+                   @{@"title":@"地图",@"class":@"XMapViewController",@"storyboard":@"0"},
+                   @{@"title":@"属性",@"class":@"XPropertyViewController",@"storyboard":@"0"},
                    @{@"title":@"Gesture手势",@"class":@"XGestureRecognizerViewController",@"storyboard":@"0"},
-                   @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},  @{@"title":@"play视频",@"class":@"XPlayerViewController",@"storyboard":@"0"},
-                   
+                   @{@"title":@"Runloop",@"class":@"XRunloopViewController",@"storyboard":@"0"},
+                   @{@"title":@"play视频",@"class":@"XPlayerViewController",@"storyboard":@"0"},
                    @{@"title":@"falsh动画",@"class":@"XFlashViewController",@"storyboard":@"0"},
                    @{@"title":@"蓝牙",@"class":@"XBluetoothViewController",@"storyboard":@"0"},
                    @{@"title":@"OC调用Swift",@"class":@"InvokeSwiftViewController",@"storyboard":@"0"},
-                   @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},        @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},@{@"title":@"KVOKVC",@"class":@"XKVCViewController",@"storyboard":@"0"},
+                   @{@"title":@"Category",@"class":@"XCategoryViewController",@"storyboard":@"0"},
+                   @{@"title":@"Block",@"class":@"XBlockViewController",@"storyboard":@"0"},
+                   @{@"title":@"KVOKVC",@"class":@"XKVCViewController",@"storyboard":@"0"},
                    @{@"title":@"日历",@"class":@"XcalendarViewController",@"storyboard":@"0"},
                    @{@"title":@"UIView",@"class":@"XYViewController",@"storyboard":@"0"},
                    @{@"title":@"UIImage",@"class":@"XimageViewController",@"storyboard":@"0"},
@@ -61,7 +65,7 @@
                    @{@"title":@"数据存储",@"class":@"XStoreViewController",@"storyboard":@"0"},
                    @{@"title":@"循环引用",@"class":@"XRetainCyViewController",@"storyboard":@"0"},
                    @{@"title":@"手写签名",@"class":@"XSignatureViewController",@"storyboard":@"0"},
-                   ];
+    ];
 //    NSObject *ob = [[NSObject alloc]init];
 //    [ob setValue:@"11" forKey:@"uuu"];
 //
@@ -86,16 +90,20 @@
 //    view1.backgroundColor = [UIColor redColor];
 //    [suView addSubview:view1];
     
-    CALayer *imageLayer = [CALayer layer];
-    [suView.layer addSublayer:imageLayer];
-    UIImage *limage = [UIImage imageNamed:@"12"];
-    imageLayer.contents = (__bridge id)limage.CGImage;
-    CGFloat height =limage.size.height*CGRectGetWidth(suView.frame)/limage.size.width;
-    imageLayer.frame = CGRectMake(0,CGRectGetHeight(suView.frame) - height , CGRectGetWidth(suView.frame),height);
+//    CALayer *imageLayer = [CALayer layer];
+//    [suView.layer addSublayer:imageLayer];
+//    UIImage *limage = [UIImage imageNamed:@"123"];
+//    imageLayer.contents = (__bridge id)limage.CGImage;
+//    CGFloat height =limage.size.height*CGRectGetWidth(suView.frame)/limage.size.width;
+//    imageLayer.frame = CGRectMake(0,CGRectGetHeight(suView.frame) - height , CGRectGetWidth(suView.frame),height);
+    
+    UIImageView *imView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    imView2.backgroundColor = [UIColor redColor];
+    [suView addSubview:imView2];
+    [imView2 sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604573826451&di=2026887c67e2618bf293ce5e79741247&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F24%2F78%2F20300000291746133783784887147.jpg"]];
     
     
-    
-//    UIView *view2 = [[UIView alloc]init];
+//    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view2.backgroundColor = [UIColor yellowColor];
 //    [suView addSubview:view2];
      
