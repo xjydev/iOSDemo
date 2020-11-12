@@ -102,7 +102,11 @@
     [suView addSubview:imView2];
     [imView2 sd_setImageWithURL:[NSURL URLWithString:@"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1604573826451&di=2026887c67e2618bf293ce5e79741247&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F24%2F78%2F20300000291746133783784887147.jpg"]];
     
-    
+    UIFont *font = [UIFont systemFontOfSize:15];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(100, 50, 200, font.lineHeight)];
+    label.backgroundColor = [UIColor redColor];
+    label.text = @"12哈哈好jhgGJLMQ";
+    [suView addSubview:label];
 //    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view2.backgroundColor = [UIColor yellowColor];
 //    [suView addSubview:view2];

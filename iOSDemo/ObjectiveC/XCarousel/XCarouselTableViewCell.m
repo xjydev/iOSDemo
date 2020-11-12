@@ -9,6 +9,32 @@
 #import "XCarouselTableViewCell.h"
 #import "XTools.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+
+
+@interface WBMLPageControl : UIPageControl
+
+@end
+
+@implementation WBMLPageControl
+#define kmldotW 5
+#define kmlmagrin 1
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    CGFloat marginX = kmldotW + kmlmagrin;
+    
+    for (int i = 0; i < [self.subviews count]; i++) {
+        UIImageView* dot = [self.subviews objectAtIndex:i];
+        if (i == self.currentPage) {
+            [dot setFrame:CGRectMake(i * marginX, dot.frame.origin.y, kmldotW, kmldotW)];
+        }else {
+            [dot setFrame:CGRectMake(i * marginX, dot.frame.origin.y, kmldotW, kmldotW)];
+        }
+    }
+}
+
+@end
+
 @interface XCarouselCell : UICollectionViewCell
 @property (nonatomic, strong)UIImageView *imageView;
 @property (nonatomic, strong)UILabel *label;
@@ -39,7 +65,7 @@
 @interface XCarouselTableViewCell ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong)UICollectionView *cellCollectionView;
 @property (nonatomic, assign)NSInteger index;
-@property (nonatomic, strong)UIPageControl *pageControl;
+@property (nonatomic, strong)WBMLPageControl *pageControl;
 @end
 
 @implementation XCarouselTableViewCell
@@ -71,9 +97,9 @@
     }
     return _cellCollectionView;
 }
-- (UIPageControl *)pageControl {
+- (WBMLPageControl *)pageControl {
     if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(10, 60, kScreen_Width - 20, 20)];
+        _pageControl = [[WBMLPageControl alloc]initWithFrame:CGRectMake(10, 60, kScreen_Width - 20, 20)];
         _pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
         _pageControl.pageIndicatorTintColor = [UIColor greenColor];
         _pageControl.backgroundColor = [UIColor redColor];
