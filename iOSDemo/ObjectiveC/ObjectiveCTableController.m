@@ -32,6 +32,7 @@
 }
 - (void)viewDidLoad {//
     [super viewDidLoad];
+    //练习分支 git cherry-pick 
 //    sleep(1);
 //    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
