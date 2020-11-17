@@ -108,6 +108,7 @@
 		6CF4404F2436C7E7000B1AD1 /* JYHookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */; };
 		6CF44053243744B8000B1AD1 /* tm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF44052243744B8000B1AD1 /* tm.png */; };
 		6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */; };
+		E456E5AA2562791400B179D2 /* XScreenProjectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */; };
 		E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */; };
 		E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475BB2B251C91B20090D954 /* DistributeViewController.swift */; };
 		E49F899B2546D28A00A9A165 /* XGSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F899A2546D28A00A9A165 /* XGSubViewController.m */; };
@@ -332,6 +333,8 @@
 		6CF4405524381B50000B1AD1 /* XAutoLayoutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XAutoLayoutViewController.h; sourceTree = "<group>"; };
 		6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XAutoLayoutViewController.m; sourceTree = "<group>"; };
 		A925C9B207F37E35CFCEF1CB /* Pods-iOSDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDemo/Pods-iOSDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		E456E5A82562791400B179D2 /* XScreenProjectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XScreenProjectionViewController.h; sourceTree = "<group>"; };
+		E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XScreenProjectionViewController.m; sourceTree = "<group>"; };
 		E457B6E12542E2C500AE445A /* XGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		E475BB2B251C91B20090D954 /* DistributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeViewController.swift; sourceTree = "<group>"; };
@@ -611,6 +614,7 @@
 				6C64588F20AD51580046C2F9 /* ObjectiveCTableController.m */,
 				6CE9914C2466F62700F8AE12 /* InvokeSwiftViewController.h */,
 				6CE9914D2466F62700F8AE12 /* InvokeSwiftViewController.m */,
+				E456E5A7256278EE00B179D2 /* ScreenProjection */,
 				E4C25044252425D8000BC8B8 /* Encrypt */,
 				6C67E2232452DD4E00BA9876 /* KVOKVC */,
 				6C67E21F2452D81900BA9876 /* X循环引用 */,
@@ -937,6 +941,15 @@
 				2EE7A61F689CC7248C7974C2 /* Pods-iOSDemo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		E456E5A7256278EE00B179D2 /* ScreenProjection */ = {
+			isa = PBXGroup;
+			children = (
+				E456E5A82562791400B179D2 /* XScreenProjectionViewController.h */,
+				E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */,
+			);
+			path = ScreenProjection;
 			sourceTree = "<group>";
 		};
 		E457B6DA2542E2AB00AE445A /* GestureRecognizer */ = {
@@ -1270,6 +1283,7 @@
 				6C0E11D522DEFDCA00360D76 /* XTransferViewController.m in Sources */,
 				6C6232DA215F789B001E85D4 /* XTableViewController.m in Sources */,
 				6CE36BBD22D4AB3B00B38008 /* EnumViewController.swift in Sources */,
+				E456E5AA2562791400B179D2 /* XScreenProjectionViewController.m in Sources */,
 				6C1DDAEB2455711C002D45A3 /* XKVCViewController+cate.m in Sources */,
 				6CA915EC243CC3FF00F49F55 /* XJYViewController.m in Sources */,
 				6C0BD7342424FF650002E956 /* XOtherViewController.swift in Sources */,

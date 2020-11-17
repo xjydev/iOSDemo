@@ -5,7 +5,7 @@
 //  Created by XiaoDev on 17/05/2018.
 //  Copyright © 2018 Xiaodev. All rights reserved.
 //
-
+#import "XSignatureViewController.h"
 #import "XPropertyViewController.h"
 #import "XModel.h"
 
@@ -112,7 +112,12 @@ int sta2 = 3;
 //    coStr1 = @"567";//coStr1指针指向的内存地址不能变。指向不能变。
 }
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self weakFunc];
+//    [self weakFunc];
+    XSignatureViewController *VC = [[XSignatureViewController alloc]init];
+    [self presentViewController:VC animated:YES completion:^{
+            
+    }];
+    
 }
 - (void)weakFunc {
     NSHashTable *hashT = [NSHashTable weakObjectsHashTable];//弱引用,对象被销毁后移除

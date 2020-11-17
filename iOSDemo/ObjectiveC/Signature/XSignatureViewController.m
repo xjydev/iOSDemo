@@ -17,7 +17,10 @@
 @end
 
 @implementation XSignatureViewController
-
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"root == %@",[UIApplication sharedApplication].keyWindow.rootViewController);
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
