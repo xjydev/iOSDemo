@@ -37,6 +37,7 @@
 //    self.navigationController.delegate = self;
     _mainArray = @[@{@"title":@"OC对象本质",@"class":@"XOCViewController",@"storyboard":@"0"},
                    @{@"title":@"线程",@"class":@"XThreadViewController",@"storyboard":@"0"},
+                   @{@"title":@"Lottie动画",@"class":@"LottieViewController",@"storyboard":@"0"},
                    @{@"title":@"投屏",@"class":@"XScreenProjectionViewController",@"storyboard":@"0"},
                    @{@"title":@"轮播图",@"class":@"XCarouselTController",@"storyboard":@"0"},
                    @{@"title":@"第三方",@"class":@"ThirdViewController",@"storyboard":@"0"},

@@ -111,6 +111,12 @@
 		E456E5AA2562791400B179D2 /* XScreenProjectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */; };
 		E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */; };
 		E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475BB2B251C91B20090D954 /* DistributeViewController.swift */; };
+		E4777ED6257622CC00920159 /* LottieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4777ED5257622CC00920159 /* LottieViewController.m */; };
+		E4777EE1257622D900920159 /* feed_attitude_pure.json in Resources */ = {isa = PBXBuildFile; fileRef = E4777EDD257622D900920159 /* feed_attitude_pure.json */; };
+		E4777EE2257622D900920159 /* feed_attitude_heart.json.json in Resources */ = {isa = PBXBuildFile; fileRef = E4777EDE257622D900920159 /* feed_attitude_heart.json.json */; };
+		E4777EE3257622D900920159 /* feed_attitude_happy_lite.json in Resources */ = {isa = PBXBuildFile; fileRef = E4777EDF257622D900920159 /* feed_attitude_happy_lite.json */; };
+		E4777EE4257622D900920159 /* feed_attitude_like_lite.json in Resources */ = {isa = PBXBuildFile; fileRef = E4777EE0257622D900920159 /* feed_attitude_like_lite.json */; };
+		E4777EE9257623EB00920159 /* LottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4777EE8257623EB00920159 /* LottieViewController.swift */; };
 		E49F899B2546D28A00A9A165 /* XGSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49F899A2546D28A00A9A165 /* XGSubViewController.m */; };
 		E4C028A5254FB08D00FD783C /* XCarouselTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028A4254FB08D00FD783C /* XCarouselTController.m */; };
 		E4C028AB254FB29400FD783C /* XCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */; };
@@ -338,6 +344,13 @@
 		E457B6E12542E2C500AE445A /* XGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGestureRecognizerViewController.m; sourceTree = "<group>"; };
 		E475BB2B251C91B20090D954 /* DistributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeViewController.swift; sourceTree = "<group>"; };
+		E4777ED4257622CC00920159 /* LottieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieViewController.h; sourceTree = "<group>"; };
+		E4777ED5257622CC00920159 /* LottieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieViewController.m; sourceTree = "<group>"; };
+		E4777EDD257622D900920159 /* feed_attitude_pure.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed_attitude_pure.json; sourceTree = "<group>"; };
+		E4777EDE257622D900920159 /* feed_attitude_heart.json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed_attitude_heart.json.json; sourceTree = "<group>"; };
+		E4777EDF257622D900920159 /* feed_attitude_happy_lite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed_attitude_happy_lite.json; sourceTree = "<group>"; };
+		E4777EE0257622D900920159 /* feed_attitude_like_lite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = feed_attitude_like_lite.json; sourceTree = "<group>"; };
+		E4777EE8257623EB00920159 /* LottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieViewController.swift; sourceTree = "<group>"; };
 		E49F89992546D28A00A9A165 /* XGSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGSubViewController.h; sourceTree = "<group>"; };
 		E49F899A2546D28A00A9A165 /* XGSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGSubViewController.m; sourceTree = "<group>"; };
 		E4C028A3254FB08D00FD783C /* XCarouselTController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XCarouselTController.h; sourceTree = "<group>"; };
@@ -602,6 +615,7 @@
 				6CE9914A2466F48100F8AE12 /* InvokeOCViewController.swift */,
 				E475BB2B251C91B20090D954 /* DistributeViewController.swift */,
 				6CE991522466FE0200F8AE12 /* OCObject.swift */,
+				E4777EE8257623EB00920159 /* LottieViewController.swift */,
 				6C64588C20AD51580046C2F9 /* iOSDemo-Bridging-Header.h */,
 			);
 			path = Swift;
@@ -646,6 +660,7 @@
 				6C64589220AD61DE0046C2F9 /* xProperty */,
 				E4C0289F254FAEF600FD783C /* XCarousel */,
 				E457B6DA2542E2AB00AE445A /* GestureRecognizer */,
+				E4777ED3257622B200920159 /* Lottie */,
 			);
 			path = ObjectiveC;
 			sourceTree = SOURCE_ROOT;
@@ -964,6 +979,20 @@
 			path = ObjectiveC/GestureRecognizer;
 			sourceTree = SOURCE_ROOT;
 		};
+		E4777ED3257622B200920159 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				E4777EDF257622D900920159 /* feed_attitude_happy_lite.json */,
+				E4777EDE257622D900920159 /* feed_attitude_heart.json.json */,
+				E4777EE0257622D900920159 /* feed_attitude_like_lite.json */,
+				E4777EDD257622D900920159 /* feed_attitude_pure.json */,
+				E4777ED4257622CC00920159 /* LottieViewController.h */,
+				E4777ED5257622CC00920159 /* LottieViewController.m */,
+			);
+			name = Lottie;
+			path = ObjectiveC/Lottie;
+			sourceTree = SOURCE_ROOT;
+		};
 		E4C0289F254FAEF600FD783C /* XCarousel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1102,10 +1131,14 @@
 			files = (
 				6C64585D20AD4B5E0046C2F9 /* LaunchScreen.storyboard in Resources */,
 				6C64585A20AD4B5E0046C2F9 /* Assets.xcassets in Resources */,
+				E4777EE4257622D900920159 /* feed_attitude_like_lite.json in Resources */,
 				6CF44053243744B8000B1AD1 /* tm.png in Resources */,
 				6C64585820AD4B5D0046C2F9 /* Main.storyboard in Resources */,
 				6CB429E120C5468D000CFD37 /* LXCalenderCell.xib in Resources */,
+				E4777EE1257622D900920159 /* feed_attitude_pure.json in Resources */,
 				6CB429DF20C5468D000CFD37 /* LXCalendarHearder.xib in Resources */,
+				E4777EE2257622D900920159 /* feed_attitude_heart.json.json in Resources */,
+				E4777EE3257622D900920159 /* feed_attitude_happy_lite.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1198,6 +1231,7 @@
 				"${BUILT_PRODUCTS_DIR}/XRefresh/XRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/YYDebugDatabase/YYDebugDatabase.framework",
 				"${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 				"${BUILT_PRODUCTS_DIR}/pdftotxt/pdftotxt.framework",
 				"${BUILT_PRODUCTS_DIR}/thrift/thrift.framework",
 			);
@@ -1246,6 +1280,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYDebugDatabase.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pdftotxt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/thrift.framework",
 			);
@@ -1302,6 +1337,7 @@
 				6CBAB4AC211D69B7009E07B1 /* ABCalendarController.m in Sources */,
 				6CE1A8C3241BA58100754036 /* XSonObj.m in Sources */,
 				6CF4404C2436C0E9000B1AD1 /* UIViewController+Hook.m in Sources */,
+				E4777ED6257622CC00920159 /* LottieViewController.m in Sources */,
 				6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */,
 				6C64589020AD51580046C2F9 /* SwiftTableController.swift in Sources */,
 				6C224C34228121AA00C8A6AE /* XFlashViewController.m in Sources */,
@@ -1330,6 +1366,7 @@
 				6C67E2262452DD5A00BA9876 /* XKVOViewController.m in Sources */,
 				6CB429E420C5468D000CFD37 /* NSDate+GFCalendar.m in Sources */,
 				6CE1A8B62418D43B00754036 /* XShareInstance.m in Sources */,
+				E4777EE9257623EB00920159 /* LottieViewController.swift in Sources */,
 				E4C028AB254FB29400FD783C /* XCarouselTableViewCell.m in Sources */,
 				6CE1A8BA241BA53C00754036 /* XOCViewController.m in Sources */,
 				6CB429F820C547DB000CFD37 /* LxButton.m in Sources */,
