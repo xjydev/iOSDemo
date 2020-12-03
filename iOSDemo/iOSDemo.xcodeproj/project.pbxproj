@@ -108,6 +108,7 @@
 		6CF4404F2436C7E7000B1AD1 /* JYHookObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4404E2436C7E7000B1AD1 /* JYHookObject.m */; };
 		6CF44053243744B8000B1AD1 /* tm.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CF44052243744B8000B1AD1 /* tm.png */; };
 		6CF4405724381B50000B1AD1 /* XAutoLayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF4405624381B50000B1AD1 /* XAutoLayoutViewController.m */; };
+		E43468402578889C00752CF0 /* la.svga in Resources */ = {isa = PBXBuildFile; fileRef = E4626B1E2577A1C30027A700 /* la.svga */; };
 		E456E5AA2562791400B179D2 /* XScreenProjectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */; };
 		E457B6E32542E2C500AE445A /* XGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */; };
 		E475BB2C251C91B20090D954 /* DistributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E475BB2B251C91B20090D954 /* DistributeViewController.swift */; };
@@ -343,6 +344,7 @@
 		E456E5A92562791400B179D2 /* XScreenProjectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XScreenProjectionViewController.m; sourceTree = "<group>"; };
 		E457B6E12542E2C500AE445A /* XGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XGestureRecognizerViewController.h; sourceTree = "<group>"; };
 		E457B6E22542E2C500AE445A /* XGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XGestureRecognizerViewController.m; sourceTree = "<group>"; };
+		E4626B1E2577A1C30027A700 /* la.svga */ = {isa = PBXFileReference; lastKnownFileType = file; path = la.svga; sourceTree = "<group>"; };
 		E475BB2B251C91B20090D954 /* DistributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistributeViewController.swift; sourceTree = "<group>"; };
 		E4777ED4257622CC00920159 /* LottieViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LottieViewController.h; sourceTree = "<group>"; };
 		E4777ED5257622CC00920159 /* LottieViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LottieViewController.m; sourceTree = "<group>"; };
@@ -570,6 +572,7 @@
 				6C64584E20AD4B5D0046C2F9 /* AppDelegate.m */,
 				6C67E1E12450224B00BA9876 /* TestViewController.swift */,
 				6CF44052243744B8000B1AD1 /* tm.png */,
+				E4626B1E2577A1C30027A700 /* la.svga */,
 				6C64585620AD4B5D0046C2F9 /* Main.storyboard */,
 				6C64585920AD4B5E0046C2F9 /* Assets.xcassets */,
 				6C64585B20AD4B5E0046C2F9 /* LaunchScreen.storyboard */,
@@ -660,7 +663,7 @@
 				6C64589220AD61DE0046C2F9 /* xProperty */,
 				E4C0289F254FAEF600FD783C /* XCarousel */,
 				E457B6DA2542E2AB00AE445A /* GestureRecognizer */,
-				E4777ED3257622B200920159 /* Lottie */,
+				E4777ED3257622B200920159 /* Animation */,
 			);
 			path = ObjectiveC;
 			sourceTree = SOURCE_ROOT;
@@ -979,7 +982,7 @@
 			path = ObjectiveC/GestureRecognizer;
 			sourceTree = SOURCE_ROOT;
 		};
-		E4777ED3257622B200920159 /* Lottie */ = {
+		E4777ED3257622B200920159 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
 				E4777EDF257622D900920159 /* feed_attitude_happy_lite.json */,
@@ -989,8 +992,8 @@
 				E4777ED4257622CC00920159 /* LottieViewController.h */,
 				E4777ED5257622CC00920159 /* LottieViewController.m */,
 			);
-			name = Lottie;
-			path = ObjectiveC/Lottie;
+			name = Animation;
+			path = ObjectiveC/Animation;
 			sourceTree = SOURCE_ROOT;
 		};
 		E4C0289F254FAEF600FD783C /* XCarousel */ = {
@@ -1129,6 +1132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43468402578889C00752CF0 /* la.svga in Resources */,
 				6C64585D20AD4B5E0046C2F9 /* LaunchScreen.storyboard in Resources */,
 				6C64585A20AD4B5E0046C2F9 /* Assets.xcassets in Resources */,
 				E4777EE4257622D900920159 /* feed_attitude_like_lite.json in Resources */,
