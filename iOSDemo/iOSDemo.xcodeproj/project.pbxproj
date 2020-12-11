@@ -124,6 +124,7 @@
 		E4C25047252425D8000BC8B8 /* EncryptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C25046252425D8000BC8B8 /* EncryptViewController.m */; };
 		E4D0ED782547FEED00548F76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C61CB3B2269B403002FE2A8 /* CoreBluetooth.framework */; };
 		E4D0ED7A2547FEEF00548F76 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
+		E4FC140A257A08A8006DB2A1 /* XRainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC1409257A08A8006DB2A1 /* XRainViewController.m */; };
 		E4FE4BDC24FCA42200AF2DE6 /* XSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE4BDB24FCA42200AF2DE6 /* XSignatureViewController.m */; };
 		FE84A0C3B55958A8B6DC3A8B /* Pods_iOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */; };
 /* End PBXBuildFile section */
@@ -361,6 +362,8 @@
 		E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCarouselTableViewCell.m; sourceTree = "<group>"; };
 		E4C25045252425D8000BC8B8 /* EncryptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptViewController.h; sourceTree = "<group>"; };
 		E4C25046252425D8000BC8B8 /* EncryptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptViewController.m; sourceTree = "<group>"; };
+		E4FC1408257A08A8006DB2A1 /* XRainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRainViewController.h; sourceTree = "<group>"; };
+		E4FC1409257A08A8006DB2A1 /* XRainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRainViewController.m; sourceTree = "<group>"; };
 		E4FE4BDA24FCA42200AF2DE6 /* XSignatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSignatureViewController.h; sourceTree = "<group>"; };
 		E4FE4BDB24FCA42200AF2DE6 /* XSignatureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XSignatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -664,6 +667,7 @@
 				E4C0289F254FAEF600FD783C /* XCarousel */,
 				E457B6DA2542E2AB00AE445A /* GestureRecognizer */,
 				E4777ED3257622B200920159 /* Animation */,
+				E4FC1407257A088D006DB2A1 /* Rain */,
 			);
 			path = ObjectiveC;
 			sourceTree = SOURCE_ROOT;
@@ -1016,6 +1020,15 @@
 			path = Encrypt;
 			sourceTree = "<group>";
 		};
+		E4FC1407257A088D006DB2A1 /* Rain */ = {
+			isa = PBXGroup;
+			children = (
+				E4FC1408257A08A8006DB2A1 /* XRainViewController.h */,
+				E4FC1409257A08A8006DB2A1 /* XRainViewController.m */,
+			);
+			path = Rain;
+			sourceTree = "<group>";
+		};
 		E4FE4BD924FCA40300AF2DE6 /* Signature */ = {
 			isa = PBXGroup;
 			children = (
@@ -1365,6 +1378,7 @@
 				6CB429FD20C54B00000CFD37 /* XTools.m in Sources */,
 				6C57B71C2463A71D009D1843 /* XPlayerViewController.m in Sources */,
 				6CCEE1C12429CE6900C6AC2F /* XRunloopViewController.m in Sources */,
+				E4FC140A257A08A8006DB2A1 /* XRainViewController.m in Sources */,
 				6C68BCD5223A5101007C8861 /* URLComponentsViewController.m in Sources */,
 				6CE4DB8422D742E4008F01A9 /* ExtensionViewController.swift in Sources */,
 				6C67E2262452DD5A00BA9876 /* XKVOViewController.m in Sources */,
