@@ -65,7 +65,7 @@ struct SomeStruct {
 class SwiftTableController: UITableViewController {
     
   open var otherVar = 0;
-    let mainArray = [["title":"关键字","classn":"XKeyWordViewController","storyboard":"0"],["title":"数据类型","classn":"DataTypeViewController","storyboard":"0"],["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"],["title":"UIStackView","classn":"XStackViewController","storyboard":"0"],["title":"字符串","classn":"XStringViewController","storyboard":"0"],["title":"Swift调用OC","classn":"InvokeOCViewController","storyboard":"0"],
+    let mainArray = [["title":"关键字","classn":"XKeyWordViewController","storyboard":"0"],["title":"数据类型","classn":"DataTypeViewController","storyboard":"0"],["title":"lottie动画","classn":"LottieViewController","storyboard":"0"],["title":"闭包","classn":"SwiftBlocksViewController","storyboard":"1"],["title":"枚举","classn":"EnumViewController","storyboard":"0"],["title":"构造器","classn":"ConstructorViewController","storyboard":"0"],["title":"扩展","classn":"ExtensionViewController","storyboard":"0"],["title":"协议","classn":"ProtocolViewController","storyboard":"0"],["title":"UIStackView","classn":"XStackViewController","storyboard":"0"],["title":"字符串","classn":"XStringViewController","storyboard":"0"],["title":"Swift调用OC","classn":"InvokeOCViewController","storyboard":"0"],
         ["title":"派发机制","classn":"DistributeViewController","storyboard":"0"]]
     
     //类型方法

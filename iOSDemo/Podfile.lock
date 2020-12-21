@@ -60,6 +60,7 @@ PODS:
   - GPUImage (0.1.7)
   - JLRoutes (2.1)
   - JSONModel (1.8.0)
+  - lottie-ios (3.1.8)
   - LzmaSDK-ObjC (2.1.1)
   - LZUberSignature (1.0.4)
   - Masonry (1.1.0)
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - GPUImage (~> 0.1.7)
   - JLRoutes (~> 2.1)
   - JSONModel (~> 1.8.0)
+  - lottie-ios (~> 3.1.8)
   - LzmaSDK-ObjC
   - LZUberSignature (~> 1.0.4)
   - Masonry
@@ -179,6 +181,7 @@ SPEC REPOS:
     - GPUImage
     - JLRoutes
     - JSONModel
+    - lottie-ios
     - LzmaSDK-ObjC
     - LZUberSignature
     - Masonry
@@ -223,6 +226,7 @@ SPEC CHECKSUMS:
   GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
   LzmaSDK-ObjC: 6c68c37743a658fc9a4c7b70f7d6045b587aa42b
   LZUberSignature: f1bb185deaa45f158720933fda78b6ddff3c8617
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -249,6 +253,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: e9e1d2a92c32b29c8a2777e3a49d34f8133efae0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 18336b85aaa5023b81b4e2ffaea9524aff64e281
+PODFILE CHECKSUM: 007f9a4a7250c50dc37c309ffeb200e3589e8fb9
 
 COCOAPODS: 1.5.3
