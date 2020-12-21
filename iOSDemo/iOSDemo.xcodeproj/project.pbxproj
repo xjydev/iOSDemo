@@ -122,6 +122,7 @@
 		E4C028A5254FB08D00FD783C /* XCarouselTController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028A4254FB08D00FD783C /* XCarouselTController.m */; };
 		E4C028AB254FB29400FD783C /* XCarouselTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */; };
 		E4C25047252425D8000BC8B8 /* EncryptViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C25046252425D8000BC8B8 /* EncryptViewController.m */; };
+		E4CCA7DF2590CA2A008708D8 /* UIBezierPath+BesselCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA7DE2590CA29008708D8 /* UIBezierPath+BesselCurve.m */; };
 		E4D0ED782547FEED00548F76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C61CB3B2269B403002FE2A8 /* CoreBluetooth.framework */; };
 		E4D0ED7A2547FEEF00548F76 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
 		E4FC140A257A08A8006DB2A1 /* XRainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC1409257A08A8006DB2A1 /* XRainViewController.m */; };
@@ -362,6 +363,8 @@
 		E4C028AA254FB29400FD783C /* XCarouselTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XCarouselTableViewCell.m; sourceTree = "<group>"; };
 		E4C25045252425D8000BC8B8 /* EncryptViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptViewController.h; sourceTree = "<group>"; };
 		E4C25046252425D8000BC8B8 /* EncryptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptViewController.m; sourceTree = "<group>"; };
+		E4CCA7DD2590CA29008708D8 /* UIBezierPath+BesselCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BesselCurve.h"; sourceTree = "<group>"; };
+		E4CCA7DE2590CA29008708D8 /* UIBezierPath+BesselCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+BesselCurve.m"; sourceTree = "<group>"; };
 		E4FC1408257A08A8006DB2A1 /* XRainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRainViewController.h; sourceTree = "<group>"; };
 		E4FC1409257A08A8006DB2A1 /* XRainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRainViewController.m; sourceTree = "<group>"; };
 		E4FE4BDA24FCA42200AF2DE6 /* XSignatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSignatureViewController.h; sourceTree = "<group>"; };
@@ -995,6 +998,8 @@
 				E4777EDD257622D900920159 /* feed_attitude_pure.json */,
 				E4777ED4257622CC00920159 /* LottieViewController.h */,
 				E4777ED5257622CC00920159 /* LottieViewController.m */,
+				E4CCA7DD2590CA29008708D8 /* UIBezierPath+BesselCurve.h */,
+				E4CCA7DE2590CA29008708D8 /* UIBezierPath+BesselCurve.m */,
 			);
 			name = Animation;
 			path = ObjectiveC/Animation;
@@ -1315,6 +1320,7 @@
 			files = (
 				6C67E22C2453077100BA9876 /* NSObject+cate.m in Sources */,
 				6C7EA62A2446EF6800E970AB /* XJYViewController.swift in Sources */,
+				E4CCA7DF2590CA2A008708D8 /* UIBezierPath+BesselCurve.m in Sources */,
 				6C0BD73024235B1C0002E956 /* XAnimationViewController.m in Sources */,
 				6CCEE1B724283F2D00C6AC2F /* XKeyWordViewController.swift in Sources */,
 				6C64589720AD670A0046C2F9 /* XPropertyViewController.m in Sources */,

@@ -7,24 +7,24 @@
 //
 
 import UIKit
-//import Lottie
+import Lottie
 class LottieViewController: UIViewController {
 
     override func viewDidLoad() {
-//        super.viewDidLoad()
-//        let path : String = Bundle.main.path(forResource: "feed_attitude_happy_lite", ofType: "json")!
-//         let lottieAnimationView = AnimationView.init(filePath: path)
-//        self.view .addSubview(lottieAnimationView);
-//        lottieAnimationView.play();
-//         let lottieAnimationView = AnimationView.init(name: "feed_attitude_happy_lite")
-        // load from URL
-//         let animationView = LOTAnimationView(contentsOf: WebURL)
-//         let lottieAnimationView = AnimationView.init(url: WebURL, closure:{
-//                   down in
-//          })
-
+        super.viewDidLoad()
+        
     }
-    
+    func showLottie() {
+        let path : String = Bundle.main.path(forResource: "feed_attitude_happy_lite", ofType: "json")!
+         let lottieAnimationView = AnimationView.init(filePath: path)
+        lottieAnimationView.frame = CGRect(x: 100, y: 100, width: 50, height: 50);
+        self.view .addSubview(lottieAnimationView);
+        lottieAnimationView.play();
+        
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+      showLottie()
+    }
 
     /*
     // MARK: - Navigation
