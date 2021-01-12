@@ -125,6 +125,7 @@
 		E4CCA7DF2590CA2A008708D8 /* UIBezierPath+BesselCurve.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CCA7DE2590CA29008708D8 /* UIBezierPath+BesselCurve.m */; };
 		E4D0ED782547FEED00548F76 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C61CB3B2269B403002FE2A8 /* CoreBluetooth.framework */; };
 		E4D0ED7A2547FEEF00548F76 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C044E3620CE45C5009B77C9 /* Accelerate.framework */; };
+		E4F3E3532591F6E50089A103 /* thumb.json in Resources */ = {isa = PBXBuildFile; fileRef = E4F3E3522591F6E40089A103 /* thumb.json */; };
 		E4FC140A257A08A8006DB2A1 /* XRainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FC1409257A08A8006DB2A1 /* XRainViewController.m */; };
 		E4FE4BDC24FCA42200AF2DE6 /* XSignatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE4BDB24FCA42200AF2DE6 /* XSignatureViewController.m */; };
 		FE84A0C3B55958A8B6DC3A8B /* Pods_iOSDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6120F33F06E9EF3B91C0D6CA /* Pods_iOSDemo.framework */; };
@@ -365,6 +366,7 @@
 		E4C25046252425D8000BC8B8 /* EncryptViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptViewController.m; sourceTree = "<group>"; };
 		E4CCA7DD2590CA29008708D8 /* UIBezierPath+BesselCurve.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+BesselCurve.h"; sourceTree = "<group>"; };
 		E4CCA7DE2590CA29008708D8 /* UIBezierPath+BesselCurve.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+BesselCurve.m"; sourceTree = "<group>"; };
+		E4F3E3522591F6E40089A103 /* thumb.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = thumb.json; sourceTree = "<group>"; };
 		E4FC1408257A08A8006DB2A1 /* XRainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XRainViewController.h; sourceTree = "<group>"; };
 		E4FC1409257A08A8006DB2A1 /* XRainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XRainViewController.m; sourceTree = "<group>"; };
 		E4FE4BDA24FCA42200AF2DE6 /* XSignatureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XSignatureViewController.h; sourceTree = "<group>"; };
@@ -626,6 +628,7 @@
 				6CE991522466FE0200F8AE12 /* OCObject.swift */,
 				E4777EE8257623EB00920159 /* LottieViewController.swift */,
 				6C64588C20AD51580046C2F9 /* iOSDemo-Bridging-Header.h */,
+				E4F3E3522591F6E40089A103 /* thumb.json */,
 			);
 			path = Swift;
 			sourceTree = SOURCE_ROOT;
@@ -1152,6 +1155,7 @@
 			files = (
 				E43468402578889C00752CF0 /* la.svga in Resources */,
 				6C64585D20AD4B5E0046C2F9 /* LaunchScreen.storyboard in Resources */,
+				E4F3E3532591F6E50089A103 /* thumb.json in Resources */,
 				6C64585A20AD4B5E0046C2F9 /* Assets.xcassets in Resources */,
 				E4777EE4257622D900920159 /* feed_attitude_like_lite.json in Resources */,
 				6CF44053243744B8000B1AD1 /* tm.png in Resources */,

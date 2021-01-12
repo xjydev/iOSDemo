@@ -18,6 +18,10 @@
     [super viewDidLoad];
     AVPlayerItem *item = [[AVPlayerItem alloc]initWithURL:@""];
     AVPlayer *player = [[AVPlayer alloc]initWithPlayerItem:item];
+    
+    //信息中断恢复
+//    AVAudioSessionInterruptionNotification
+//    AVAudioSessionRouteChangeNotification
 }
 
 /*

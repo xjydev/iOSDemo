@@ -15,10 +15,11 @@ class LottieViewController: UIViewController {
         
     }
     func showLottie() {
-        let path : String = Bundle.main.path(forResource: "feed_attitude_happy_lite", ofType: "json")!
-         let lottieAnimationView = AnimationView.init(filePath: path)
+        let path : String = Bundle.main.path(forResource: "thumb", ofType: "json")!
+        let lottieAnimationView = AnimationView.init(filePath: path)
         lottieAnimationView.frame = CGRect(x: 100, y: 100, width: 50, height: 50);
         self.view .addSubview(lottieAnimationView);
+        lottieAnimationView.backgroundColor = UIColor.red;
         lottieAnimationView.play();
         
     }

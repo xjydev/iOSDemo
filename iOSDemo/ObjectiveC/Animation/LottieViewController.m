@@ -33,7 +33,7 @@
 //    label.textColor = [UIColor whiteColor];
 //    label.text = @"背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景背景景背景背景背景景背景背景背景景背景背景背景景背景背景背景景背景背景背景背景背景背景背景背景背景背景背景背景";
 //    [self.view addSubview:label];
-//    [self.view addSubview:self.player];
+    [self.view addSubview:self.player];
 //
 //    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
 //    button.frame = CGRectMake(50, kScreen_Height - 60, 100, 40);
@@ -57,36 +57,53 @@
 //    NSLog(@"----------%@",[self stringWithNum:123434667533]);
 //    NSLog(@"----------%@",[self stringWithNum:1234346675342345]);
     
-    [self showbize];
+//    [self showbize];
 }
 - (void)showbize {
-    self.backView = [[UIView alloc]initWithFrame:CGRectMake(100, 50, 100, 400)];
+    self.backView = [[UIView alloc]initWithFrame:CGRectMake(100, 150, 100, 400)];
     self.backView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.backView];
-    UIBezierPath *bezierPath = [[UIBezierPath alloc] init];
-    [bezierPath moveToPoint:CGPointMake(50, 400)];
-    CGFloat sp = 40.0f;
-    CGFloat spy = 60.0f;
-    NSValue *point1 = [NSValue valueWithCGPoint:CGPointMake(50+ sp,400 - spy*1)];
-    NSValue *point2 = [NSValue valueWithCGPoint:CGPointMake(50- sp,400 - spy*2)];
-    NSValue *point3 = [NSValue valueWithCGPoint:CGPointMake(50+ sp,400 - spy*3)];
-    NSValue *point4 = [NSValue valueWithCGPoint:CGPointMake(50- sp,400 - spy*4)];
-    NSValue *point5 = [NSValue valueWithCGPoint:CGPointMake(50+ sp,400 - spy*5)];
-    NSValue *point6 = [NSValue valueWithCGPoint:CGPointMake(50- sp,400 - spy*6)];
-    bezierPath.contractionFactor = -0.8;
-    NSMutableArray *arr = [NSMutableArray arrayWithArray:@[point1,point2,point3,point4,point5,point6]];
-    [bezierPath addBezierThroughPoints:arr];
+    UIView *cView = [[UIView alloc]initWithFrame: CGRectMake(30, 400, 30, 30)];
+    cView.backgroundColor = [UIColor redColor];
+    [self.backView addSubview:cView];
+    cView.transform = CGAffineTransformMakeScale(0.18, 0.18);
+    [UIView animateWithDuration:0.5 animations:^{
+        cView.center = CGPointMake(30, 340);
+        cView.transform = CGAffineTransformMakeScale(1, 1);
+    } completion:^(BOOL finished) {
+        UIBezierPath *path = [UIBezierPath bezierPath];
+        path.lineCapStyle = kCGLineCapRound;
+        path.lineJoinStyle = kCGLineJoinRound;
+        [path moveToPoint:cView.center];
+        CGFloat startOff = arc4random_uniform(40);
+//        [path addLineToPoint:CGPointMake(randomCenterX, randomCenterY)];
+        CGFloat randomCenterX = self.backView.frame.size.width/2.0 - 20 +  startOff;
+        CGFloat randomCenterY = self.backView.frame.size.height  - 60 - startOff/2.0;
+        
+        CGFloat offx = arc4random_uniform(40);
+        CGPoint endPoint = CGPointMake(cView.center.x + (20 - offx), 20);
+        NSInteger j = arc4random_uniform(2);
+        NSInteger travelDirection = 1- (2*j);//随机放向 -1 OR 1
+        NSInteger x1 = randomCenterX + travelDirection*(arc4random_uniform(20) + 50);
+        NSInteger y1 = randomCenterY - 80 + travelDirection*arc4random_uniform(20);
+        NSInteger x2 = randomCenterX - travelDirection*(arc4random_uniform(20) + 50);
+        NSInteger y2 = randomCenterY - 120 + travelDirection*arc4random_uniform(20);
+        CGPoint controlPoint1 = CGPointMake(x1, y1);//control根据自己动画想要的效果做灵活的调整
+        CGPoint controlPoint2 = CGPointMake(x2, y2);
+        [path addCurveToPoint:endPoint controlPoint1:controlPoint1 controlPoint2:controlPoint2];
+        CAKeyframeAnimation *fadeOutAnimation = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+        fadeOutAnimation.repeatCount = 1;
+        fadeOutAnimation.path = path.CGPath;
+        fadeOutAnimation.calculationMode = kCAAnimationPaced;
+        fadeOutAnimation.duration =3.0;
+        [cView.layer addAnimation:fadeOutAnimation forKey:@"fade"];
+    }];
+    
+    
+    
     //一个曲线
     //路径样式
-    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
-    shapeLayer.path = bezierPath.CGPath;
-    shapeLayer.fillColor = [UIColor clearColor].CGColor; //填充色<默认黑色>
-    shapeLayer.strokeColor = [UIColor redColor].CGColor; //线色
-    shapeLayer.lineWidth = 2;
-    [self.backView.layer addSublayer:shapeLayer];
-    for (NSValue *V in arr) {
-        [self setViewWithValue:V];
-    }
+   
 }
 - (void)setViewWithValue:(NSValue *)value {
     CGPoint point = value.CGPointValue;
@@ -117,7 +134,7 @@
 - (SVGAPlayer *)player{
     if (!_player) {
         _player = [[SVGAPlayer alloc]init];
-        _player.frame = CGRectMake(0, 0, kScreen_Width, kScreen_Width);
+        _player.frame = CGRectMake(50, 50, 200, 200);
         _player.loops = 1;
         _player.clearsAfterStop = YES;
         _player.delegate = self;
@@ -141,7 +158,9 @@
 //    if (touch) {
 //        CGPoint point = [ui]
 //    }
-    [self showLikeviewWithPoint:CGPointMake(200, 500)];
+//    [self showLikeviewWithPoint:CGPointMake(200, 500)];
+//    [self showbize];
+    [self showLocationAnimation];
 }
 - (void)showLikeviewWithPoint:(CGPoint)point {
     UIView *likeView = [[UIView alloc]initWithFrame:CGRectMake(point.x, point.y, 40, 40)];
@@ -202,14 +221,14 @@
 }
 - (void)showLocationAnimation {
     
-//    NSString *path = [[NSBundle mainBundle]pathForResource:@"la" ofType:@"svga"];
-//    [self.parser parseWithURL:[NSURL fileURLWithPath:path] completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
-//        NSLog(@"start ---------");
-//        self.player.videoItem = videoItem;
-//        [self.player startAnimation];
-//    } failureBlock:^(NSError * _Nonnull error) {
-//        NSLog(@"Error: %@",error);
-//    }];
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"la" ofType:@"svga"];
+    [self.parser parseWithURL:[NSURL fileURLWithPath:path] completionBlock:^(SVGAVideoEntity * _Nullable videoItem) {
+        NSLog(@"start ---------");
+        self.player.videoItem = videoItem;
+        [self.player startAnimation];
+    } failureBlock:^(NSError * _Nonnull error) {
+        NSLog(@"Error: %@",error);
+    }];
 //    [self.parser parseWithNamed:@"la.svga" inBundle:nil completionBlock:^(SVGAVideoEntity * _Nonnull videoItem) {
 //        NSLog(@"start ---------");
 //        self.player.videoItem = videoItem;

@@ -7,7 +7,7 @@
 //
 
 #import "XAnimationViewController.h"
-
+#import "XTools.h"
 @interface XAnimationViewController ()<CAAnimationDelegate>
 @property (nonatomic , strong)UIButton *currentButton;
 @end
@@ -22,7 +22,7 @@
 - (void)createButtons {
     for (int i = 0; i<9; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.frame = CGRectMake(10+i%3*100, 120+i/3*100, 80, 80);
+        button.frame = CGRectMake(50+i%3*100,kScreen_Height - 300 +i/3*100, 80, 80);
         button.tag = i+300;
         [button addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         button.backgroundColor = [UIColor redColor];
@@ -43,7 +43,7 @@
             animation.autoreverses = NO;
             animation.duration = 0.25;
             animation.repeatCount = 1;
-            animation.removedOnCompletion = NO;
+            animation.removedOnCompletion = YES;
             animation.fillMode = kCAFillModeBoth;
             animation.delegate = self;
             UIColor *randomColor = [UIColor blueColor];
@@ -122,6 +122,58 @@
         }
             break;
         case 4:{
+            float time1 = 0.6;
+            float time2 = 1.2;
+            CAKeyframeAnimation *animationPath = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+//            animationPath.fromValue = [NSValue valueWithCGPoint:button.center];
+//            animationPath.toValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x, kScreen_Height - 400)];
+            animationPath.values = @[[NSValue valueWithCGPoint:button.center],[NSValue valueWithCGPoint:CGPointMake(100, 400)]];
+            animationPath.duration = time1;
+            animationPath.calculationMode = kCAAnimationPaced;
+            
+            CAKeyframeAnimation *animationPath1 = [CAKeyframeAnimation animationWithKeyPath:@"position"];
+//            animationPath1.fromValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x , kScreen_Height - 400)];
+//            animationPath1.toValue = [NSValue valueWithCGPoint:CGPointMake(button.center.x , 100)];
+            animationPath1.values = @[[NSValue valueWithCGPoint:CGPointMake(100 , 400)],[NSValue valueWithCGPoint:CGPointMake(button.center.x , 100)]];
+            animationPath1.duration = time2;
+            animationPath1.beginTime = time1;
+            animationPath1.calculationMode = kCAAnimationPaced;
+            
+            CAKeyframeAnimation *zoomAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+            zoomAnimation.repeatCount = 1;
+            zoomAnimation.values = @[[NSNumber numberWithFloat:0.5],[NSNumber numberWithFloat:1.5],[NSNumber numberWithFloat:0.5]];
+            zoomAnimation.keyTimes = @[[NSNumber numberWithFloat:0],[NSNumber numberWithFloat:time1-0.2],[NSNumber numberWithFloat:time2+0.2]];
+            
+            CAKeyframeAnimation *opacityAnimation = [CAKeyframeAnimation animationWithKeyPath:@"opacity"];
+            opacityAnimation.repeatCount = 1;
+            opacityAnimation.values = @[[NSNumber numberWithFloat:0.2],[NSNumber numberWithFloat:1.0],[NSNumber numberWithFloat:0.0]];
+            opacityAnimation.keyTimes = @[[NSNumber numberWithFloat:0],[NSNumber numberWithFloat:time1],[NSNumber numberWithFloat:time2]];
+            
+            CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
+            animationGroup.removedOnCompletion = NO;
+            animationGroup.duration = time1 + time2;
+            animationGroup.animations = @[animationPath,animationPath1,zoomAnimation,opacityAnimation];
+            [button.layer addAnimation:animationGroup forKey:nil];
+            
+            
+        }
+            break;
+        case 5:{
+            CABasicAnimation *ani1 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+            
+        }
+            break;
+        case 6:{
+            CABasicAnimation *ani1 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+            
+        }
+            break;
+        case 7:{
+            CABasicAnimation *ani1 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+            
+        }
+            break;
+        case 8:{
             CABasicAnimation *ani1 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
             
         }
