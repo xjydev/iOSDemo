@@ -54,7 +54,7 @@ target 'iOSDemo' do
   pod 'SSZipArchive'
   pod 'UnrarKit'
   pod 'LzmaSDK-ObjC'
-  pod 'BookReader'
+#  pod 'BookReader'
   pod 'pdftotxt'
 #  pod 'SwiftOCR'
   pod 'LZUberSignature', '~> 1.0.4'
