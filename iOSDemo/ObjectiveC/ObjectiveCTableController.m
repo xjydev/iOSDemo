@@ -15,7 +15,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import <FBMemoryProfiler/FBMemoryProfiler.h>
-
+#import "PopViewController.h"
 @interface ObjectiveCTableController ()<UINavigationControllerDelegate,UIPopoverPresentationControllerDelegate>
 {
   NSArray  *  _mainArray;
@@ -225,19 +225,22 @@ cell.transform = CGAffineTransformIdentity;
     return @[deleteRoWAction,editRowAction];//最后返回这俩个RowAction 的数组
 }
 - (IBAction)footButtonAction:(id)sender {
-    [[ABCalendarController alloc]showSelectedCompletion:^(NSDate *startDate, NSDate *endDate) {
-        
-    }];
+//    [[ABCalendarController alloc]showSelectedCompletion:^(NSDate *startDate, NSDate *endDate) {
+//
+//    }];
 }
 - (IBAction)popButtonAction:(UIButton *)sender {
-    UIViewController *viewC = [[UIViewController alloc]init];
-    viewC.modalPresentationStyle = UIModalPresentationPopover;
-    viewC.preferredContentSize = CGSizeMake(80, 150);
-    viewC.popoverPresentationController.sourceView = sender;
-    viewC.popoverPresentationController.sourceRect =sender.bounds;
-    viewC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
-    viewC.popoverPresentationController.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
-    viewC.popoverPresentationController.delegate = self;
+    PopViewController *viewC = [[PopViewController alloc]init];
+    viewC.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//    viewC.view.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+//    viewC.popoverPresentationController.backgroundColor = [UIColor clearColor];
+//    viewC.modalPresentationStyle = UIModalPresentationPopover;
+//    viewC.preferredContentSize = CGSizeMake(80, 150);
+//    viewC.popoverPresentationController.sourceView = sender;
+//    viewC.popoverPresentationController.sourceRect =sender.bounds;
+//    viewC.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
+//    viewC.popoverPresentationController.backgroundColor = [UIColor colorWithWhite:0.5 alpha:1.0];
+//    viewC.popoverPresentationController.delegate = self;
     
     [self presentViewController:viewC animated:YES completion:^{
         

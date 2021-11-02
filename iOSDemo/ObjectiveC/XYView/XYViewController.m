@@ -37,7 +37,7 @@
     [super viewDidLoad];
     self.title = @"UIView";
 //    UIControl
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     
     _layer = [[CALayer alloc]init];
     _layer.frame = CGRectMake(100, 100, 100, 100);

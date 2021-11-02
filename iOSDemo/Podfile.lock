@@ -15,7 +15,6 @@ PODS:
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
   - Alamofire (5.2.2)
-  - BookReader (0.1.0)
   - CocoaLumberjack (3.6.2):
     - CocoaLumberjack/Core (= 3.6.2)
   - CocoaLumberjack/Core (3.6.2)
@@ -120,7 +119,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - Alamofire
-  - BookReader
   - CTMediator (~> 25)
   - CTPersistance
   - DateTools
@@ -163,10 +161,9 @@ DEPENDENCIES:
   - YYKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Alamofire
-    - BookReader
     - CocoaLumberjack
     - CTMediator
     - CTPersistance
@@ -211,7 +208,6 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  BookReader: 63a44cb075cf63b18526c2c23f190fd700c4ab31
   CocoaLumberjack: bd155f2dd06c0e0b03f876f7a3ee55693122ec94
   CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
   CTPersistance: 91dfa86d211a416ee4364b433153b21c0d94329b
@@ -253,6 +249,6 @@ SPEC CHECKSUMS:
   YYDebugDatabase: e9e1d2a92c32b29c8a2777e3a49d34f8133efae0
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 007f9a4a7250c50dc37c309ffeb200e3589e8fb9
+PODFILE CHECKSUM: 64363fb1bd17358309fbb721d60495c0e98e3d4e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1
